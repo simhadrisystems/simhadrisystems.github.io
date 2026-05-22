@@ -1,8 +1,433 @@
- <!DOCTYPE html>
-  <html>
-  <head><meta charset="UTF-8"><title>WinEntry Guide - English</title></head>
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WinEntry — User Guide</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+           font-size: 15px; line-height: 1.7; color: #1e293b; background: #f8fafc; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 20px 16px 60px; }
+
+    /* Header */
+    .guide-header { background: #1e3a5f; color: white; padding: 28px 20px 22px;
+                    text-align: center; margin-bottom: 0; }
+    .guide-header h1 { font-size: 22px; font-weight: 700; letter-spacing: 0.3px; }
+    .guide-header .sub { font-size: 13px; color: #94b4d4; margin-top: 6px; }
+
+    /* TOC */
+    .toc { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px;
+           padding: 20px 24px; margin: 20px 0 28px; }
+    .toc h2 { font-size: 14px; font-weight: 700; color: #64748b; text-transform: uppercase;
+               letter-spacing: 0.8px; margin-bottom: 12px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin: 5px 0; }
+    .toc a { color: #1d4ed8; text-decoration: none; font-size: 14px; }
+    .toc a:hover { text-decoration: underline; }
+    .toc ul { margin: 4px 0 4px 16px; list-style: disc; }
+    .toc ul li { margin: 3px 0; }
+  
+    /* Sections */
+    section { background: #ffffff; border-radius: 10px; padding: 24px 20px;
+              margin-bottom: 16px; border: 1px solid #e2e8f0; }
+    h2 { font-size: 18px; font-weight: 700; color: #1e3a5f;
+         border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 16px; }
+    h3 { font-size: 15px; font-weight: 700; color: #0f4c81; margin: 20px 0 8px; }
+    h4 { font-size: 14px; font-weight: 700; color: #334155; margin: 14px 0 6px; }
+    p  { margin: 8px 0; }
+    ul, ol { padding-left: 22px; margin: 8px 0; }
+    li { margin: 5px 0; }
+    strong { color: #0f172a; }  
+  
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px;
+            display: block; overflow-x: auto; }
+    th { background: #1e3a5f; color: white; padding: 9px 12px; text-align: left; }
+    td { border: 1px solid #e2e8f0; padding: 8px 12px; vertical-align: top; }
+    tr:nth-child(even) td { background: #f8fafc; }
+
+    /* Screenshots */ 
+    figure { margin: 16px 0; text-align: center; }
+    figure img { max-width: 100%; width: 320px; border-radius: 12px;
+                 border: 1px solid #cbd5e1; box-shadow: 0 2px 8px rgba(0,0,0,0.10); }
+    figcaption { font-size: 12px; color: #64748b; margin-top: 6px; font-style: italic; }
+
+    /* Note / tip boxes */
+    .note { background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 6px 6px 0;
+            padding: 12px 14px; margin: 12px 0; font-size: 14px; color: #78350f; }
+    .tip  { background: #f0fdf4; border-left: 4px solid #22c55e; border-radius: 0 6px 6px 0;
+            padding: 12px 14px; margin: 12px 0; font-size: 14px; color: #14532d; }
+    .formula { display: inline-block; background: #f0fdf4; border: 1px solid #bbf7d0;
+               padding: 8px 14px; border-radius: 6px; font-weight: 700;
+               color: #166534; margin: 8px 0; }
+
+    /* Back to top */ 
+    .back-top { display: block; text-align: right; font-size: 13px; color: #64748b;
+                margin-top: 18px; text-decoration: none; }
+    .back-top:hover { color: #1d4ed8; }
+
+    @media (max-width: 480px) { 
+      .guide-header h1 { font-size: 18px; }
+      section { padding: 18px 14px; }
+      figure img { width: 100%; }
+    }
+  </style>
+  </head>
   <body>
-  <h1>WinEntry User Guide</h1>
-  <p>Guide coming soon.</p>
+  
+  <div class="guide-header">
+    <h1>WinEntry — User Guide</h1>
+    <div class="sub">Version 1.1 (Build 4) &nbsp;·&nbsp; Android App &nbsp;·&nbsp; Updated May 2026</div>
+  </div>
+  
+  <div class="wrap">
+  
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <h2>Contents</h2>
+    <ol>    
+      <li><a href="#s1">About WinEntry</a></li>
+      <li><a href="#s2">Installing the App</a></li>
+      <li><a href="#s3">Signing In</a></li>
+      <li><a href="#s4">Getting Started — First-Time Setup</a>
+        <ul>
+          <li><a href="#s4-1">Step 1 — Business Info</a></li>
+          <li><a href="#s4-2">Step 2 — Import Product List</a></li>
+          <li><a href="#s4-3">Step 3 — Load Sample Data</a></li>
+          <li><a href="#s4-4">Step 4 — Setup Opening Stock</a></li>
+        </ul>
+      </li>
+      <li><a href="#s5">Home Screen</a></li>
+      <li><a href="#s6">Daily Stock Entry</a></li>
+      <li><a href="#s7">Purchases</a></li>
+      <li><a href="#s8">Reports</a></li>
+      <li><a href="#s9">Items / Products</a></li>
+      <li><a href="#s10">Settings</a></li>
+      <li><a href="#s11">Cloud Drive Backup</a></li>
+      <li><a href="#s12">Data Management and Excel Import/Export</a></li>
+      <li><a href="#s13">Help and Support</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION 1 -->  
+  <section id="s1">
+    <h2>1. About WinEntry</h2>
+    <!-- paste Section 1 content here -->
+    <a href="#" class="back-top">↑ Back to top</a>
+  </section>
+  
+  <!-- SECTION 2 -->
+  <section id="s2">
+    <h2>2. Installing the App</h2>
+    <ol>
+      <li>Open <strong>Google Play Store</strong> on your Android phone</li>
+      <li>Search for <strong>WinEntry</strong> or <strong>WinEntry Simple Inventory</strong></li>
+      <li>Tap the result published by <strong>Simhadri Systems</strong> → tap <strong>Install</strong></li>
+      <li>Once installed, tap <strong>Open</strong></li>
+    </ol>   
+    <p><strong>Requirements:</strong> Android 8.0 (Oreo) or later · A Google account for sign-in</p>
+
+    <figure>
+      <img src="img/install_play_store.webp" alt="Google Play Store listing for WinEntry">
+      <figcaption>WinEntry on Google Play Store — tap Install</figcaption>
+    </figure>
+
+    <div class="note"><strong>Updates:</strong> The Play Store notifies you automatically when a new version
+    is released. You can also check from inside the app: Settings → Check for Update.</div>
+    <a href="#" class="back-top">↑ Back to top</a>
+  </section>
+  
+  <!-- SECTION 3 -->
+  <section id="s3">
+    <h2>3. Signing In</h2>
+    <p>WinEntry uses your <strong>Google account</strong> to sign in — the same account you use for Gmail or YouTube.</p>
+    <ol>
+      <li>Open WinEntry — the Sign In screen appears</li>
+      <li>Tap <strong>Sign in with Google</strong></li>
+      <li>Select your Google account from the list</li>
+      <li>Grant the permissions requested</li>
+      <li>You will be taken to the Home screen</li>
+    </ol>
+  
+    <figure>
+      <img src="img/signin_screen.webp" alt="Sign In screen">
+      <figcaption>Sign In screen — tap Sign in with Google</figcaption>
+    </figure>
+  
+    <div class="note">Always use the same Google account. Signing in with a different account will not show your previous data.</div>
+    <a href="#" class="back-top">↑ Back to top</a>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section id="s4">   
+    <h2>4. Getting Started — First-Time Setup</h2>
+    <p>When you open the app after signing in for the first time, an amber <strong>Getting Started</strong> card appears at the top of the Home screen.
+   <strong>Tap this card to open the setup checklist.</strong></p>
+  
+    <figure>
+      <img src="img/home_getting_started_card.webp" alt="Home screen with Getting Started card">
+      <figcaption>Amber Getting Started card on the Home screen</figcaption>
+    </figure>
+  
+    <figure>
+      <img src="img/getting_started_checklist.webp" alt="Getting Started 4-step checklist">
+      <figcaption>The 4-step setup checklist — language toggle at the top</figcaption>
+    </figure>
+  
+    <div class="tip"><strong>Language toggle:</strong> The English / తెలుగbuttons at the top of this dialog switch the app language immediately. You can
+   change it again at any time from Settings.</div>
+  
+    <h3 id="s4-1">Step 1 — Business Info</h3>
+    <ol>
+      <li>Tap <strong>Set Up</strong> next to "Set Up Business Information"</li>
+      <li>Fill in: Owner Name, Business Name (required), Licence / Reg. No, Address, Phone</li>
+      <li>Tap <strong>Save &amp; Register</strong> → confirm in the dialog</li>
+    </ol>
+  
+    <figure>
+      <img src="img/business_info_filled.webp" alt="Business Info screen with fields filled">
+      <figcaption>Business Info screen — fill all fields then tap Save &amp; Register</figcaption>
+    </figure>
+
+    <div class="note">The "Account:" line at the top shows your Google sign-in email — it is read-only.</div>
+  
+    <h3 id="s4-2">Step 2 — Import Product List</h3>
+    <p>Downloads the admin's standard product master list to your phone.</p>
+    <ol>
+      <li>Tap <strong>Download</strong> next to "Import Product List"</li>
+      <li>Wait 5–30 seconds — a green tick appears when complete</li>
+    </ol>
+  
+    <figure>
+      <img src="img/download_products.webp" alt="Download Product List step">
+      <figcaption>Step 2 — tap Download, wait for the green tick</figcaption>
+    </figure>
+  
+    <div class="note"><strong>If "Request Access" appears instead of "Download":</strong> Your account has not been activated by the admin yet. Tap
+  "Request Access" to notify the admin. Once approved, come back and tap Download.</div>
+  
+    <h3 id="s4-3">Step 3 — Load Sample Data (Optional)</h3>
+    <p>Loads dummy data so you can practise before entering real figures. <strong>Skip this step if you have real opening stock to enter — go directly
+  to Step 4.</strong></p>
+    <ol>
+      <li>Tap <strong>Load</strong> next to "Import Sample / Test Data"</li>
+      <li>Select the opening balance date → tap <strong>OK</strong></li>
+    </ol>
+  
+    <figure>
+      <img src="img/sample_data_date_picker.webp" alt="Date picker for sample data">
+      <figcaption>Select the opening balance date for sample data</figcaption>
+    </figure>
+  
+    <h3 id="s4-4">Step 4 — Setup Opening Stock</h3>
+    <p>Enter the actual unit count per product and size as your starting inventory. Two ways to do this:</p>
+
+    <h4>Option A — Manual entry</h4>
+    <ol>    
+      <li>Tap <strong>Enter</strong> next to "Setup Opening Stock (manual)"</li>
+      <li>For each product, enter units per size column</li>
+      <li>Tap <strong>Save</strong></li>
+    </ol>
+  
+    <figure>
+      <img src="img/opening_stock_manual.webp" alt="Opening Stock Setup screen manual entry">
+      <figcaption>Opening Stock — enter units for each product and size</figcaption>
+    </figure>
+  
+    <h4>Option B — Import from Excel</h4>
+    <ol>
+      <li>Tap the <strong>⋮</strong> menu → <strong>Download Template</strong> — an Excel file saves to your phone</li>
+      <li>Fill in the template on your computer</li>
+      <li>Transfer back to your phone → ⋮ menu → <strong>Import from Excel</strong></li>
+    </ol>
+  
+    <figure>
+      <img src="img/opening_stock_import_menu.webp" alt="Opening Stock import menu">
+      <figcaption>⋮ menu → Download Template or Import from Excel</figcaption>
+    </figure>
+
+    <a href="#" class="back-top">↑ Back to top</a>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section id="s5">
+    <h2>5. Home Screen</h2>
+
+    <figure>
+      <img src="img/home_screen.webp" alt="Home screen with all module cards">
+      <figcaption>Home screen — five module cards after setup is complete</figcaption>
+    </figure>
+  
+    <!-- paste Section 5 content here -->
+    <a href="#" class="back-top">↑ Back to top</a>
+  </section>
+  
+  <!-- SECTION 6 -->
+  <section id="s6">
+    <h2>6. Daily Stock Entry</h2>
+
+    <figure>
+      <img src="img/daily_stock_screen.webp" alt="Daily Stock Entry screen">
+      <figcaption>Daily Stock screen — product list with size columns and date selector</figcaption>
+    </figure>
+  
+    <h3>Entering Closing Balances</h3>
+  
+    <figure>
+      <img src="img/daily_stock_cb_entry.webp" alt="CB Entry mode">
+      <figcaption>CB Entry mode — OB, purchases and closing balance fields</figcaption>
+    </figure>
+  
+    <h3>Importing Closing Balances from Excel</h3>
+  
+    <figure>
+      <img src="img/daily_stock_import_menu.webp" alt="Daily Stock import menu">
+      <figcaption>⋮ menu — Download Closing Template and Import Closing options</figcaption>
+    </figure>
+  
+    <h3>Day-End Reconciliation</h3>
+  
+    <figure>
+      <img src="img/daily_reconciliation.webp" alt="Day-end reconciliation section">
+      <figcaption>Day-end section — UPI receipts, expenses, cash deposit and total sales</figcaption>
+    </figure>
+  
+    <!-- paste remaining Section 6 content here -->
+    <a href="#" class="back-top">↑ Back to top</a>
+  </section>
+  
+  <!-- SECTION 7 -->
+  <section id="s7">
+    <h2>7. Purchases</h2>
+
+    <figure>
+      <img src="img/purchases_list.webp" alt="Purchases list screen">
+      <figcaption>Purchases list — invoice rows with date, reference, supplier and cost</figcaption>
+    </figure>
+  
+    <h3>Recording a Purchase</h3>
+  
+    <figure>
+      <img src="img/purchase_entry_top.webp" alt="Purchase Entry form top half">
+      <figcaption>Purchase Entry — Invoice No, Reference No, Supplier and Date fields</figcaption>
+    </figure>
+  
+    <figure>
+      <img src="img/purchase_entry_bottom.webp" alt="Purchase Entry form bottom half">
+      <figcaption>Purchase Entry — product selected with Cases, Loose and Price filled</figcaption>
+    </figure>
+  
+    <h3>Importing Purchases from Excel</h3>
+  
+    <figure>
+      <img src="img/purchases_import_menu.webp" alt="Purchases import menu">
+      <figcaption>⋮ menu — Download Template and Import from Excel options</figcaption>
+    </figure>
+  
+    <!-- paste remaining Section 7 content here -->
+    <a href="#" class="back-top">↑ Back to top</a>
+  </section>
+
+  <!-- SECTION 8 -->
+  <section id="s8">   
+    <h2>8. Reports</h2>
+
+    <figure>
+      <img src="img/reports_screen.webp" alt="Reports screen">
+      <figcaption>Reports — Daily, Period and Monthly report cards</figcaption>
+    </figure>
+  
+    <h3>Daily Stock Sheet</h3>
+  
+    <figure>
+      <img src="img/report_daily_sheet.webp" alt="Daily Stock Sheet report">
+      <figcaption>Daily Stock Sheet — OB / Purchase / Sale / Closing columns per product</figcaption>
+    </figure>
+  
+    <h3>Daily Brand Wise Account</h3>
+  
+    <figure>
+      <img src="img/report_brand_wise.webp" alt="Brand Wise Account report">
+      <figcaption>Brand Wise Account — products grouped by category with totals</figcaption>
+    </figure>
+  
+    <!-- paste remaining Section 8 content here -->
+    <a href="#" class="back-top">↑ Back to top</a>
+  </section>
+
+  <!-- SECTION 9 -->
+  <section id="s9">
+    <h2>9. Items / Products</h2>
+
+    <figure>
+      <img src="img/products_menu.webp" alt="Products menu screen">
+      <figcaption>Items / Products — four sections: Display Order, Opening Stock, Master Data, Cloud Update</figcaption>
+    </figure>
+  
+    <h3>Product Display Order</h3>
+
+    <figure>
+      <img src="img/product_order_drag.webp" alt="Product Order drag handles">
+      <figcaption>Drag handles on the left — long-press and drag to reorder</figcaption>
+    </figure>
+  
+    <h3>Product Master Data</h3>
+  
+    <figure>
+      <img src="img/product_master_data.webp" alt="Product Master Data list">
+      <figcaption>Product Master Data — product code, name and size code columns</figcaption>
+    </figure>
+  
+    <!-- paste remaining Section 9 content here -->
+    <a href="#" class="back-top">↑ Back to top</a>
+  </section>
+
+  <!-- SECTION 10 -->
+  <section id="s10">  
+    <h2>10. Settings</h2>
+
+    <figure>
+      <img src="img/settings_screen.webp" alt="Settings screen">
+      <figcaption>Settings — Language, Business Info, Drive Backup, Sync Settings, Help &amp; Support</figcaption>
+    </figure>
+  
+    <!-- paste Section 10 content here -->
+    <a href="#" class="back-top">↑ Back to top</a>
+  </section>
+
+  <!-- SECTION 11 -->
+  <section id="s11">  
+    <h2>11. Cloud Drive Backup</h2>
+
+    <figure>
+      <img src="img/drive_backup_active.webp" alt="Drive Backup Active card">
+      <figcaption>Settings screen showing the green Drive Backup Active card</figcaption>
+    </figure>
+  
+    <figure>
+      <img src="img/drive_backup_consent.webp" alt="Cloud backup consent dialog">
+      <figcaption>Consent dialog — read and tap I Agree — Enable Backup to proceed</figcaption>
+    </figure>
+  
+    <!-- paste Section 11 content here -->
+    <a href="#" class="back-top">↑ Back to top</a>
+  </section>
+
+  <!-- SECTION 12 -->
+  <section id="s12">  
+    <h2>12. Data Management and Excel Import/Export</h2>
+    <!-- paste Section 12 content here -->
+    <a href="#" class="back-top">↑ Back to top</a>
+  </section>
+  
+  <!-- SECTION 13 -->
+  <section id="s13">
+    <h2>13. Help and Support</h2>
+    <!-- paste Section 13 content here -->
+    <a href="#" class="back-top">↑ Back to top</a>
+  </section>
+  
+  </div><!-- /wrap -->
   </body>
-  </html>   
+  </html>

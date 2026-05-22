@@ -146,24 +146,24 @@
     ol.steps { list-style: none; margin: 10px 0 16px 0; counter-reset: step; }
     ol.steps > li {
       counter-increment: step;
-      display: flex;
-      gap: 12px;
+      position: relative;
+      padding-left: 36px;
       margin-bottom: 10px;
-      align-items: flex-start;
     }
     ol.steps > li::before {
       content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 2px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       width: 24px; height: 24px;
-      min-width: 24px;
       background: #1248a8;
       color: #fff;
       border-radius: 50%;
       font-size: 12px;
       font-weight: 700;
-      margin-top: 2px;
     }
 
     /* ── Callout boxes ── */

@@ -5,12 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WinEntry — వినియోగదారు మార్గదర్శి v1.1</title>
   <style>
+    /* ── Telugu Fonts ── */
+    @font-face {
+      font-family: "Hind Guntur";
+      src: url("fonts/HindGuntur-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Hind Guntur";
+      src: url("fonts/HindGuntur-SemiBold.ttf") format("truetype");
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Hind Guntur";
+      src: url("fonts/HindGuntur-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Ramabhadra";
+      src: url("fonts/Ramabhadra-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+    }
+
     /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     /* ── Base ── */
     body {
-      font-family: "Noto Sans Telugu", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: "Hind Guntur", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       font-size: 15px;
       line-height: 1.85;
       color: #1a2233;
@@ -32,10 +58,9 @@
       display: inline-block;
       background: rgba(255,255,255,0.15);
       color: rgba(255,255,255,0.9);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0;
       padding: 4px 12px;
       border-radius: 20px;
       margin-bottom: 16px;
@@ -50,11 +75,13 @@
       border-radius: 20px;
       margin-bottom: 16px;
       margin-left: 8px;
+      text-decoration: none;
     }
+    .lang-badge:hover { background: rgba(255,200,0,0.4); }
     .site-header h1 {
       font-size: 34px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      font-weight: 700;
+      letter-spacing: 0;
       margin-bottom: 8px;
       color: #fff;
     }
@@ -82,10 +109,9 @@
       box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
     .toc-title {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0;
       color: #1248a8;
       margin-bottom: 14px;
     }
@@ -109,7 +135,7 @@
     /* ── Headings ── */
     h2 {
       font-size: 19px;
-      font-weight: 800;
+      font-weight: 700;
       color: #0d1b2a;
       margin-bottom: 18px;
       padding-bottom: 12px;
@@ -143,8 +169,6 @@
       font-weight: 700;
       color: #333;
       margin: 18px 0 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
     }
 
     /* ── Prose ── */
@@ -240,10 +264,9 @@
     }
     .option-tag {
       display: inline-block;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0;
       padding: 3px 10px;
       border-radius: 4px;
       margin-bottom: 10px;
@@ -347,12 +370,18 @@
 <!-- HEADER -->
 <header class="site-header">
   <div class="inner">
-    <div class="app-badge">అధికారిక వినియోగదారు మార్గదర్శి</div><div class="lang-badge">తెలుగు</div>
-    <h1>WinEntry</h1>
-    <p class="tagline">వ్యాపార Inventory &amp; Stock Management &nbsp;·&nbsp; Daily Stock &nbsp;·&nbsp; Sales &nbsp;·&nbsp; Purchases</p>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div class="app-badge" style="margin-bottom:0;">అధికారిక యూజర్ గైడ్</div>
+      <a href="../en/index.html" class="lang-badge" style="margin:0;">English Version</a>
+    </div>
+    <div style="display:flex; align-items:flex-end; gap:14px; margin:14px 0 8px;">
+      <img src="../en/img/WinEntry_Logo.svg" alt="WinEntry" style="width:56px; height:56px; display:block;" />
+      <h1 style="font-size:50px; line-height:1; margin:0; align-self:flex-end; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">WinEntry</h1>
+    </div>
+    <p class="tagline">ప్రత్యేక రిటైల్ ఇన్వెంటరీ &amp; అకౌంటబిలిటీ &nbsp;·&nbsp; రోజువారీ స్టాక్ &nbsp;·&nbsp; అమ్మకాలు &nbsp;·&nbsp; కొనుగోళ్లు</p>
     <div class="header-meta">
-      <span>Version 1.1 (Build 4)</span>
-      <span>Android App</span>
+      <span>వెర్షన్ 1.1 (బిల్డ్ 4)</span>
+      <span>ఆండ్రాయిడ్ యాప్</span>
       <span>మే 2026</span>
     </div>
   </div>
@@ -362,48 +391,48 @@
 
 <!-- TOC -->
 <div class="toc">
-  <div class="toc-title">విషయసూచిక</div>
+  <div class="toc-title">విషయ సూచిక</div>
   <ol>
-    <li><a href="#s1">WinEntry గురించి</a></li>
-    <li><a href="#s2">App Install చేయడం</a></li>
-    <li><a href="#s3">Sign In చేయడం</a></li>
-    <li><a href="#s4">మొదటిసారి Setup</a></li>
-    <li><a href="#s5">Home Screen</a></li>
-    <li><a href="#s6">Daily Stock Entry</a></li>
-    <li><a href="#s7">Purchases</a></li>
-    <li><a href="#s8">Reports</a></li>
-    <li><a href="#s9">Items / Products</a></li>
-    <li><a href="#s10">Settings</a></li>
-    <li><a href="#s11">Cloud Drive Backup</a></li>
-    <li><a href="#s12">Data Management &amp; Excel Import/Export</a></li>
-    <li><a href="#s13">Help మరియు Support</a></li>
+    <li><a href="#s1">WinEntry యాప్ గురించి</a></li>
+    <li><a href="#s2">యాప్‌ను ఇన్‌స్టాల్ చేయడం ఎలా?</a></li>
+    <li><a href="#s3">సైన్-ఇన్ అవ్వడం ఎలా?</a></li>
+    <li><a href="#s4">మొదటిసారి సెటప్ చేయడం (స్టార్టింగ్ గైడ్)</a></li>
+    <li><a href="#s5">హోమ్ స్క్రీన్ పరిచయం</a></li>
+    <li><a href="#s6">రోజువారీ స్టాక్ ఎంట్రీ (Daily Stock Entry)</a></li>
+    <li><a href="#s7">కొనుగోళ్లు (Purchases)</a></li>
+    <li><a href="#s8">రిపోర్టులు (Reports)</a></li>
+    <li><a href="#s9">ఐటమ్స్ / ప్రొడక్ట్స్</a></li>
+    <li><a href="#s10">సెట్టింగ్స్</a></li>
+    <li><a href="#s11">క్లౌడ్ డ్రైవ్ బ్యాకప్</a></li>
+    <li><a href="#s12">డేటా మేనేజ్‌మెంట్ &amp; ఎక్సెల్ ఇంపోర్ట్/ఎక్స్‌పోర్ట్</a></li>
+    <li><a href="#s13">హెల్ప్ మరియు సపోర్ట్</a></li>
   </ol>
 </div>
 
 
 <!-- SECTION 1 -->
 <div class="section-card" id="s1">
-  <h2><span class="sec-num">1</span> WinEntry గురించి</h2>
+  <h2><span class="sec-num">1</span> WinEntry యాప్ గురించి</h2>
 
-  <p>WinEntry ని <strong>Simhadri Systems</strong> వారు Telugu రాష్ట్రాల్లోని licensed retail wine &amp; liquor వ్యాపారాల కఠినమైన రోజువారీ stock reconciliation అవసరాలను తీర్చడానికి design &amp; engineer చేశారు. ఇది ఏ retail వ్యాపారానికైనా — unit-based stock tracking అవసరమయ్యే అన్ని రంగాలకు — పనికొచ్చే powerful inventory management tool.</p>
+  <p>తెలుగు రాష్ట్రాల్లోని వైన్ షాపులు మరియు లిక్కర్ రిటైల్ వ్యాపారాల్లో ప్రతిరోజూ అవసరమయ్యే స్టాక్ అమ్మకము లెక్కింపు (Reconciliation) విధానాన్ని సులభతరం చేయడం కోసం <strong>సింహాద్రి సిస్టమ్స్ (Simhadri Systems)</strong> వారు ఈ యాప్‌ను స్వంత అవసరానికి ప్రత్యేకంగా డిజైన్ చేశారు. కేవలం వైన్ షాపులకే కాకుండా, వస్తువుల సంఖ్య (Units) ఆధారంగా స్టాకును లెక్క వేయగల ఏ రిటైల్ వ్యాపారానికైనా ఇది ఒక అద్భుతమైన ఇన్వెంటరీ మేనేజ్‌మెంట్ టూల్.</p>
 
-  <h3>App ఏమి చేస్తుంది</h3>
-  <p>WinEntry అత్యంత కీలకమైన రోజువారీ reconciliation process ని — "opening vs. closing" balance — automate చేస్తుంది. అధిక volume గల retail వ్యాపారాలకు ఇది చాలా అవసరం.</p>
+  <h3>యాప్ ఏం చేస్తుంది?</h3>
+  <p>వ్యాపారంలో అత్యంత కీలకమైన రోజువారీ "ఓపెనింగ్ ఇంకా క్లోజింగ్" బ్యాలెన్స్ లెక్కింపును WinEntry ఆటోమేటిక్‌గా చేస్తుంది.</p>
   <ul>
-    <li><strong>Unit-Level Tracking</strong> — అనేక brands, categories మరియు వివిధ sizes అంతటా inventory manage చేయండి (bottles, cases, packets, bags మొదలైనవి)</li>
-    <li><strong>Daily Reconciliation</strong> — రోజువారీ purchases, sales మరియు expenses record చేసి, accurate daily stock balance sheets తక్షణమే generate చేయండి</li>
-    <li><strong>Calculated Sales</strong> — Opening Balance + Purchases − Closing Balance = Daily Sale — ప్రతి product మరియు size కు automatically calculate అవుతుంది</li>
-    <li><strong>Multilingual Interface</strong> — ప్రస్తుతం English మరియు Telugu support చేస్తుంది; కనీస మార్పులతో ఇతర Indian భాషలకు కూడా localise చేయవచ్చు</li>
-    <li><strong>Privacy-First Design</strong> — default గా పూర్తిగా offline పని చేస్తుంది; optional cloud backup మాత్రమే data బయటకు పంపుతుంది</li>
-    <li><strong>Excel Export</strong> — ప్రతి report మరియు record ని audits, accounts లేదా regulatory submission కోసం Excel కి export చేయవచ్చు</li>
+    <li><strong>యూనిట్-లెవెల్ ట్రాకింగ్</strong> — వివిధ రకాల బ్రాండ్‌లు, కేటగిరీలు మరియు రకరకాల సైజుల (బాటిళ్లు, కేసులు, ప్యాకెట్లు, బ్యాగులు మొదలైనవి) వారీగా స్టాక్‌ను మేనేజ్ చేయవచ్చు</li>
+    <li><strong>రోజువారీ లెక్కలు</strong> — ప్రతిరోజూ కొనుగోళ్లు, అమ్మకాలు మరియు ఖర్చులను నమోదు చేయడం ద్వారా, ఆ రోజుకు సంబంధించిన కచ్చితమైన స్టాక్ అమ్మకము, మిగిలిన షీట్‌ను తక్షణమే పొందవచ్చు</li>
+    <li><strong>ఆటోమేటిక్ సేల్స్ లెక్కింపు</strong> — ఓపెనింగ్ బ్యాలెన్స్ + కొనుగోళ్లు − క్లోజింగ్ బ్యాలెన్స్ = రోజువారీ అమ్మకం; యాప్ ప్రతి ప్రొడక్ట్ మరియు సైజుకు ఆటోమేటిక్‌గా లెక్కిస్తుంది</li>
+    <li><strong>పలు భాషల సపోర్ట్</strong> — ప్రస్తుతానికి ఇది ఇంగ్లీష్ మరియు తెలుగు భాషల్లో అందుబాటులో ఉంది; అవసరమైతే ఇతర భారతీయ భాషల్లోకి కూడా సులభంగా మార్చుకోవచ్చు</li>
+    <li><strong>ప్రైవసీ డిజైన్</strong> — మీ బిజినెస్ డేటా మీ ఫోన్ లోనే సురక్షితంగా ఉండటానికి ఇది పూర్తిగా ఇంటర్నెట్ లేకపోయినా (Offline) పనిచేస్తుంది; ఆప్షనల్ క్లౌడ్ బ్యాకప్ ద్వారా మాత్రమే డేటా బయటకు పంపబడుతుంది</li>
+    <li><strong>ఎక్సెల్ ఎక్స్‌పోర్ట్ (Excel Export)</strong> — తనిఖీల కోసం లేదా అకౌంటింగ్ కోసం ప్రతి రిపోర్టును ఎక్సెల్ ఫైల్ రూపంలో సేవ్ చేసుకోవచ్చు</li>
   </ul>
 
-  <h3>దీన్ని వాడడం ఎందుకు లాభదాయకం</h3>
-  <p><strong>వ్యాపారుల కోసం, వ్యాపారులే తయారు చేసింది.</strong> Retail licensees యొక్క విశేష అవసరాల నుండి పుట్టిన WinEntry, peers మధ్య share చేయబడే professional-grade tool గా అందించబడుతోంది. Feedback మరియు నిరంతర మెరుగుదల కోసం community ని promote చేస్తుంది.</p>
-  <p><strong>మానవ తప్పులను తొలగిస్తుంది.</strong> కాగితంపై manual entries కు బదులు digital logging వాడడం వల్ల mathematical errors మరియు financial discrepancies గణనీయంగా తగ్గుతాయి.</p>
-  <p><strong>అధికంగా customize చేయగలిగేది.</strong> Licensed retail trade కు అనువుగా ఉన్నా, underlying logic ఏ retail sector కైనా — Dairy, Hardware, Cosmetics — code మార్పులు లేకుండా adapt చేయవచ్చు.</p>
+  <h3>ఇది ఎందుకు ఉపయోగపడుతుంది?</h3>
+  <p><strong>వ్యాపారుల అనుభవంతో తయారైనది.</strong> ఈ యాప్ లైసెన్స్ పొందిన వ్యాపారుల వాస్తవ అవసరాలను బట్టి peer-to-peer (సహచర వ్యాపారుల) ఫీడ్‌బ్యాక్‌తో డెవలప్ చేయబడింది.</p>
+  <p><strong>తప్పులకు తావుండదు.</strong> కాగితాల మీద చేత్తో రాసేటప్పుడు జరిగే లెక్కల తప్పులను మరియు ఆర్థిక నష్టాలను ఈ డిజిటల్ లాగిన్ పూర్తిగా నివారిస్తుంది.</p>
+  <p><strong>ఎలాంటి వ్యాపారానికైనా మార్చుకోవచ్చు.</strong> ఇది వైన్ రిటైల్ ట్రేడ్ కోసం డిజైన్ చేయబడినప్పటికీ, దీనిలోని లాజిక్ సహాయంతో డెయిరీ, హార్డ్‌వేర్ లేదా కాస్మెటిక్స్ వంటి ఏ రిటైల్ రంగంలోనైనా కోడింగ్ మార్చకుండానే వాడుకోవచ్చు.</p>
 
-  <h3>వ్యాపార Use Cases</h3>
+  <h3>బిజినెస్ యూజ్ కేసెస్ (ఉదాహరణలు)</h3>
   <div class="table-wrap">
     <table>
       <tr><th>రంగం</th><th>వినియోగం</th></tr>
@@ -421,7 +450,7 @@
     <table>
       <tr><th>Size Code</th><th>వివరణ</th><th>సాధారణ పరిమాణం</th><th>Case లో Units</th></tr>
       <tr><td>QQ</td><td>Full / Big</td><td>551–900 ml (సాధారణంగా 750 ml లేదా 650 ml Beer)</td><td>12 per case</td></tr>
-      <tr><td>QQ + "L"</td><td>Litre</td><td>1000 ml (brand code కు "L" చేర్చడం ద్వారా)</td><td>9 per case</td></tr>
+      <tr><td>QQ</td><td>Litre</td><td>1000 ml (brand code కు "L" చేర్చడం ద్వారా)</td><td>9 per case</td></tr>
       <tr><td>PP</td><td>Half / Pint</td><td>201–550 ml (సాధారణంగా 375 ml లేదా Can Beer)</td><td>24 per case</td></tr>
       <tr><td>NN</td><td>Quarter / Nip</td><td>101–200 ml (సాధారణంగా 180 ml)</td><td>48 per case</td></tr>
       <tr><td>DD</td><td>Dip / Miniature</td><td>≤ 100 ml (సాధారణంగా 90 ml లేదా 60 ml)</td><td>96 per case</td></tr>
@@ -433,16 +462,16 @@
 
 <!-- SECTION 2 -->
 <div class="section-card" id="s2">
-  <h2><span class="sec-num">2</span> App Install చేయడం</h2>
+  <h2><span class="sec-num">2</span> యాప్‌ను ఇన్‌స్టాల్ చేయడం ఎలా?</h2>
 
   <ol class="steps">
-    <li>మీ Android phone లో <strong>Google Play Store</strong> తెరవండి</li>
-    <li><strong>WinEntry</strong> లేదా <strong>WinEntry Simple Inventory</strong> search చేయండి</li>
-    <li><strong>Simhadri Systems</strong> publish చేసిన result తాకి <strong>Install</strong> తాకండి</li>
-    <li>Install అయిన తర్వాత <strong>Open</strong> తాకండి</li>
+    <li>మీ ఆండ్రాయిడ్ ఫోన్‌లో <strong>Google Play Store</strong> ఓపెన్ చేయండి</li>
+    <li>సెర్చ్ బార్‌లో <strong>WinEntry</strong> లేదా <strong>WinEntry Simple Inventory</strong> అని టైప్ చేసి సెర్చ్ చేయండి</li>
+    <li><strong>Simhadri Systems</strong> అని ఉన్న రిజల్ట్‌పై క్లిక్ చేసి <strong>Install</strong> నొక్కండి</li>
+    <li>ఇన్‌స్టాల్ అయిన తర్వాత <strong>Open</strong> బటన్ నొక్కండి</li>
   </ol>
 
-  <p><strong>అవసరమైనవి:</strong> Android 8.0 (Oreo) లేదా తదుపరి &nbsp;·&nbsp; Sign in కోసం Google account</p>
+  <p><strong>కనీస అవసరాలు:</strong> ఆండ్రాయిడ్ 8.0 (Oreo) లేదా ఆపై వెర్షన్ ఉండాలి &nbsp;·&nbsp; లాగిన్ అవ్వడానికి ఒక గూగుల్ అకౌంట్ అవసరం</p>
 
   <div class="screenshots-row">
     <div class="phone-wrap">
@@ -456,23 +485,23 @@
   </div>
 
   <div class="callout tip">
-    <strong>Updates:</strong> కొత్త version release అయినప్పుడు Play Store automatically notify చేస్తుంది. WinEntry store page లో <strong>Update</strong> తాకండి, లేదా app లో నుండే check చేయండి: <span class="path">Settings → Check for Update</span>.
+    <strong>అప్‌డేట్స్:</strong> యాప్ కొత్త వెర్షన్ వచ్చినప్పుడు ప్లే స్టోర్ ఆటోమేటిక్‌గా చూపిస్తుంది. WinEntry store page లో <strong>Update</strong> నొక్కండి, లేదా యాప్ లోపల <span class="path">Settings → Check for Update</span> ద్వారా కూడా చెక్ చేయవచ్చు.
   </div>
 </div>
 
 
 <!-- SECTION 3 -->
 <div class="section-card" id="s3">
-  <h2><span class="sec-num">3</span> Sign In చేయడం</h2>
+  <h2><span class="sec-num">3</span> సైన్-ఇన్ అవ్వడం ఎలా?</h2>
 
-  <p>WinEntry మీ <strong>Google account</strong> తో sign in చేస్తుంది — Gmail లేదా YouTube కి వాడే అదే account.</p>
+  <p>WinEntry యాప్ మీ <strong>Google Account</strong> (మీ Gmail లేదా YouTube కి వాడే అకౌంట్) ద్వారా లాగిన్ అవుతుంది.</p>
 
   <ol class="steps">
-    <li>WinEntry తెరవండి — Sign In screen కనిపిస్తుంది</li>
-    <li><strong>Sign in with Google</strong> తాకండి</li>
-    <li>List నుండి మీ Google account ఎంచుకోండి (అవసరమైతే కొత్తది add చేయండి)</li>
-    <li>Request చేసిన permissions అనుమతించండి — app కు Sheets access కేవలం optional cloud backup కోసం మాత్రమే అవసరం</li>
-    <li>Home screen కి తీసుకెళ్ళబడతారు</li>
+    <li>WinEntry యాప్ ఓపెన్ చేయగానే 'Sign In' స్క్రీన్ కనిపిస్తుంది</li>
+    <li><strong>Sign in with Google</strong> బటన్ పై క్లిక్ చేయండి</li>
+    <li>మీ గూగుల్ అకౌంట్‌ను సెలెక్ట్ చేసుకోండి</li>
+    <li>అడిగిన పర్మిషన్లను ఓకే చేయండి (క్లౌడ్ బ్యాకప్ కోసం మాత్రమే యాప్‌కు గూగుల్ షీట్స్ యాక్సెస్ అవసరమవుతుంది)</li>
+    <li>ఇప్పుడు మీరు హోమ్ స్క్రీన్‌కి చేరుకుంటారు</li>
   </ol>
 
   <div class="screenshots-row">
@@ -486,47 +515,47 @@
     </div>
   </div>
 
-  <div class="callout warn">ఎప్పుడూ same Google account వాడండి. వేరే account తో sign in చేస్తే మీ previous data కనిపించదు.</div>
+  <div class="callout warn"><strong>ముఖ్య గమనిక:</strong> ఎల్లప్పుడూ ఒకే గూగుల్ అకౌంట్‌ను వాడండి. వేరే అకౌంట్‌తో లాగిన్ అయితే మీ పాత డేటా కనిపించదు.</div>
 </div>
 
 
 <!-- SECTION 4 -->
 <div class="section-card" id="s4">
-  <h2><span class="sec-num">4</span> మొదటిసారి Setup</h2>
+  <h2><span class="sec-num">4</span> మొదటిసారి సెటప్ చేయడం (Getting Started)</h2>
 
-  <p>మొదటిసారి sign in చేసిన తర్వాత app తెరిచినప్పుడు, Home screen పై భాగంలో amber రంగులో <strong>Getting Started</strong> card కనిపిస్తుంది. <strong>ఈ card తాకి setup checklist తెరవండి.</strong></p>
+  <p>లాగిన్ అయిన తర్వాత, మొదటిసారి హోమ్ స్క్రీన్ పైన ఒక అంబర్ (ఆరెంజ్) రంగులో <strong>Getting Started</strong> కార్డ్ కనిపిస్తుంది. <strong>ఈ కార్డ్‌ని తాకి సెటప్ చెక్‌లిస్ట్ ఓపెన్ చేయండి.</strong></p>
 
   <div class="screenshots-row">
     <div class="phone-wrap">
-      <img src="../en/img/WinEntry_HomeGetStartTel.png" alt="Home — Getting Started card" style="width:250px; border-radius:20px;" />
+      <img src="img/WinEntry_HomeGetStartTel.png" alt="Home — Getting Started card" style="width:250px; border-radius:20px;" />
       <div class="phone-caption">Home — Getting Started card</div>
     </div>
     <div class="phone-wrap">
-      <img src="../en/img/WinEntry_OnBoardTel2.png" alt="Setup checklist dialog" style="width:250px; border-radius:20px;" />
+      <img src="img/WinEntry_TeOnBoarding0.png" alt="Setup checklist dialog" style="width:250px; border-radius:20px;" />
       <div class="phone-caption">Setup checklist dialog</div>
     </div>
   </div>
 
-  <p>Checklist లో 4 steps ఉన్నాయి. Step 1 మరియు Step 2 తప్పనిసరి. Card మాయమవ్వాలంటే Step 3 లేదా Step 4 లో ఏదైనా ఒకటి కూడా complete చేయాలి — అప్పుడే రోజువారీ వ్యాపారం మొదలుపెట్టవచ్చు.</p>
+  <p>ఈ చెక్‌లిస్ట్‌లో 4 స్టెప్స్ ఉంటాయి. ఇందులో స్టెప్ 1 మరియు స్టెప్ 2 తప్పనిసరి. అలాగే స్టెప్ 3 లేదా స్టెప్ 4 లలో ఏదో ఒకటి పూర్తి చేస్తే ఈ కార్డ్ ఇక ముందు కనిపించదు; తరువాత మీరు రోజువారీ ఎంట్రీలు మొదలుపెట్టొచ్చు.</p>
 
   <div class="callout tip">
-    <strong>Language toggle:</strong> ఈ dialog పై భాగంలో <strong>English / తెలుగు</strong> buttons app language ని switch చేస్తాయి. మార్పు వెంటనే అన్ని screens కు apply అవుతుంది. Settings నుండి ఎప్పుడైనా మళ్ళీ మార్చవచ్చు.
+    <strong>భాష మార్చుకోవడం:</strong> ఈ డైలాగ్ బాక్స్ పైన ఉండే <strong>English / తెలుగు</strong> బటన్ల ద్వారా యాప్ భాషను వెంటనే మార్చుకోవచ్చు. Settings నుండి ఎప్పుడైనా మళ్ళీ మార్చవచ్చు.
   </div>
 
   <hr />
 
-  <h3>Step 1 — Business Info</h3>
-  <p>మీ business పేరు మరియు owner వివరాలు exported reports మరియు Home screen లో header గా కనిపిస్తాయి.</p>
+  <h3>స్టెప్ 1 — బిజినెస్ సమాచారం (Business Info)</h3>
+  <p>మీరు ఎక్స్‌పోర్ట్ చేసే అన్ని రిపోర్టుల పైన మీ షాప్ పేరు, యజమాని పేరు కనిపిస్తాయి.</p>
 
   <ol class="steps">
     <li>"Set Up Business Information" పక్కన <strong>Set Up</strong> తాకండి — Business Info screen తెరుచుకుంటుంది</li>
     <li>Fields పూరించండి:
       <ul>
         <li><strong>Owner Name</strong> — మీ పూర్తి పేరు</li>
-        <li><strong>Business Name</strong> (తప్పనిసరి) — మీ వ్యాపారం లేదా దుకాణం పేరు</li>
-        <li><strong>Licence / Reg. No</strong> — registration లేదా licence number (locally మాత్రమే store అవుతుంది, admin కి share కాదు)</li>
-        <li><strong>Address Lines 1 &amp; 2, Location</strong> — దుకాణం చిరునామా మరియు ప్రాంతం</li>
-        <li><strong>Phone</strong> — 10-digit mobile number</li>
+        <li><strong>Business Name</strong> (తప్పనిసరి) — మీ వ్యాపారం లేదా షాప్ పేరు</li>
+        <li><strong>Licence / Reg. No</strong> — మీ లైసెన్స్ నంబర్ (ఇది మీ ఫోన్ లోనే ఉంటుంది, ఎవరికీ షేర్ అవ్వదు)</li>
+        <li><strong>Address Lines 1 &amp; 2, Location</strong> — షాప్ అడ్రస్ మరియు ఏరియా</li>
+        <li><strong>Phone</strong> — మీ 10 అంకెల మొబైల్ నంబర్</li>
       </ul>
     </li>
     <li><strong>Save &amp; Register</strong> తాకండి</li>
@@ -535,11 +564,11 @@
 
   <div class="screenshots-row">
     <div class="phone-wrap">
-      <img src="../en/img/WinEntry_BusinessInfo.png" alt="Business Info form" style="width:250px; border-radius:20px;" />
+      <img src="img/WinEntry_TeBusinessInfo.png" alt="Business Info form" style="width:250px; border-radius:20px;" />
       <div class="phone-caption">Business Info form</div>
     </div>
     <div class="phone-wrap">
-      <img src="../en/img/WinEntry_OnBoardEngStep1.png" alt="Getting Started checklist" style="width:250px; border-radius:20px;" />
+      <img src="img/WinEntry_TeONBoarding1.png" alt="Getting Started checklist" style="width:250px; border-radius:20px;" />
       <div class="phone-caption">Getting Started checklist</div>
     </div>
   </div>
@@ -549,7 +578,7 @@
 
   <hr />
 
-  <h3>Step 2 — Product List Import చేయడం</h3>
+  <h3>స్టెప్ 2 — ప్రొడక్ట్ లిస్ట్ డౌన్‌లోడ్ (Import Product List)</h3>
   <p>Admin యొక్క standard product master list (product codes, పేర్లు, sizes మరియు prices) మీ phone కి download చేస్తుంది.</p>
 
   <ol class="steps">
@@ -560,7 +589,7 @@
 
   <div class="screenshots-row">
     <div class="phone-wrap">
-      <img src="../en/img/WinEntry_OnBoardEng2.png" alt="Product list download" style="width:250px; border-radius:20px;" />
+      <img src="img/WinEntry_TeMasterProductListDialog.png" alt="Product list download" style="width:250px; border-radius:20px;" />
       <div class="phone-caption">Product list download</div>
     </div>
     <div class="phone-wrap">
@@ -570,14 +599,14 @@
   </div>
 
   <div class="callout warn">
-    <strong>"Download" బదులుగా "Request Access" కనిపిస్తే:</strong> మీ account ని admin ఇంకా activate చేయలేదు. "Request Access" తాకి email లేదా WhatsApp ద్వారా activation request పంపండి. Admin మీ account ని invited list కు add చేసిన తర్వాత తిరిగి వచ్చి Download చేయండి.
+    <strong>"Download" కి బదులు "Request Access" అని వస్తే:</strong> అడ్మిన్ ఇంకా మీ అకౌంట్‌ను యాక్టివేట్ చేయలేదని అర్థం. ఆ బటన్ నొక్కి వాట్సాప్ లేదా ఈమెయిల్ ద్వారా రిక్వెస్ట్ పంపండి. అడ్మిన్ ఓకే చేశాక మళ్లీ వచ్చి డౌన్‌లోడ్ చేసుకోండి.
   </div>
   <p>Download తర్వాత, <span class="path">Items/Products → Product Display Order</span> కి వెళ్ళి products ని మీరు stock count చేసే క్రమంలో arrange చేయండి. ఇది daily closing entry వేగంగా చేయడానికి సహాయపడుతుంది.</p>
   <p>ఇక్కడ set చేసిన order app అంతటా consistently కనిపిస్తుంది — Daily Stock Entry, Opening Stock మరియు అన్ని reports లో products ఈ sequence లో appear అవుతాయి. Reorder చేయడానికి: <span class="path">Product Display Order</span> తాకి <strong>Edit</strong> switch on చేయండి, తర్వాత left వైపు drag handle తో rows move చేయండి లేదా ప్రతి product పక్కన ↑ ↓ nudge arrows తాకండి. పూర్తయినప్పుడు <strong>Renumber &amp; Save</strong> తాకండి. Edit switch off చేసిన స్థితిలో ఏదైనా product row ని double-tap చేస్తే దాన్ని deactivate చేయవచ్చు — deactivated products Inactive section కి move అవుతాయి మరియు daily stock entry లో కనిపించవు.</p>
 
   <hr />
 
-  <h3>Step 3 — Sample Data Load చేయడం (ఐచ్ఛికం)</h3>
+  <h3>స్టెప్ 3 — శాంపిల్ డేటాను లోడ్ చేయడం (ఆప్షనల్)</h3>
   <p>Sample data వల్ల real figures enter చేయడానికి ముందు app ని practice చేయవచ్చు. Dummy opening stock మరియు కొన్ని రోజుల transactions load అవుతాయి — అన్ని screens ని real data తో చూడవచ్చు.</p>
 
   <div class="callout info"><strong>Real opening stock enter చేయాలంటే ఈ step skip చేసి నేరుగా Step 4 కి వెళ్ళండి.</strong></div>
@@ -604,7 +633,7 @@
 
   <hr />
 
-  <h3>Step 4 — Opening Stock Setup చేయడం</h3>
+  <h3>స్టెప్ 4 — ఓపెనింగ్ స్టాక్ సెటప్ (Setup Opening Stock)</h3>
   <p>Sample data కాకుండా real data తో start చేస్తున్నారంటే, ప్రారంభ inventory గా ప్రతి product మరియు size కి actual unit count enter చేయాలి. ఇది మొదటిసారి live వ్యాపారం ప్రారంభించేటప్పుడు ఒకసారి మాత్రమే చేస్తారు. రెండు పద్ధతులు ఉన్నాయి — మీకు అనుకూలమైనది ఎంచుకోండి.</p>
 
   <div class="option-box">
@@ -628,7 +657,7 @@
         <div class="phone-caption">Opening stock saved</div>
       </div>
     </div>
-    <div class="callout tip">Case counts కాదు, individual unit counts enter చేయండి. 2 full cases (12 units per case) మరియు 3 loose units ఉంటే 27 enter చేయండి.</div>
+    <div class="callout tip">బాక్సుల సంఖ్య కాదు, విడి బాటిళ్ల సంఖ్యను మాత్రమే ఎంటర్ చేయాలి. ఉదాహరణకు మీ దగ్గర 2 ఫుల్ కేసులు (కేసుకు 12 చొప్పున) మరియు 3 విడి బాటిళ్లు ఉంటే, 27 అని ఎంటర్ చేయాలి.</div>
   </div>
 
   <div class="option-box">
@@ -664,36 +693,36 @@
 
 <!-- SECTION 5 -->
 <div class="section-card" id="s5">
-  <h2><span class="sec-num">5</span> Home Screen</h2>
+  <h2><span class="sec-num">5</span> హోమ్ స్క్రీన్ పరిచయం</h2>
 
-  <p>Setup తర్వాత, Home screen లో five module cards కనిపిస్తాయి.</p>
+  <p>సెటప్ పూర్తయిన తర్వాత హోమ్ స్క్రీన్‌పై ఐదు ముఖ్యమైన కార్డులు కనిపిస్తాయి.</p>
 
   <div class="screenshots-row">
     <div class="phone-wrap">
-      <img src="../en/img/WinEntry_HomeAfterSetup.png" alt="Home screen (setup తర్వాత)" style="width:250px; border-radius:20px;" />
+      <img src="img/WinEntry_TeHomeScreen.png" alt="Home screen (setup తర్వాత)" style="width:250px; border-radius:20px;" />
       <div class="phone-caption">Home screen (setup తర్వాత)</div>
     </div>
   </div>
 
-  <h3>Header (పైన బార్)</h3>
+  <h3>హెడర్ (టాప్ బార్)</h3>
   <div class="table-wrap">
     <table>
-      <tr><th>Element</th><th>ఏమి చేస్తుంది</th></tr>
-      <tr><td>Business name + location</td><td>పైన చూపిస్తుంది — Business Info నుండి తీసుకుంటుంది</td></tr>
-      <tr><td>Cloud/Sync icon (కుడివైపు పైన)</td><td>Data ని cloud కి manually push చేయడానికి తాకండి. <strong>White</strong> = అన్నీ synced; <strong>Red</strong> = sync errors, retry కు తాకండి; <strong>Amber</strong> = Drive Backup setup కాలేదు</td></tr>
-      <tr><td>Account icon</td><td>Sign in అయినప్పుడు Google profile photo చూపిస్తుంది. Account email చూడటానికి లేదా sign out కు తాకండి</td></tr>
+      <tr><th>విభాగం</th><th>ఏమి చేస్తుంది</th></tr>
+      <tr><td>షాప్ పేరు &amp; లొకేషన్</td><td>స్క్రీన్ పైన కనిపిస్తుంది — Business Info నుండి తీసుకుంటుంది</td></tr>
+      <tr><td>క్లౌడ్/సింక్ ఐకాన్ (కుడివైపు పైన)</td><td>డేటాను క్లౌడులో బ్యాకప్ చేసుకోవడానికి దీన్ని నొక్కాలి. <strong>తెలుపు</strong> = అంతా సింక్ అయింది; <strong>రెడ్</strong> = ఏదో లోపం ఉంది, మళ్లీ నొక్కండి; <strong>అంబర్</strong> = బ్యాకప్ సెటప్ చేయలేదు</td></tr>
+      <tr><td>అకౌంట్ ఐకాన్</td><td>మీ Google profile photo కనిపిస్తుంది. అకౌంట్ మార్చడానికి లేదా సైన్ అవుట్ అవ్వడానికి దీన్ని నొక్కవచ్చు</td></tr>
     </table>
   </div>
 
-  <h3>Module Cards</h3>
+  <h3>మోడ్యూల్ కార్డ్స్</h3>
   <div class="table-wrap">
     <table>
-      <tr><th>Card</th><th>ఏమి చేస్తుంది</th></tr>
-      <tr><td>Daily Closing Stock Entry</td><td>నేటి closing unit count enter చేసి day-end totals commit చేయండి</td></tr>
-      <tr><td>Purchases</td><td>Reference number, quantities మరియు prices తో supplier delivery invoices record చేయండి</td></tr>
-      <tr><td>Reports</td><td>Daily, period మరియు monthly reports చూసి Excel కి export చేయండి</td></tr>
-      <tr><td>Items / Products</td><td>Product list, display order మరియు opening stock manage చేయండి</td></tr>
-      <tr><td>Settings</td><td>Business info, language, cloud backup, sync settings మరియు support</td></tr>
+      <tr><th>కార్డ్</th><th>ఏమి చేస్తుంది</th></tr>
+      <tr><td>రోజు వారి ముగింపు స్టాక్ నమోదు (Daily Closing Stock Entry)</td><td>రోజు ముగిసేసరికి స్టాక్ అమ్మకం పోను మిగిలి ఉన్న స్టాక్ వివరాలను ఎంటర్ చేయడానికి</td></tr>
+      <tr><td>Purchases</td><td>కొత్తగా వచ్చిన స్టాక్, సప్లయర్ ఇన్వాయిస్ వివరాలను రికార్డ్ చేయడానికి</td></tr>
+      <tr><td>Reports</td><td>డైలీ, మంత్లీ, R1 &amp; R2 రిపోర్టులను చూడటానికి మరియు ఎక్సెల్‌లోకి మార్చడానికి</td></tr>
+      <tr><td>Items / Products</td><td>ప్రొడక్ట్ లిస్ట్ క్రమాన్ని కావలసిన విధంగా మార్చడానికి మరియు ఓపెనింగ్ స్టాక్ మేనేజ్ చేయడానికి</td></tr>
+      <tr><td>Settings</td><td>బిజినెస్ సమాచారం, భాష, బ్యాకప్ సెట్టింగ్స్ మార్చుకోవడానికి</td></tr>
     </table>
   </div>
 
@@ -703,14 +732,14 @@
 
 <!-- SECTION 6 -->
 <div class="section-card" id="s6">
-  <h2><span class="sec-num">6</span> Daily Stock Entry</h2>
+  <h2><span class="sec-num">6</span> రోజువారీ స్టాక్ ఎంట్రీ (Daily Stock Entry)</h2>
 
-  <p>ఇది రోజువారీ ముఖ్యమైన workflow. రోజు చివరలో shelves లో units count చేసి closing balance enter చేయండి. App automatically daily sales calculate చేస్తుంది.</p>
+  <p>ఇది మీరు ప్రతిరోజూ చేసే ముఖ్యమైన పని. రోజు ముగిసేసరికి షాపులో మిగిలిన స్టాక్‌ను లెక్కపెట్టి ఇందులో ఎంటర్ చేయాలి. సేల్స్ వివరాలను యాప్ ఆటోమేటిక్‌గా లెక్కిస్తుంది.</p>
 
-  <p><span class="formula">Opening Balance + Purchases − Closing Balance = Daily Sale</span></p>
+  <p><span class="formula">ఓపెనింగ్ బ్యాలెన్స్ + కొనుగోళ్లు − క్లోజింగ్ బ్యాలెన్స్ = రోజువారీ అమ్మకం</span></p>
 
-  <h3>Screen తెరవడం</h3>
-  <p>Home screen నుండి <strong>Daily Closing Stock Entry</strong> తాకండి.</p>
+  <h3>స్క్రీన్ ఓపెన్ చేయడం</h3>
+  <p>హోమ్ స్క్రీన్ నుండి <strong>Daily Closing Stock Entry</strong> పై క్లిక్ చేయండి.</p>
 
   <div class="screenshots-row">
     <div class="phone-wrap">
@@ -718,25 +747,24 @@
       <div class="phone-caption">Daily Stock screen</div>
     </div>
     <div class="phone-wrap">
-      <img src="../en/img/WinEntry_DailyStockEntryMode.png" alt="Daily Stock entry mode" style="width:250px; border-radius:20px;" />
+      <img src="../en/img/WinEntry_DAilyStockEntryMode.png" alt="Daily Stock entry mode" style="width:250px; border-radius:20px;" />
       <div class="phone-caption">CB Entry mode</div>
     </div>
   </div>
 
   <p><strong>పైన controls:</strong></p>
   <ul>
-    <li><strong>Date selector</strong> — default గా నేటి తేదీ. ‹ మరియు › arrows వాడి లేదా date తాకి వేరే తేదీ ఎంచుకోండి.</li>
-    <li><strong>CB Entry / View Only toggle</strong> — edit mode మరియు read-only view మధ్య switch చేస్తుంది. Default: View Only.</li>
+    <li><strong>తేదీ:</strong> నేటి తేదీ డిఫాల్ట్‌గా ఉంటుంది. పైన తేదీని మార్చుకోవడానికి ‹ మరియు › బాణాలను వాడవచ్చు.</li>
+    <li><strong>CB Entry / View Only:</strong> డేటా ఎంటర్ చేయడానికి 'CB Entry' నొక్కాలి, కేవలం చూడటానికయితే 'View Only' లో ఉంచాలి.</li>
   </ul>
 
-  <h3>Closing Balances Enter చేయడం</h3>
+  <h3>క్లోజింగ్ బ్యాలెన్స్ ఎంటర్ చేయడం</h3>
   <ol class="steps">
-    <li>Top bar లో <strong>CB Entry</strong> తాకి edit mode లోకి వెళ్ళండి</li>
-    <li>Configure చేసిన ప్రతి size కు ఒక column తో product list కనిపిస్తుంది</li>
-    <li>ప్రతి row లో Opening Balance (OB) మరియు Purchases (PQ) ముందే fill అయి ఉంటాయి</li>
-    <li>Closing Balance field తాకి మీరు physically count చేసిన unit count type చేయండి</li>
-    <li>Sale quantity (SQ) వెంటనే చూపిస్తుంది: SQ = OB + PQ − CB</li>
-    <li>అన్ని products enter చేసిన తర్వాత toolbar లో <strong>Save</strong> button (green checkmark) తాకండి</li>
+    <li>పైన ఉన్న CB Entry బటన్ నొక్కగానే ఎడిట్ మోడ్ ఓపెన్ అవుతుంది.</li>
+    <li>ప్రతి ప్రొడక్ట్ లైన్ లోనూ ఆరోజు ఓపెనింగ్ బ్యాలెన్స్ (OB) మరియు పర్చేసెస్ (PQ) ఆటోమేటిక్‌గా కనిపిస్తాయి.</li>
+    <li>Closing Balance (CB) కాలమ్‌లో మీరు లెక్కబెట్టిన ఫిజికల్ స్టాక్ నంబర్‌ను టైప్ చేయండి.</li>
+    <li>మీరు టైప్ చేస్తున్నప్పుడే సేల్స్ క్వాంటిటీ (SQ) పక్కన మారిపోతూ ఉంటుంది. అమ్మకాల విలువ (ధరల ప్రకారం ఆటోమేటిక్‌గా లెక్కించబడుతుంది).</li>
+    <li>అంతా అయిపోయాక పైన ఉన్న Save (గ్రీన్ టిక్) బటన్ నొక్కండి.</li>
   </ol>
 
   <div class="screenshots-row">
@@ -751,21 +779,15 @@
   </div>
 
   <div class="callout tip">Keyboard Next key ఒక size field నుండి తదుపరి product కి automatically focus move చేస్తుంది. Active field కనిపించేలా list automatically scroll అవుతుంది.</div>
-  <div class="callout warn"><strong>Negative sale warning:</strong> Closing balance, OB + PQ కంటే ఎక్కువగా ఉంటే app warning చూపిస్తుంది. Save చేయడానికి ముందు figures check చేయండి.</div>
+  <div class="callout warn"><strong>నెగెటివ్ సేల్ వార్నింగ్:</strong> ఒకవేళ మీ క్లోజింగ్ బ్యాలెన్స్, ఓపెనింగ్+పర్చేసెస్ కంటే ఎక్కువగా ఉంటే (అంటే సాధ్యం కాని స్టాక్ ఉంటే), యాప్ వార్నింగ్ చూపిస్తుంది. వివరాలు సరిచూసుకోండి.</div>
 
-  <h3>Excel నుండి Closing Balances Import చేయడం</h3>
-  <p>Products ఎక్కువగా ఉన్నప్పుడు, లేదా closing stock ఇప్పటికే spreadsheet లో record అయి ఉంటే, Excel నుండి directly import చేయడం వేగంగా ఉంటుంది.</p>
+  <h3>ఎక్సెల్ ద్వారా క్లోజింగ్ బ్యాలెన్స్ ఇంపోర్ట్ చేయడం</h3>
+  <p>ప్రొడక్ట్స్ ఎక్కువగా ఉన్నప్పుడు, లేదా క్లోజింగ్ స్టాక్ ఇప్పటికే స్ప్రెడ్‌షీట్‌లో రికార్డ్ అయి ఉంటే, ఎక్సెల్ నుండి నేరుగా ఇంపోర్ట్ చేయడం వేగంగా ఉంటుంది.</p>
 
   <ol class="steps">
-    <li>Daily Stock screen లో <strong>⋮</strong> → <strong>Download Closing Template</strong> తాకండి</li>
-    <li>App Downloads folder లో pre-filled Excel file save చేస్తుంది. Product codes మరియు names ముందే fill అయి ఉంటాయి — వాటిని మార్చకండి.</li>
-    <li>Computer లో లేదా Google Sheets / Microsoft Excel లో template తెరవండి</li>
-    <li>ప్రతి product మరియు size కు closing balance counts enter చేయండి. ఆ size లేకపోతే blank వదలండి లేదా 0 enter చేయండి.</li>
-    <li>Date column లో మీరు enter చేస్తున్న trading తేదీ set చేయండి.</li>
-    <li>File save చేసి phone కు transfer చేయండి (WhatsApp, Google Drive, email లేదా USB ద్వారా)</li>
-    <li>Daily Stock screen లో తిరిగి వచ్చి <strong>⋮ → Import Closing</strong> తాకండి</li>
-    <li>Phone storage నుండి file ఎంచుకోండి</li>
-    <li>App closing balances import చేసి result summary చూపిస్తుంది (<a href="#s12">Section 12</a> చూడండి)</li>
+    <li>డైలీ స్టాక్ స్క్రీన్‌లో పైన కుడివైపు <strong>⋮ → Download Closing Template</strong> నొక్కండి.</li>
+    <li>డౌన్‌లోడ్ అయిన ఎక్సెల్ షీట్‌లో క్లోజింగ్ బ్యాలెన్స్ వివరాలను, ట్రేడింగ్ తేదీని నింపి సేవ్ చేయండి.</li>
+    <li>యాప్‌లోకి వచ్చి <strong>⋮ → Import Closing</strong> నొక్కి ఆ ఫైల్‌ను సెలెక్ట్ చేయండి. ఒకే ఎక్సెల్ ఫైల్ ద్వారా ఒకటి కంటే ఎక్కువ రోజుల డేటాను కూడా ఒకేసారి ఇంపోర్ట్ చేసుకోవచ్చు.</li>
   </ol>
 
   <div class="screenshots-row">
@@ -779,19 +801,17 @@
     </div>
   </div>
 
-  <div class="callout tip">ఒకే file లో అనేక తేదీలకు closing balances import చేయవచ్చు — ప్రతి product-date combination కు ఒక వేరే row చేర్చండి.</div>
-
-  <h3>Day-End Reconciliation</h3>
-  <p>Closing balances enter చేసిన తర్వాత, day-end summary complete చేయడానికి list దిగువకు scroll చేయండి:</p>
+  <h3>డే-ఎండ్ రికన్సిలియేషన్ (Day-End Reconciliation)</h3>
+  <p>క్లోజింగ్ బ్యాలెన్స్ ఎంటర్ చేసాక, స్క్రీన్ కింది భాగానికి స్క్రోల్ చేస్తే రోజువారీ క్యాష్ లెక్కల సమ్మరీ కనిపిస్తుంది:</p>
   <ul>
-    <li><strong>Total Day Sales</strong> — అన్ని products మరియు వాటి prices నుండి automatically calculate అవుతుంది</li>
-    <li><strong>UPI Receipts</strong> — రోజు UPI మరియు digital payment collections మొత్తం (₹)</li>
-    <li><strong>Day Expenses</strong> — ఆ రోజు petty cash expenses</li>
-    <li><strong>Cash for Deposit</strong> — Sales − UPI − Expenses గా calculate అవుతుంది (negative అయితే red లో చూపిస్తుంది)</li>
-    <li><strong>Cash Deposit</strong> — bank లో physically deposit చేసిన amount</li>
-    <li><strong>Notes</strong> — రోజుకు సంబంధించిన గమనికలు</li>
+    <li><strong>Total Day Sales</strong> — మొత్తం అమ్మకాల విలువ (ధరల ప్రకారం ఆటోమేటిక్‌గా లెక్కించబడుతుంది).</li>
+    <li><strong>UPI Receipts</strong> — ఆ రోజు ఆన్‌లైన్/UPI ద్వారా వచ్చిన మొత్తం (₹).</li>
+    <li><strong>Day Expenses</strong> — ఆ రోజు జరిగిన చిల్లర ఖర్చులు (Petty Cash).</li>
+    <li><strong>Cash for Deposit</strong> — బ్యాంకులో వేయాల్సిన నగదు (Sales − UPI − Expenses రూపంలో ఆటోమేటిక్‌గా లెక్కించబడుతుంది).</li>
+    <li><strong>Cash Deposit</strong> — మీరు బ్యాంకులో లేదా గల్లా పెట్టెలో జమ చేసిన అసలు నగదు.</li>
+    <li><strong>Notes</strong> — ఏవైనా రిమార్కులు ఉంటే రాయవచ్చు.</li>
   </ul>
-  <p>Reconciliation section దిగువన <strong>Save</strong> తాకి day-end summary lock చేయండి.</p>
+  <p>వివరాలన్నీ నింపాక కింద ఉన్న <strong>Save</strong> బటన్ నొక్కి రోజువారీ లెక్కను లాక్ చేయండి. తప్పులు ఉంటే మళ్లీ ఎడిట్ చేసి సేవ్ చేయవచ్చు, పాత డేటా స్థానంలో కొత్తది సేవ్ అవుతుంది.</p>
 
   <div class="screenshots-row">
     <div class="phone-wrap">
@@ -805,34 +825,34 @@
   <h3>Daily Stock Menu (⋮ కుడివైపు పైన)</h3>
   <div class="table-wrap">
     <table>
-      <tr><th>Menu Item</th><th>ఏమి చేస్తుంది</th></tr>
-      <tr><td>Export Daily Stock</td><td>పూర్తి stock sheet ని Excel గా export చేయండి</td></tr>
-      <tr><td>Export Current Date</td><td>నేటి data మాత్రమే Excel గా export చేయండి</td></tr>
-      <tr><td>Export Date Range</td><td>ఒక date range Excel గా export చేయండి</td></tr>
-      <tr><td>Download Closing Template</td><td>Bulk CB entry కోసం pre-filled Excel template download చేయండి</td></tr>
-      <tr><td>Import Closing</td><td>Excel file నుండి closing balances import చేయండి</td></tr>
-      <tr><td>Restore from Cloud</td><td>Cloud workspace నుండి daily stock data pull చేయండి</td></tr>
-      <tr><td>Clear Current Date</td><td>ఎంచుకున్న తేదీ entries మాత్రమే delete చేయండి</td></tr>
-      <tr><td>Clear ALL Daily Stock</td><td>అన్ని daily stock data delete చేయండి ("DELETE ALL" type చేసి confirm చేయాలి)</td></tr>
+      <tr><th>మెనూ ఆప్షన్</th><th>ఏమి చేస్తుంది</th></tr>
+      <tr><td>Export Daily Stock</td><td>పూర్తి స్టాక్ షీట్‌ను ఎక్సెల్‌గా ఎక్స్‌పోర్ట్ చేయండి</td></tr>
+      <tr><td>Export Current Date</td><td>నేటి డేటాను మాత్రమే ఎక్సెల్‌గా ఎక్స్‌పోర్ట్ చేయండి</td></tr>
+      <tr><td>Export Date Range</td><td>ఒక తేదీ పరిధిలోని డేటాను ఎక్సెల్‌గా ఎక్స్‌పోర్ట్ చేయండి</td></tr>
+      <tr><td>Download Closing Template</td><td>క్లోజింగ్ బ్యాలెన్స్ ఇంపోర్ట్ కోసం ఎక్సెల్ టెంప్లేట్ డౌన్‌లోడ్ చేయండి</td></tr>
+      <tr><td>Import Closing</td><td>ఎక్సెల్ ఫైల్ నుండి క్లోజింగ్ బ్యాలెన్స్ ఇంపోర్ట్ చేయండి</td></tr>
+      <tr><td>Restore from Cloud</td><td>క్లౌడ్ నుండి డైలీ స్టాక్ డేటా తీసుకోండి</td></tr>
+      <tr><td>Clear Current Date</td><td>ఎంచుకున్న తేదీ ఎంట్రీలు మాత్రమే డిలీట్ చేయండి</td></tr>
+      <tr><td>Clear ALL Daily Stock</td><td>అన్ని డైలీ స్టాక్ డేటా డిలీట్ చేయండి ("DELETE ALL" అని టైప్ చేసి కన్ఫర్మ్ చేయాలి)</td></tr>
     </table>
   </div>
 
-  <h3>Search</h3>
-  <p>Daily stock screen లో ఉండగా product పేరు లేదా product code ద్వారా filter చేయడానికి toolbar లో search icon తాకండి.</p>
+  <h3>సెర్చ్</h3>
+  <p>డైలీ స్టాక్ స్క్రీన్‌లో ఉండగా ప్రొడక్ట్ పేరు లేదా కోడ్ ద్వారా ఫిల్టర్ చేయడానికి పైన సెర్చ్ ఐకాన్ తాకండి.</p>
 
-  <h3>Save చేయని మార్పులు</h3>
-  <p>Save చేయకుండా navigate away అయినా లేదా dates switch చేసినా, app అడుగుతుంది: <strong>Save Now / Discard / Keep Editing</strong>. మీరు explicitly discard చేసే వరకు data safe గా ఉంటుంది.</p>
+  <h3>సేవ్ చేయని మార్పులు</h3>
+  <p>సేవ్ చేయకుండా వేరే చోటికి వెళ్ళినా లేదా తేదీ మార్చినా, యాప్ అడుగుతుంది: <strong>Save Now / Discard / Keep Editing</strong>. మీరు డిస్కార్డ్ చేసే వరకు డేటా సురక్షితంగా ఉంటుంది.</p>
 </div>
 
 
 <!-- SECTION 7 -->
 <div class="section-card" id="s7">
-  <h2><span class="sec-num">7</span> Purchases</h2>
+  <h2><span class="sec-num">7</span> కొనుగోళ్లు (Purchases)</h2>
 
-  <p>ప్రతి supplier delivery invoice ఇక్కడ record చేయండి. Purchases ఆ purchase తేదీ daily stock calculation లో automatically include అవుతాయి.</p>
+  <p>షాపుకి వచ్చిన ప్రతిసారీ స్టాక్ వివరాలు, ఇన్వాయిస్ వివరాలను ఇక్కడ రికార్డ్ చేయాలి. ఇవి ఆ రోజు స్టాక్ లెక్కల్లో పర్చేసెస్‌గా ఆటోమేటిక్‌గా ఓపెనింగ్ కు యాడ్ అవుతాయి.</p>
 
-  <h3>Purchases List</h3>
-  <p>అన్ని recorded invoices చూడడానికి Home screen నుండి <strong>Purchases</strong> తాకండి.</p>
+  <h3>పర్చేస్ లిస్ట్</h3>
+  <p>హోమ్ స్క్రీన్‌లో <strong>Purchases</strong> నొక్కితే ఇప్పటివరకు ఉన్న ఇన్వాయిస్‌ల లిస్ట్ కనిపిస్తుంది.</p>
 
   <div class="screenshots-row">
     <div class="phone-wrap">
@@ -846,14 +866,13 @@
   </div>
 
   <ul>
-    <li>ప్రతి row లో: date, invoice reference number, supplier పేరు మరియు total cost కనిపిస్తాయి</li>
-    <li>పూర్తి invoice details చూడడానికి row తాకండి</li>
-    <li>కొత్త purchase add చేయడానికి <strong>+</strong> (కుడివైపు పైన toolbar లో) తాకండి</li>
-    <li>Product పేరు, code, తేదీ లేదా invoice number ద్వారా filter చేయడానికి పైన search bar వాడండి</li>
+    <li>కొత్త ఇన్వాయిస్ యాడ్ చేయడానికి పైన ఉన్న <strong>+</strong> గుర్తును నొక్కండి.</li>
+    <li>పాత ఇన్వాయిస్‌ను ఎడిట్ చేయడానికి లేదా డిలీట్ చేయడానికి దానిపై డబుల్ ట్యాప్ (రెండుసార్లు నొక్కడం) చేయండి.</li>
+    <li>ప్రొడక్ట్ పేరు, కోడ్, తేదీ లేదా ఇన్వాయిస్ నంబర్ ద్వారా వెతకడానికి పైన సెర్చ్ బార్ వాడండి.</li>
   </ul>
 
-  <h3>Purchase Record చేయడం</h3>
-  <p>Purchase Entry form తెరవడానికి <strong>+</strong> తాకండి.</p>
+  <h3>పర్చేస్ ఎంట్రీ చేయడం</h3>
+  <p><strong>+</strong> నొక్కగానే పర్చేస్ ఫామ్ ఓపెన్ అవుతుంది.</p>
 
   <div class="screenshots-row">
     <div class="phone-wrap">
@@ -866,59 +885,33 @@
     </div>
   </div>
 
-  <h4>Invoice వివరాలు (పై సగం)</h4>
-  <ul>
-    <li><strong>Invoice No</strong> — delivery document నుండి supplier invoice number</li>
-    <li><strong>Reference No</strong> — ఈ delivery కు unique reference (permit లేదా transport number వంటివి) — duplicate imports నివారించడానికి వాడతారు</li>
-    <li><strong>Supplier</strong> — dropdown నుండి ఎంచుకోండి లేదా manually type చేయండి</li>
-    <li><strong>Date</strong> — goods receive అయిన తేదీ (default: నేడు)</li>
-    <li><strong>Notes</strong> — ఐచ్ఛిక గమనికలు</li>
-  </ul>
+  <h4>ఇన్వాయిస్ వివరాలు (పైన)</h4>
+  <p>Invoice No, Reference No, సప్లయర్ పేరు మరియు డేట్ ఎంటర్ చేయండి.</p>
 
-  <h4>Product వివరాలు (కింది సగం)</h4>
+  <h4>ప్రొడక్ట్ వివరాలు (కింద)</h4>
   <ol class="steps">
-    <li>Product ఎంచుకోవడానికి <strong>Select Product</strong> తాకండి</li>
-    <li>Receive అయిన ప్రతి size కు enter చేయండి:
-      <ul>
-        <li><strong>Cases</strong> — పూర్తిగా sealed cases సంఖ్య</li>
-        <li><strong>Loose</strong> — individual loose units (partial case)</li>
-        <li><strong>Price</strong> — per unit price (product master నుండి auto-fill అవుతుంది)</li>
-      </ul>
-    </li>
-    <li>Total units = (Cases × units per case) + Loose, Cost = Total × Price — automatically calculate అవుతుంది</li>
-    <li>అదే invoice లో మరొక product add చేయడానికి <strong>Add Another Product</strong> తాకండి</li>
-    <li>పూర్తయినప్పుడు <strong>Save</strong> తాకండి</li>
+    <li><strong>Select Product</strong> నొక్కి వస్తువును ఎంచుకోండి.</li>
+    <li>వచ్చిన స్టాక్‌ను <strong>Cases</strong> (పూర్తి బాక్సులు) మరియు <strong>Loose</strong> (విడి బాటిళ్లు) లలో విడివిడిగా ఎంటర్ చేయండి. ధర ఆటోమేటిక్‌గా వస్తుంది, కావాలంటే మార్చుకోవచ్చు.</li>
+    <li>ఒకే ఇన్వాయిస్‌లో మరికొన్ని ప్రొడక్ట్స్ యాడ్ చేయడానికి <strong>Add Another Product</strong> నొక్కండి.</li>
+    <li>అంతా అయ్యాక <strong>Save</strong> నొక్కండి.</li>
   </ol>
-  <div class="callout tip">ఈ delivery లో ఒక size రాకపోతే దాని Cases మరియు Loose fields zero లో వదలండి.</div>
+  <div class="callout tip">దీన్ని కూడా <strong>⋮ → Download Template</strong> ద్వారా ఎక్సెల్ ఫైల్ డౌన్‌లోడ్ చేసుకొని, కంప్యూటర్‌లో బల్క్‌గా డేటా నింపి, Import from Excel ద్వారా ఒకేసారి యాప్‌లోకి ఇంపోర్ట్ చేసుకోవచ్చు.</div>
 
-  <h3>Purchase Edit లేదా Delete చేయడం</h3>
-  <p>List లో ఏదైనా purchase ని double-tap చేస్తే <strong>Edit</strong>, <strong>Delete</strong> లేదా <strong>Insert Here</strong> options తో action dialog తెరుచుకుంటుంది. Deletions permanent అవుతాయి మరియు ఆ తేదీ daily stock totals వెంటనే update అవుతాయి.</p>
+  <h3>పర్చేస్ ఎడిట్ లేదా డిలీట్ చేయడం</h3>
+  <p>లిస్ట్‌లో ఏదైనా పర్చేస్‌ను డబుల్-ట్యాప్ చేస్తే <strong>Edit</strong>, <strong>Delete</strong> లేదా <strong>Insert Here</strong> ఆప్షన్లతో యాక్షన్ డైలాగ్ తెరుచుకుంటుంది. డిలీషన్స్ పర్మనెంట్ అవుతాయి మరియు ఆ తేదీ డైలీ స్టాక్ టోటల్స్ వెంటనే అప్‌డేట్ అవుతాయి.</p>
 
-  <h3>అదే Invoice లో Multiple Items చేర్చడం</h3>
-  <p>Purchases list లో existing purchase ని double-tap చేసి <strong>Insert Here</strong> ఎంచుకోండి. అదే invoice number, తేదీ మరియు supplier తో pre-filled కొత్త purchase form తెరుచుకుంటుంది — product మాత్రమే మార్చండి.</p>
+  <h3>అదే ఇన్వాయిస్‌లో మల్టిపుల్ ఐటమ్స్ చేర్చడం</h3>
+  <p>పర్చేసెస్ లిస్ట్‌లో ఇప్పటికే ఉన్న పర్చేస్‌ను డబుల్-ట్యాప్ చేసి <strong>Insert Here</strong> ఎంచుకోండి. అదే ఇన్వాయిస్ నంబర్, తేదీ మరియు సప్లయర్‌తో ముందే నింపబడిన కొత్త పర్చేస్ ఫామ్ తెరుచుకుంటుంది — ప్రొడక్ట్ మాత్రమే మార్చండి.</p>
 
-  <h3>Excel నుండి Purchases Import చేయడం</h3>
-  <p>చాలా products తో delivery వచ్చినప్పుడు, లేదా bulk historical invoices enter చేసేటప్పుడు, Excel నుండి import చేయడం చాలా వేగంగా ఉంటుంది.</p>
+  <h3>ఎక్సెల్ నుండి పర్చేసెస్ ఇంపోర్ట్ చేయడం</h3>
+  <p>చాలా ప్రొడక్ట్స్‌తో డెలివరీ వచ్చినప్పుడు లేదా పాత ఇన్వాయిస్‌లను ఒకేసారి ఎంటర్ చేయాల్సి వచ్చినప్పుడు, ఎక్సెల్ ద్వారా ఇంపోర్ట్ చేయడం వేగంగా ఉంటుంది.</p>
 
   <ol class="steps">
-    <li>Purchases screen లో <strong>⋮</strong> → <strong>Download Template</strong> తాకండి</li>
-    <li>App Downloads folder లో pre-filled Excel template save చేస్తుంది. Columns: Date, Invoice No, Reference No, Supplier, Product Code, మరియు ప్రతి size కు Cases, Loose, Price.</li>
-    <li>Computer లో లేదా Google Sheets / Microsoft Excel లో template తెరవండి</li>
-    <li>ప్రతి invoice యొక్క ప్రతి product line కు ఒక row fill చేయండి:
-      <ul>
-        <li>Delivery <strong>Date</strong> enter చేయండి (format: DD-MM-YYYY లేదా YYYY-MM-DD)</li>
-        <li>Delivery document నుండి <strong>Invoice No</strong> మరియు <strong>Reference No</strong> enter చేయండి</li>
-        <li><strong>Supplier</strong> పేరు enter చేయండి</li>
-        <li><strong>Product Code</strong> column లో సరైన product row వెతకండి</li>
-        <li>Receive అయిన ప్రతి size కు <strong>Cases</strong> మరియు <strong>Loose</strong> enter చేయండి</li>
-        <li>ప్రతి size కు per unit <strong>Price</strong> enter చేయండి</li>
-      </ul>
-    </li>
-    <li>ప్రతి product కు rows repeat చేయండి. ఒకే file లో అనేక invoices enter చేయవచ్చు — ప్రతి delivery కు వేరే Invoice No వాడండి.</li>
-    <li>File save చేసి phone కు transfer చేయండి</li>
-    <li>Purchases screen లో తిరిగి వచ్చి <strong>⋮ → Import from Excel</strong> తాకండి</li>
-    <li>Phone storage నుండి file ఎంచుకోండి</li>
-    <li>App అన్ని rows import చేసి result summary చూపిస్తుంది (<a href="#s12">Section 12</a> చూడండి)</li>
+    <li>పర్చేసెస్ స్క్రీన్‌లో <strong>⋮ → Download Template</strong> తాకండి.</li>
+    <li>డౌన్‌లోడ్ అయిన ఎక్సెల్ టెంప్లేట్‌లో ప్రతి ఇన్వాయిస్‌కు తేదీ, ఇన్వాయిస్ నంబర్, సప్లయర్, ప్రొడక్ట్ కోడ్, Cases, Loose మరియు Price వివరాలు నింపండి.</li>
+    <li>ఒకే ఫైల్‌లో అనేక ఇన్వాయిస్‌లు ఎంటర్ చేయవచ్చు — ప్రతి డెలివరీకి వేరే Invoice No వాడండి.</li>
+    <li>ఫైల్ సేవ్ చేసి ఫోన్‌కు ట్రాన్స్‌ఫర్ చేయండి.</li>
+    <li>పర్చేసెస్ స్క్రీన్‌లో <strong>⋮ → Import from Excel</strong> తాకి ఫైల్ సెలెక్ట్ చేయండి.</li>
   </ol>
 
   <div class="screenshots-row">
@@ -928,19 +921,19 @@
     </div>
   </div>
 
-  <div class="callout warn"><strong>Duplicate detection:</strong> Existing record తో same product + invoice number + date ఉన్న rows ని app flag చేసి update చేయాలా లేదా skip చేయాలా అని అడుగుతుంది.</div>
+  <div class="callout warn"><strong>డూప్లికేట్ డిటెక్షన్:</strong> ఇప్పటికే ఉన్న రికార్డ్‌తో సేమ్ ప్రొడక్ట్ + ఇన్వాయిస్ నంబర్ + తేదీ ఉన్న rows ని యాప్ ఫ్లాగ్ చేసి అప్‌డేట్ చేయాలా లేదా స్కిప్ చేయాలా అని అడుగుతుంది.</div>
 
   <h3>Purchases Menu (⋮ కుడివైపు పైన)</h3>
   <div class="table-wrap">
     <table>
-      <tr><th>Menu Item</th><th>ఏమి చేస్తుంది</th></tr>
-      <tr><td>Import from Excel</td><td>Excel file నుండి purchases bulk-import చేయండి (ముందు template download చేయండి)</td></tr>
-      <tr><td>Export All</td><td>అన్ని purchase records ని Excel గా export చేయండి</td></tr>
-      <tr><td>Export Filtered</td><td>ఒక date range లో purchases export చేయండి</td></tr>
-      <tr><td>Download Template</td><td>మీ product list తో pre-filled Excel template పొందండి</td></tr>
-      <tr><td>Delete by Date Range</td><td>ఒక date range లో అన్ని purchases delete చేయండి</td></tr>
-      <tr><td>Multi-Select</td><td>ఒకేసారి delete చేయడానికి multiple purchases select చేయండి</td></tr>
-      <tr><td>Download from Cloud</td><td>Cloud workspace నుండి purchase data pull చేయండి</td></tr>
+      <tr><th>మెనూ ఆప్షన్</th><th>ఏమి చేస్తుంది</th></tr>
+      <tr><td>Import from Excel</td><td>ఎక్సెల్ ఫైల్ నుండి పర్చేసెస్ బల్క్-ఇంపోర్ట్ చేయండి (ముందు టెంప్లేట్ డౌన్‌లోడ్ చేయండి)</td></tr>
+      <tr><td>Export All</td><td>అన్ని పర్చేస్ రికార్డులను ఎక్సెల్‌గా ఎక్స్‌పోర్ట్ చేయండి</td></tr>
+      <tr><td>Export Filtered</td><td>ఒక తేదీ పరిధిలో పర్చేసెస్ ఎక్స్‌పోర్ట్ చేయండి</td></tr>
+      <tr><td>Download Template</td><td>మీ ప్రొడక్ట్ లిస్ట్‌తో ముందే నింపబడిన ఎక్సెల్ టెంప్లేట్ పొందండి</td></tr>
+      <tr><td>Delete by Date Range</td><td>ఒక తేదీ పరిధిలో అన్ని పర్చేసెస్ డిలీట్ చేయండి</td></tr>
+      <tr><td>Multi-Select</td><td>ఒకేసారి డిలీట్ చేయడానికి మల్టిపుల్ పర్చేసెస్ సెలెక్ట్ చేయండి</td></tr>
+      <tr><td>Download from Cloud</td><td>క్లౌడ్ నుండి పర్చేస్ డేటా తీసుకోండి</td></tr>
     </table>
   </div>
 </div>
@@ -948,19 +941,19 @@
 
 <!-- SECTION 8 -->
 <div class="section-card" id="s8">
-  <h2><span class="sec-num">8</span> Reports</h2>
+  <h2><span class="sec-num">8</span> రిపోర్టులు (Reports)</h2>
 
-  <p>Home screen నుండి <strong>Reports</strong> తాకండి.</p>
+  <p>హోమ్ స్క్రీన్ నుండి <strong>Reports</strong> కార్డ్ నొక్కితే రకరకాల రిపోర్టులు కనిపిస్తాయి.</p>
 
   <div class="screenshots-row">
     <div class="phone-wrap">
-      <img src="../en/img/WinEntry_ReportsScreen.png" alt="Reports menu" style="width:250px; border-radius:20px;" />
+      <img src="img/WinEntry_TeReportScreen.png" alt="Reports menu" style="width:250px; border-radius:20px;" />
       <div class="phone-caption">Reports menu</div>
     </div>
   </div>
 
   <h3>Daily Stock Sheet</h3>
-  <p>ఎంచుకున్న తేదీలో అన్ని products మరియు sizes కు opening balance, purchases, closing balance మరియు calculated sales తో పూర్తి table.</p>
+  <p>ఒక నిర్దిష్ట రోజున అన్ని ప్రొడక్ట్స్ యొక్క ఓపెనింగ్, పర్చేస్, క్లోజింగ్ మరియు సేల్స్ వివరాల పూర్తి టేబుల్. దీన్ని Export to Excel ద్వారా సేవ్ చేసుకోవచ్చు.</p>
   <ol class="steps">
     <li><strong>Daily Stock Sheet</strong> తాకండి</li>
     <li>తేదీ ఎంచుకోండి</li>
@@ -975,20 +968,20 @@
   </div>
 
   <ul>
-    <li>Business name, owner name మరియు తేదీ report header గా కనిపిస్తాయి (Business Info నుండి)</li>
-    <li>Sheet ని Downloads కు save చేయడానికి <strong>Export to Excel</strong> (కుడివైపు పైన) తాకండి</li>
+    <li>బిజినెస్ పేరు, యజమాని పేరు మరియు తేదీ రిపోర్ట్ హెడర్‌లో కనిపిస్తాయి (Business Info నుండి)</li>
+    <li>షీట్‌ను Downloads కు సేవ్ చేయడానికి <strong>Export to Excel</strong> (కుడివైపు పైన) తాకండి</li>
   </ul>
 
   <h3>Closing Balances</h3>
-  <p>ఎంచుకున్న తేదీలో అన్ని sizes లో per product end-of-day stock quantities. Physical stock quick verification కు useful.</p>
+  <p>కేవలం ఆ రోజు మిగిలిన స్టాక్ క్వాంటిటీల వివరాలు. ఫిజికల్ వెరిఫికేషన్ కోసం వాడుకోవచ్చు.</p>
 
   <h3>Daily Brand Wise Account</h3>
-  <p>Product category వారీగా brand పర్ sales మరియు stock summary తో daily account. మీ business type కు అవసరమైన regulatory reporting కు useful.</p>
+  <p>బ్రాండ్ల వారీగా, కేటగిరీల వారీగా అమ్మకాల సమ్మరీ. ప్రభుత్వ నివేదికల (Regulatory Compliance) కోసం ఇది ఉపయోగపడుతుంది.</p>
   <ol class="steps">
     <li><strong>Daily Brand Wise A/c</strong> తాకండి</li>
     <li>తేదీ ఎంచుకోండి</li>
     <li><strong>View Report</strong> తాకండి</li>
-    <li>అవసరమైతే Excel కి export చేయండి</li>
+    <li>అవసరమైతే ఎక్సెల్‌కి ఎక్స్‌పోర్ట్ చేయండి</li>
   </ol>
 
   <div class="screenshots-row">
@@ -999,7 +992,7 @@
   </div>
 
   <h3>Purchase Report (Period)</h3>
-  <p>ఒక date range లో invoice వారీగా group చేయబడిన అన్ని purchase records — supplier-wise లేదా invoice-wise reconciliation కు useful.</p>
+  <p>ఒక నిర్దిష్ట కాలంలో (ఉదాహరణకు ఒక వారంలో లేదా నెలలో) వచ్చిన అన్ని ఇన్వాయిస్‌ల వివరాలు.</p>
   <ol class="steps">
     <li><strong>Purchase Report</strong> తాకండి</li>
     <li>From మరియు To తేదీలు ఎంచుకోండి</li>
@@ -1007,91 +1000,93 @@
   </ol>
 
   <h3>Monthly Sale Data</h3>
-  <p>ఎంచుకున్న నెలలో ప్రతి రోజు day-end commit totals (sale amount, UPI receipts, expenses, cash deposit) చూపిస్తుంది — monthly reconciliation మరియు accounts కు.</p>
+  <p>ఒక నెలలోని ప్రతి రోజు యొక్క సేల్స్ అమౌంట్, UPI కలెక్షన్, ఖర్చులు మరియు క్యాష్ డిపాజిట్ వివరాల మంత్లీ సమ్మరీ. లోపాలున్న రోజులు ఇందులో కలర్ కోడింగ్ ద్వారా (అంబర్ రంగులో) హైలైట్ అవుతాయి.</p>
   <ol class="steps">
     <li><strong>Monthly Sale Data</strong> తాకండి</li>
-    <li>◀ మరియు ▶ arrows తో months navigate చేయండి, లేదా month పేరు తాకి ఏ నెల/సంవత్సరానికైనా jump చేయండి</li>
+    <li>◀ మరియు ▶ బాణాలతో నెలలు నావిగేట్ చేయండి, లేదా నెల పేరు తాకి ఏ నెల/సంవత్సరానికైనా జంప్ చేయండి</li>
   </ol>
-  <p>Day-end reconciliation save కాని రోజులు amber రంగులో * marker తో highlight అవుతాయి. Closing balances reconciliation తర్వాత update అయిన రోజులు refresh icon తో mark అవుతాయి. Column totals దిగువన కనిపిస్తాయి; negative అయితే red లో చూపిస్తాయి.</p>
+  <p>డే-ఎండ్ రికన్సిలియేషన్ సేవ్ కాని రోజులు అంబర్ రంగులో * మార్కర్‌తో హైలైట్ అవుతాయి. క్లోజింగ్ బ్యాలెన్స్ రికన్సిలియేషన్ తర్వాత అప్‌డేట్ అయిన రోజులు రిఫ్రెష్ ఐకాన్‌తో మార్క్ అవుతాయి. కాలమ్ టోటల్స్ కిందన కనిపిస్తాయి; నెగెటివ్ అయితే రెడ్‌లో చూపిస్తాయి.</p>
 
   <div class="table-wrap">
     <table>
       <tr><th>Monthly Summary Menu (⋮)</th><th>ఏమి చేస్తుంది</th></tr>
-      <tr><td>Share</td><td>Report ని colour-coded HTML file గా share చేయండి</td></tr>
-      <tr><td>Print / Save as PDF</td><td>Phone print service ద్వారా print చేయండి లేదా PDF గా save చేయండి</td></tr>
-      <tr><td>Import Reconciliation from Cloud</td><td>Cloud workspace నుండి day-end data pull చేయండి</td></tr>
-      <tr><td>Delete Reconciliation Range</td><td>ఒక date range లో day-end records remove చేయండి</td></tr>
+      <tr><td>Share</td><td>రిపోర్ట్‌ను కలర్-కోడెడ్ HTML ఫైల్‌గా షేర్ చేయండి</td></tr>
+      <tr><td>Print / Save as PDF</td><td>ఫోన్ ప్రింట్ సర్వీస్ ద్వారా ప్రింట్ చేయండి లేదా PDF గా సేవ్ చేయండి</td></tr>
+      <tr><td>Import Reconciliation from Cloud</td><td>క్లౌడ్ నుండి డే-ఎండ్ డేటా తీసుకోండి</td></tr>
+      <tr><td>Delete Reconciliation Range</td><td>ఒక తేదీ పరిధిలో డే-ఎండ్ రికార్డులు రిమూవ్ చేయండి</td></tr>
     </table>
   </div>
 
   <h3>Monthly Stock Purchases</h3>
-  <p>ఎంచుకున్న నెలలో ప్రతి product కు total purchase quantities, ఒక product కు ఒక row.</p>
+  <p>ఎంచుకున్న నెలలో ప్రతి ప్రొడక్ట్‌కు మొత్తం కొనుగోళ్ల క్వాంటిటీలు, ఒక ప్రొడక్ట్‌కు ఒక row.</p>
 
   <h3>Zero-Activity Products చేర్చడం</h3>
-  <p>Report filter లో <strong>"Include products with zero activity"</strong> toggle చేసి, ఆ తేదీలో sales లేదా purchases లేని products చూడవచ్చు. Default గా off ఉంటుంది.</p>
+  <p>రిపోర్టులలో స్టాక్ లేని (Zero-Activity) ప్రొడక్ట్స్ కనిపించకుండా ఉండటానికి <strong>"Include products with zero activity"</strong> స్విచ్‌ను ఆఫ్ చేసి ఉంచవచ్చు. డిఫాల్ట్‌గా ఆఫ్‌లో ఉంటుంది.</p>
 
-  <div class="callout tip">అన్ని reports లో <span class="path">Settings → Business Info</span> నుండి business name మరియు owner వివరాలు header గా కనిపిస్తాయి. Reports generate చేయడానికి ముందు Step 1 లో వీటిని setup చేయండి.</div>
+  <div class="callout tip">అన్ని రిపోర్టుల్లో <span class="path">Settings → Business Info</span> నుండి బిజినెస్ పేరు మరియు యజమాని వివరాలు హెడర్‌గా కనిపిస్తాయి. రిపోర్టులు చూసే ముందు Step 1 లో వీటిని సెటప్ చేయండి.</div>
 </div>
 
 
 <!-- SECTION 9 -->
 <div class="section-card" id="s9">
-  <h2><span class="sec-num">9</span> Items / Products</h2>
+  <h2><span class="sec-num">9</span> ప్రోడక్ట్ / సరకుల జాబితా</h2>
 
-  <p>Home screen నుండి <strong>Items / Products</strong> తాకండి.</p>
+  <p>ఇక్కడ ప్రొడక్ట్స్ యొక్క మాస్టర్ డేటాను మరియు వాటి డిస్ప్లే ఆర్డర్‌ను మేనేజ్ చేయవచ్చు.</p>
 
-  <div class="screenshots-row">
-    <div class="phone-wrap">
-      <img src="../en/img/WinEntry_ProductsScreen.png" alt="Products menu" style="width:250px; border-radius:20px;" />
-      <div class="phone-caption">Products menu</div>
-    </div>
-  </div>
-
-  <h3>Product Display Order</h3>
-  <p>Daily Stock Entry screen మరియు reports లో products కనిపించే క్రమాన్ని నియంత్రిస్తుంది.</p>
+  <h3>Product Display Order సరకుల పట్టీ క్రమం</h3>
+  <p>మీ షాపులో రాక్‌లలో బాటిళ్లు అమర్చిన క్రమం ప్రకారం ప్రొడక్ట్స్ వరుసను మార్చుకోవచ్చు.</p>
   <ol class="steps">
-    <li><strong>Product Display Order</strong> తాకండి</li>
-    <li>Edit mode లోకి వెళ్ళడానికి <strong>Edit switch</strong> toggle చేయండి</li>
-    <li>ఏదైనా product ని up లేదా down move చేయడానికి <strong>Long-press చేసి drag</strong> చేయండి</li>
-    <li>Edit switch off చేసి product row ని double-tap చేస్తే <strong>Deactivate</strong> option వస్తుంది (daily stock నుండి దాచి, దిగువన Inactive section కి move చేస్తుంది). Inactive product ని double-tap చేసి <strong>Re-activate</strong> చేయండి.</li>
-    <li>పూర్తయినప్పుడు <strong>Renumber &amp; Save</strong> తాకండి, లేదా <strong>Discard</strong> తో cancel చేయండి</li>
+    <li><strong>Product Display Order</strong> తాకండి.</li>
+    <li>ఎడిట్ మోడ్‌లోకి వెళ్ళడానికి <strong>Edit switch</strong> టోగుల్ చేయండి.</li>
+    <li>ఏదైనా ప్రొడక్ట్‌ను పైకి లేదా కిందికి మార్చడానికి <strong>Long-press చేసి drag</strong> చేయండి.</li>
+    <li>Edit Order switch ఆఫ్ చేసి ప్రొడక్ట్ row ను డబుల్-ట్యాప్ చేస్తే <strong>Deactivate</strong> ఆప్షన్ వస్తుంది (డైలీ స్టాక్ నుండి దాచి, కింద Inactive సెక్షన్‌కి మూవ్ చేస్తుంది). Inactive ప్రొడక్ట్‌ను డబుల్-ట్యాప్ చేసి <strong>Re-activate</strong> చేయండి.</li>
+    <li>పూర్తయినప్పుడు <strong>Renumber &amp; Save</strong> తాకండి, లేదా <strong>Discard</strong> తో క్యాన్సెల్ చేయండి.</li>
   </ol>
 
   <div class="screenshots-row">
+     <div class="phone-wrap">
+      <img src="img/WinEntry_TeProductsScreen.png" alt="Products menu" style="width:250px; border-radius:20px;" />
+      <div class="phone-caption">Products menu</div>
+    </div>
     <div class="phone-wrap">
       <img src="../en/img/WinEntry_ProductsDisplayScreen.png" alt="Product Display Order (edit mode)" style="width:250px; border-radius:20px;" />
       <div class="phone-caption">Product Display Order (edit mode)</div>
     </div>
+    
   </div>
 
-  <div class="callout tip">మీరు shelves count చేసే క్రమంలో products arrange చేయండి. ఇది daily closing entry చాలా వేగంగా చేయడానికి సహాయపడుతుంది.</div>
+  <div class="callout tip">మీరు షెల్ఫ్‌లలో లెక్కించే క్రమంలో ప్రొడక్ట్స్ అమర్చండి. ఇది డైలీ క్లోజింగ్ ఎంట్రీ చాలా వేగంగా చేయడానికి సహాయపడుతుంది.</div>
 
-  <h3>Opening Stock Setup</h3>
-  <p>కొత్త period start చేసేటప్పుడు లేదా starting quantities సరిచేసేటప్పుడు వాడతారు. పూర్తి walkthrough కోసం <a href="#s4">Section 4 — Step 4</a> చూడండి.</p>
+  <h3>Opening Stock Setup ప్రారంభ నిల్వల ఏర్పాటు</h3>
+  <p>కొత్త అకౌంట్ పీరియడ్ మొదలుపెట్టేటప్పుడు లేదా ప్రారంభ క్వాంటిటీలు సరిచేసేటప్పుడు వాడతారు. పూర్తి వివరాల కోసం <a href="#s4">Section 4 — Step 4</a> చూడండి.</p>
 
   <div class="option-box">
-    <div class="option-tag tag-a">Manual Entry</div>
+    <div class="option-tag tag-a">మాన్యువల్ ఎంట్రీ</div>
     <ol class="steps">
-      <li><strong>Opening Stock Setup</strong> తాకండి</li>
-      <li>తేదీ ఎంచుకుని <strong>Begin Entry</strong> లేదా <strong>Edit</strong> తాకండి</li>
-      <li>Keyboard వాడి ప్రతి product కు per size unit counts enter చేయండి</li>
-      <li>దిగువన <strong>SAVE</strong> తాకండి</li>
+      <li><strong>Opening Stock Setup</strong> తాకండి.</li>
+      <li>తేదీ ఎంచుకుని <strong>Begin Entry</strong> లేదా <strong>Edit</strong> తాకండి.</li>
+      <li>కీబోర్డ్ వాడి ప్రతి ప్రొడక్ట్‌కు సైజు వారీగా యూనిట్ కౌంట్ ఎంటర్ చేయండి.</li>
+      <li>కిందన <strong>SAVE</strong> తాకండి.</li>
     </ol>
   </div>
   <div class="option-box">
-    <div class="option-tag tag-b">Excel నుండి Import (పెద్ద product lists కు recommended)</div>
+    <div class="option-tag tag-b">ఎక్సెల్ నుండి ఇంపోర్ట్ (పెద్ద ప్రొడక్ట్ లిస్ట్‌లకు సిఫారసు)</div>
     <ol class="steps">
-      <li><strong>Opening Stock Setup</strong> → ⋮ → <strong>Download Template</strong> తాకండి</li>
-      <li>Computer లో template లో stock quantities fill చేయండి</li>
-      <li>File ని phone కు transfer చేయండి</li>
-      <li><strong>⋮ → Import from Excel</strong> తాకి file ఎంచుకోండి</li>
+      <li><strong>Opening Stock Setup</strong> → ⋮ → <strong>Download Template</strong> తాకండి.</li>
+      <li>కంప్యూటర్‌లో టెంప్లేట్‌లో స్టాక్ క్వాంటిటీలు నింపండి.</li>
+      <li>ఫైల్‌ను ఫోన్‌కు ట్రాన్స్‌ఫర్ చేయండి.</li>
+      <li><strong>⋮ → Import from Excel</strong> తాకి ఫైల్ సెలెక్ట్ చేయండి.</li>
     </ol>
   </div>
 
-  <h3>Product Master Data</h3>
-  <p>Reference కోసం మీ పూర్తి product list — product codes, పేర్లు మరియు size variants — చూపిస్తుంది.</p>
+  <h3>Product Master List ప్రోడక్ట్ మాస్టర్ లిస్ట్‌</h3>
+  <p>రిఫరెన్స్ కోసం మీ పూర్తి ప్రొడక్ట్ లిస్ట్ — ప్రొడక్ట్ కోడ్లు, పేర్లు మరియు సైజు వేరియంట్స్ — చూపిస్తుంది.</p>
 
   <div class="screenshots-row">
+    <div class="phone-wrap">
+      <img src="../te/img/WinEntry_TeMasterProductListDialog.png" alt="Product Master Data" style="width:250px; border-radius:20px;" />
+      <div class="phone-caption">Product List Download Dialog</div>
+    </div>
     <div class="phone-wrap">
       <img src="../en/img/WinEntry_ProductsMaster.png" alt="Product Master Data" style="width:250px; border-radius:20px;" />
       <div class="phone-caption">Product Master Data</div>
@@ -1099,34 +1094,38 @@
   </div>
 
   <h3>Standard Product List Download చేయడం</h3>
-  <p>Admin కొత్త products add చేసినప్పుడు లేదా prices update చేసినప్పుడు దీన్ని run చేయండి.</p>
+  <p>అడ్మిన్ కొత్తగా ఏవైనా బ్రాండ్‌లను యాడ్ చేసినా లేదా ధరలు మార్చినా, ఇక్కడికి వచ్చి డౌన్‌లోడ్ చేసుకోవాలి. దీనివల్ల మీ పాత డిస్ప్లే ఆర్డర్ ఏమాత్రం మారదు.</p>
   <ol class="steps">
-    <li><strong>Download Standard Product List</strong> తాకండి</li>
-    <li>Download confirm చేయండి</li>
-    <li>Complete అయ్యే వరకు వేచి ఉండండి — కొత్త మరియు updated products add అవుతాయి; మీ display order preserve అవుతుంది</li>
+    <li><strong>Download Standard Product List</strong> తాకండి.</li>
+    <li>డౌన్‌లోడ్ కన్ఫర్మ్ చేయండి.</li>
+    <li>పూర్తయ్యే వరకు వేచి ఉండండి — కొత్త మరియు అప్‌డేటెడ్ ప్రొడక్ట్స్ యాడ్ అవుతాయి; మీ డిస్ప్లే ఆర్డర్ అలాగే ఉంటుంది.</li>
   </ol>
-  <div class="callout tip">Admin's standard list లో లేని మీ local products unchanged గా ఉంటాయి.</div>
+  <div class="callout tip">అడ్మిన్ స్టాండర్డ్ లిస్ట్‌లో లేని మీ లోకల్ ప్రొడక్ట్స్ మారవు.</div>
 </div>
 
 
 <!-- SECTION 10 -->
 <div class="section-card" id="s10">
-  <h2><span class="sec-num">10</span> Settings</h2>
+  <h2><span class="sec-num">10</span> సెట్టింగ్స్</h2>
 
   <p>Home screen నుండి <strong>Settings</strong> తాకండి.</p>
 
   <div class="screenshots-row">
     <div class="phone-wrap">
-      <img src="../en/img/WinEntry_SettingsScreen.png" alt="Settings screen" style="width:250px; border-radius:20px;" />
+      <img src="img/WinEntry_TeSettingScreen.png" alt="Settings screen" style="width:250px; border-radius:20px;" />
+      <div class="phone-caption">Settings screen</div>
+    </div>
+        <div class="phone-wrap">
+      <img src="img/WinEntry_TeSettingsLanguage.png" alt="Settings screen" style="width:250px; border-radius:20px;" />
       <div class="phone-caption">Settings screen</div>
     </div>
   </div>
 
   <h3>Language</h3>
-  <p><strong>English</strong> మరియు <strong>తెలుగు</strong> మధ్య switch చేయడానికి <strong>App Language</strong> తాకండి. మార్పు వెంటనే అన్ని screens కు apply అవుతుంది.</p>
+  <p>యాప్ భాషను ఇంగ్లీష్ లేదా తెలుగులోకి మార్చుకోవడానికి <strong>App Language</strong> తాకండి. మార్పు వెంటనే అన్ని స్క్రీన్లకు అప్లై అవుతుంది.</p>
 
   <h3>Business Info</h3>
-  <p>మీ business name, owner name, address మరియు phone update చేయండి. Getting Started setup యొక్క Step 1 లో ఉన్న అన్ని fields ఇక్కడ కూడా ఉంటాయి.</p>
+  <p>మీ షాప్ పేరు, ఫోన్ నంబర్ అప్‌డేట్ చేయడానికి. ఇక్కడి నుండే అకౌంట్ మరియు డేటాను పూర్తిగా డిలీట్ (Delete Account &amp; Data) చేయవచ్చు.</p>
   <ul>
     <li>Changes ని admin's system కు sync చేయడానికి <strong>Save &amp; Update Registration</strong> తాకండి</li>
   </ul>
@@ -1134,91 +1133,94 @@
   <h4>Business Info overflow menu (⋮ కుడివైపు పైన)</h4>
   <div class="table-wrap">
     <table>
-      <tr><th>మీ Status</th><th>Menu Option</th><th>ఏమి చేస్తుంది</th></tr>
-      <tr><td>Registered</td><td>Delete Account &amp; Data</td><td>అన్ని cloud data, registration మరియు sign-in account permanently remove చేస్తుంది</td></tr>
-      <tr><td>Not registered</td><td>Clear Local Data</td><td>ఈ device నుండి అన్ని inventory data delete చేస్తుంది (exported Excel files affected కావు)</td></tr>
-      <tr><td>Deletion pending</td><td>Complete Account Deletion</td><td>Re-login తర్వాత sign-in account removing complete చేస్తుంది</td></tr>
+      <tr><th>మీ స్టేటస్</th><th>మెనూ ఆప్షన్</th><th>ఏమి చేస్తుంది</th></tr>
+      <tr><td>Registered</td><td>Delete Account &amp; Data</td><td>అన్ని క్లౌడ్ డేటా, రిజిస్ట్రేషన్ మరియు సైన్-ఇన్ అకౌంట్ పర్మనెంట్‌గా రిమూవ్ చేస్తుంది</td></tr>
+      <tr><td>Not registered</td><td>Clear Local Data</td><td>ఈ డివైస్ నుండి అన్ని ఇన్వెంటరీ డేటా డిలీట్ చేస్తుంది (ఎక్స్‌పోర్ట్ చేసిన ఎక్సెల్ ఫైల్స్ ప్రభావితం కావు)</td></tr>
+      <tr><td>Deletion pending</td><td>Complete Account Deletion</td><td>రీ-లాగిన్ తర్వాత సైన్-ఇన్ అకౌంట్ రిమూవ్ కంప్లీట్ చేస్తుంది</td></tr>
     </table>
   </div>
 
   <h3>Drive Backup</h3>
-  <p>Cloud backup యొక్క current state చూపిస్తుంది. పూర్తి workflow కోసం <a href="#s11">Section 11</a> చూడండి.</p>
+  <p>క్లౌడ్ బ్యాకప్ ఆన్ చేయడానికి. పూర్తి వివరాల కోసం <a href="#s11">Section 11</a> చూడండి.</p>
 
   <h3>Sync Settings</h3>
-  <p>Drive Backup active అయినప్పుడు మాత్రమే available. App automatically ప్రతి 6 గంటలకు sync చేయాలా లేదా Sync button తాకినప్పుడు మాత్రమే sync చేయాలా అని configure చేయండి.</p>
+  <p>Drive Backup యాక్టివ్ అయినప్పుడు మాత్రమే అందుబాటులో ఉంటుంది. యాప్ ఆటోమేటిక్‌గా ప్రతి 6 గంటలకు సింక్ చేయాలా లేదా Sync బటన్ నొక్కినప్పుడు మాత్రమే సింక్ చేయాలా అని కాన్ఫిగర్ చేయండి.</p>
 
   <h3>Help &amp; Support</h3>
+  <p>యాప్ టీమ్‌కు ఈమెయిల్ పంపడానికి లేదా సమస్యలను రిపోర్ట్ చేయడానికి.</p>
   <ul>
-    <li><strong>Report an Issue / Ask for Help</strong> — device మరియు app version pre-filled తో support email పంపుతుంది</li>
-    <li><strong>Request Feature</strong> — Simhadri Systems కు feature request పంపుతుంది</li>
-    <li><strong>Import Test Data</strong> — sample data reload చేస్తుంది (registration అవసరం)</li>
-    <li><strong>User Guide</strong> — ఈ guide ని browser లో తెరుస్తుంది</li>
+    <li><strong>Report an Issue / Ask for Help</strong> — డివైస్ మరియు యాప్ వెర్షన్ ముందే నింపబడిన సపోర్ట్ ఈమెయిల్ పంపుతుంది</li>
+    <li><strong>Request Feature</strong> — Simhadri Systems కు ఫీచర్ రిక్వెస్ట్ పంపుతుంది</li>
+    <li><strong>Import Test Data</strong> — శాంపిల్ డేటా లోడ్ చేస్తుంది (రిజిస్ట్రేషన్ అవసరం)</li>
+    <li><strong>User Guide</strong> — ఈ గైడ్‌ను బ్రౌజర్‌లో తెరుస్తుంది</li>
   </ul>
 
   <h3>Error Log</h3>
-  <p>App errors encounter చేసినప్పుడు, device లో log save అవుతుంది. Errors ఉంటే Settings దిగువన <strong>Share Error Log</strong> button కనిపిస్తుంది. Support contact చేసేటప్పుడు log share చేయండి.</p>
+  <p>యాప్‌లో ఏదైనా ఎర్రర్ వస్తే, డివైస్‌లో లాగ్ సేవ్ అవుతుంది. ఎర్రర్‌లు ఉంటే Settings కిందన <strong>Share Error Log</strong> బటన్ కనిపిస్తుంది. సపోర్ట్ సంప్రదించేటప్పుడు లాగ్ షేర్ చేయండి.</p>
 
   <h3>App Version</h3>
-  <p>Settings దిగువన చూపిస్తుంది. Play Store లో newer version check చేయడానికి <strong>Check for Update</strong> తాకండి.</p>
+  <p>Settings కిందన చూపిస్తుంది. Play Store లో కొత్త వెర్షన్ చెక్ చేయడానికి <strong>Check for Update</strong> తాకండి.</p>
 </div>
 
 
 <!-- SECTION 11 -->
 <div class="section-card" id="s11">
-  <h2><span class="sec-num">11</span> Cloud Drive Backup</h2>
+  <h2><span class="sec-num">11</span> క్లౌడ్ డ్రైవ్ బ్యాకప్</h2>
 
-  <p>Cloud backup ఐచ్ఛికం. దాన్ని లేకుండా app పూర్తిగా offline పని చేస్తుంది. Enable చేసినప్పుడు, మీ daily stock, purchases మరియు day-end summaries admin's Drive workspace లో private Google Sheet లో store అవుతాయి — మీ personal Drive నుండి వేరుగా.</p>
+  <p>ఇది పూర్తిగా ఆప్షనల్. ఆన్ చేయకపోతే డేటా ఫోన్‌లోనే ఉంటుంది. ఆన్ చేస్తే మీ డేటా సురక్షితంగా క్లౌడ్‌లో సేవ్ అవుతుంది. మీ ఫోన్‌లో పొరపాటున డిలీట్ అయితే క్లౌడ్ నుండి డౌన్‌లోడ్ చేసుకోవచ్చు.</p>
 
-  <div class="callout note"><strong>మీ data, మీ నియంత్రణ.</strong> Google తో sign in చేయడం వల్ల sync start కాదు. Backup enable చేసి terms accept చేసిన తర్వాత మాత్రమే data phone వదలుతుంది.</div>
+  <div class="callout note"><strong>మీ డేటా, మీ నియంత్రణ.</strong> Google తో సైన్ ఇన్ చేయడం వల్ల సింక్ స్టార్ట్ కాదు. బ్యాకప్ ఎనేబుల్ చేసి నిబంధనలు అంగీకరించిన తర్వాత మాత్రమే డేటా ఫోన్ వదులుతుంది.</div>
 
-  <h3>Enable చేయడం ఎలా</h3>
+  <h3>ఎలా ఆన్ చేయాలి?</h3>
   <ol class="steps">
-    <li><strong>Register</strong> చేయండి — <span class="path">Settings → Business Info</span> కి వెళ్ళి business name fill చేసి <strong>Save &amp; Register</strong> తాకండి</li>
-    <li><strong>Workspace request</strong> చేయండి — <span class="path">Settings</span> → <strong>Drive Backup</strong> card తాకి → <strong>Request Drive Backup</strong> తాకండి</li>
-    <li><strong>Consent terms చదవండి</strong> — ఏ data store అవుతుందో మరియు admin కు read access ఉంటుందని dialog వివరిస్తుంది</li>
-    <li><strong>I Agree — Enable Backup</strong> తాకండి</li>
-    <li>App admin's system ని contact చేస్తుంది:
-      <ul>
-        <li>Invited list లో ఉంటే → workspace వెంటనే create అవుతుంది → "Drive Backup Active" green లో చూపిస్తుంది</li>
-        <li>Invited list లో లేకపోతే → "Drive Backup Pending" చూపిస్తుంది — admin activate చేస్తారు</li>
-      </ul>
-    </li>
+    <li><span class="path">Settings → Drive Backup</span> కి వెళ్లి <strong>Request Drive Backup</strong> నొక్కాలి.</li>
+    <li>నియమ నిబంధనలు చదివి <strong>I Agree — Enable Backup</strong> నొక్కాలి.</li>
+    <li>అడ్మిన్ మీ అకౌంట్‌ను యాక్టివేట్ చేయగానే క్లౌడ్ బ్యాకప్ యాక్టివ్ అవుతుంది.</li>
   </ol>
+
+  <div class="callout warn"><strong>ముఖ్య గమనిక:</strong> మీ డేటా బ్యాకప్ అయినందుకు గాను, అడ్మిన్‌కు మీ రికార్డులను చూసే (Read Access) అనుమతి ఉంటుంది.</div>
 
   <div class="screenshots-row">
     <div class="phone-wrap">
-      <img src="../en/img/WinEntry_Settings Screen.png" alt="Drive Backup Active state" style="width:250px; border-radius:20px;" />
+      <img src="img/WinEntry_TeRequestCloudBackup.png" alt="Request Drive Backup" style="width:250px; border-radius:20px;" />
+      <div class="phone-caption">Backup request</div>
+    </div>
+    <div class="phone-wrap">
+      <img src="img/WinEntry_TeCloudBackupConsent.png" alt="Consent dialog" style="width:250px; border-radius:20px;" />
+      <div class="phone-caption">Consent dialog</div>
+    </div>
+    <div class="phone-wrap">
+      <img src="img/WinEntry_TeCloudBackupActive.png" alt="Drive Backup Active state" style="width:250px; border-radius:20px;" />
       <div class="phone-caption">Drive Backup Active state</div>
     </div>
     <div class="phone-wrap">
-      <img src="../en/img/WinEntry_DriveBackupSonsent.png" alt="Consent dialog" style="width:250px; border-radius:20px;" />
-      <div class="phone-caption">Consent dialog</div>
+      <img src="img/WinEntry_TeSettingsSyncSet.png" alt="Drive Backup Active state" style="width:250px; border-radius:20px;" />
+      <div class="phone-caption">Sync Settings</div>
     </div>
   </div>
-
-  <div class="callout tip">"Drive Backup Pending" ఒక రోజు కంటే ఎక్కువ కాలం ఉంటే, card తాకి → <strong>Send Reminder</strong> తో admin కు మళ్ళీ notify చేయండి.</div>
+  <div class="callout tip">"Drive Backup Pending" ఒక రోజు కంటే ఎక్కువ కాలం ఉంటే, కార్డ్ తాకి → <strong>Send Reminder</strong> ద్వారా అడ్మిన్‌కు మళ్లీ నోటిఫై చేయండి.</div>
 
   <h3>ఏమి Sync అవుతుంది</h3>
   <div class="table-wrap">
     <table>
-      <tr><th>Data</th><th>Sync అవుతుందా?</th></tr>
+      <tr><th>డేటా</th><th>Sync అవుతుందా?</th></tr>
       <tr><td>Daily stock entries</td><td>అవును</td></tr>
       <tr><td>Purchase records</td><td>అవును</td></tr>
       <tr><td>Day-end reconciliation</td><td>అవును</td></tr>
       <tr><td>Opening stock</td><td>అవును</td></tr>
-      <tr><td>Product list</td><td>Admin నుండి read-only download మాత్రమే</td></tr>
-      <tr><td>Licence/Reg. number, పూర్తి address</td><td>కాదు — device లో మాత్రమే ఉంటుంది</td></tr>
+      <tr><td>Product list</td><td>అడ్మిన్ నుండి read-only డౌన్‌లోడ్ మాత్రమే</td></tr>
+      <tr><td>Licence/Reg. number, పూర్తి address</td><td>కాదు — డివైస్‌లో మాత్రమే ఉంటుంది</td></tr>
     </table>
   </div>
-  <div class="callout info">Administrator మీ workspace లోని అన్ని records read చేయగలరు. ఇది free cloud backup అందించడానికి ఆధారం.</div>
+  <div class="callout info">అడ్మినిస్ట్రేటర్ మీ workspace లోని అన్ని records చదవగలరు. ఇది ఉచిత క్లౌడ్ బ్యాకప్ అందించడానికి ఆధారం.</div>
 
-  <h3>Home Screen లో Sync Status Icons</h3>
+  <h3>హోమ్ స్క్రీన్‌లో Sync Status Icons</h3>
   <div class="table-wrap">
     <table>
       <tr><th>Icon రంగు</th><th>అర్థం</th></tr>
-      <tr><td>White</td><td>అన్ని records విజయవంతంగా sync అయ్యాయి</td></tr>
-      <tr><td>Red</td><td>ఒకటి లేదా అంతకు ఎక్కువ records fail అయ్యాయి — retry కు తాకండి</td></tr>
-      <tr><td>Amber / Yellow</td><td>Drive Backup setup కాలేదు</td></tr>
+      <tr><td>తెలుపు (White)</td><td>అన్ని records విజయవంతంగా sync అయ్యాయి</td></tr>
+      <tr><td>రెడ్ (Red)</td><td>ఒకటి లేదా అంతకు ఎక్కువ records fail అయ్యాయి — మళ్లీ నొక్కండి</td></tr>
+      <tr><td>అంబర్/కాషాయం (Amber)</td><td>Drive Backup setup కాలేదు</td></tr>
     </table>
   </div>
 
@@ -1226,58 +1228,58 @@
   <div class="table-wrap">
     <table>
       <tr><th>Role</th><th>మీరు ఏమి చేయగలరు</th></tr>
-      <tr><td>Editor (default)</td><td>పూర్తి access — data enter చేయడం, up మరియు down sync, అన్ని buttons active</td></tr>
-      <tr><td>Viewer</td><td>Read-only — cloud నుండి మాత్రమే sync down; data entry మరియు save buttons hidden</td></tr>
+      <tr><td>Editor (default)</td><td>పూర్తి యాక్సెస్ — డేటా ఎంటర్ చేయడం, అప్ మరియు డౌన్ సింక్, అన్ని బటన్లు యాక్టివ్</td></tr>
+      <tr><td>Viewer</td><td>Read-only — క్లౌడ్ నుండి మాత్రమే సింక్ డౌన్; డేటా ఎంట్రీ మరియు సేవ్ బటన్లు హిడన్</td></tr>
     </table>
   </div>
-  <p>Role మార్పు అవసరమైతే admin ని contact చేయండి.</p>
+  <p>Role మార్పు అవసరమైతే అడ్మిన్‌ను సంప్రదించండి.</p>
 
-  <h3>Deactivate లేదా Delete చేయడం</h3>
+  <h3>డీయాక్టివేట్ లేదా డిలీట్ చేయడం</h3>
   <ul>
-    <li><strong>Deactivate</strong> — <span class="path">Settings → Drive Backup (active) → Deactivate</span>. Future auto-sync ఆగిపోతుంది. Local data affected కాదు.</li>
-    <li><strong>Delete Account &amp; Data</strong> — <span class="path">Settings → Business Info → ⋮ → Delete Account &amp; Data</span>. అన్ని cloud data, registration మరియు sign-in account permanently remove అవుతాయి.</li>
+    <li><strong>Deactivate</strong> — <span class="path">Settings → Drive Backup (active) → Deactivate</span>. భవిష్యత్తు ఆటో-సింక్ ఆగిపోతుంది. లోకల్ డేటా ప్రభావితం కాదు.</li>
+    <li><strong>Delete Account &amp; Data</strong> — <span class="path">Settings → Business Info → ⋮ → Delete Account &amp; Data</span>. అన్ని క్లౌడ్ డేటా, రిజిస్ట్రేషన్ మరియు సైన్-ఇన్ అకౌంట్ పర్మనెంట్‌గా రిమూవ్ అవుతాయి.</li>
   </ul>
 </div>
 
 
 <!-- SECTION 12 -->
 <div class="section-card" id="s12">
-  <h2><span class="sec-num">12</span> Data Management &amp; Excel Import/Export</h2>
+  <h2><span class="sec-num">12</span> డేటా మేనేజ్‌మెంట్ &amp; ఎక్సెల్ ఇంపోర్ట్/ఎక్స్‌పోర్ట్</h2>
 
-  <p>WinEntry records మరియు reports కోసం Excel కి data export చేయగలదు, మరియు manual typing నివారించడానికి Excel నుండి data import కూడా చేయగలదు. అన్ని operations standard <strong>.xlsx</strong> files వాడతాయి — Microsoft Excel, Google Sheets లేదా ఏ compatible spreadsheet app లోనైనా తెరుచుకుంటాయి.</p>
+  <p>యాప్‌లోని అన్ని రిపోర్టులు మరియు ఎంట్రీలను ఎక్సెల్ (.xlsx) ఫైల్స్ రూపంలో డౌన్‌లోడ్ చేసుకోవచ్చు మరియు అప్‌లోడ్ చేయవచ్చు. అన్ని operations standard <strong>.xlsx</strong> files వాడతాయి — Microsoft Excel, Google Sheets లేదా ఏ compatible spreadsheet app లోనైనా తెరుచుకుంటాయి.</p>
 
-  <h3>Excel Export — Quick Reference</h3>
-  <p>Exported files phone యొక్క <strong>Downloads</strong> folder కు save అవుతాయి. Export తర్వాత Share button ద్వారా WhatsApp, email లేదా ఏ app ద్వారానైనా directly share చేయవచ్చు.</p>
+  <h3>ఎక్సెల్ ఎక్స్‌పోర్ట్ — క్విక్ రిఫరెన్స్</h3>
+  <p>ఎక్స్‌పోర్ట్ చేసిన ఫైల్స్ ఫోన్‌లోని <strong>Downloads</strong> ఫోల్డర్‌కు సేవ్ అవుతాయి. ఎక్స్‌పోర్ట్ తర్వాత Share బటన్ ద్వారా WhatsApp, ఈమెయిల్ లేదా ఏ యాప్ ద్వారానైనా నేరుగా షేర్ చేయవచ్చు.</p>
 
   <div class="table-wrap">
     <table>
-      <tr><th>Export చేయాల్సింది</th><th>ఎక్కడ దొరుకుతుంది</th><th>గమనికలు</th></tr>
-      <tr><td>Daily stock full sheet</td><td><span class="path">Daily Stock → ⋮ → Export Daily Stock</span></td><td>ఎంచుకున్న తేదీలో అన్ని products, అన్ని sizes</td></tr>
-      <tr><td>Closing balances (single date)</td><td><span class="path">Daily Stock → ⋮ → Export Current Date</span></td><td>End-of-day stock snapshot కు useful</td></tr>
-      <tr><td>Daily stock (date range)</td><td><span class="path">Daily Stock → ⋮ → Export Date Range</span></td><td>From మరియు To తేదీలు ఎంచుకోండి</td></tr>
-      <tr><td>All purchases</td><td><span class="path">Purchases → ⋮ → Export All</span></td><td>ఎప్పటికప్పుడు record చేసిన ప్రతి invoice</td></tr>
-      <tr><td>Purchases (date range)</td><td><span class="path">Purchases → ⋮ → Export Filtered</span></td><td>From మరియు To తేదీలు ఎంచుకోండి</td></tr>
-      <tr><td>Monthly summary</td><td><span class="path">Reports → Monthly Sale Data → ⋮ → Share</span></td><td>Colour-coded HTML లేదా Print ద్వారా PDF</td></tr>
+      <tr><th>ఏమి ఎక్స్‌పోర్ట్ చేయాలి</th><th>ఎక్కడ దొరుకుతుంది</th><th>గమనికలు</th></tr>
+      <tr><td>డైలీ స్టాక్ పూర్తి షీట్</td><td><span class="path">Daily Stock → ⋮ → Export Daily Stock</span></td><td>ఎంచుకున్న తేదీలో అన్ని ప్రొడక్ట్స్, అన్ని సైజులు</td></tr>
+      <tr><td>క్లోజింగ్ బ్యాలెన్స్ (ఒకే తేదీ)</td><td><span class="path">Daily Stock → ⋮ → Export Current Date</span></td><td>రోజు ముగింపు స్టాక్ స్నాప్‌షాట్ కోసం ఉపయోగకరం</td></tr>
+      <tr><td>డైలీ స్టాక్ (తేదీ పరిధి)</td><td><span class="path">Daily Stock → ⋮ → Export Date Range</span></td><td>From మరియు To తేదీలు ఎంచుకోండి</td></tr>
+      <tr><td>అన్ని కొనుగోళ్లు</td><td><span class="path">Purchases → ⋮ → Export All</span></td><td>రికార్డ్ చేసిన ప్రతి ఇన్వాయిస్</td></tr>
+      <tr><td>కొనుగోళ్లు (తేదీ పరిధి)</td><td><span class="path">Purchases → ⋮ → Export Filtered</span></td><td>From మరియు To తేదీలు ఎంచుకోండి</td></tr>
+      <tr><td>మంత్లీ సమ్మరీ</td><td><span class="path">Reports → Monthly Sale Data → ⋮ → Share</span></td><td>కలర్-కోడెడ్ HTML లేదా Print ద్వారా PDF</td></tr>
     </table>
   </div>
 
-  <h3>Excel Import — ఎలా పని చేస్తుంది</h3>
-  <p>ప్రతి data type కు import system ఒకే three-step pattern follow చేస్తుంది:</p>
+  <h3>ఎక్సెల్ ఇంపోర్ట్ — ఎలా పని చేస్తుంది</h3>
+  <p>ప్రతి డేటా టైప్‌కు ఇంపోర్ట్ సిస్టమ్ ఒకే మూడు-స్టెప్ పద్ధతి ఫాలో చేస్తుంది:</p>
 
   <div class="option-box">
-    <div class="option-tag tag-a">Step 1 — Template Download చేయండి</div>
-    <p>ఎప్పుడూ app లో నుండే template download చేయడం మొదలుపెట్టండి. Template లో మీ product codes మరియు app expect చేసే exact format లో column headings ముందే fill అయి ఉంటాయి. <strong>Import file scratch నుండి create చేయకండి — template మాత్రమే వాడండి.</strong></p>
+    <div class="option-tag tag-a">స్టెప్ 1 — టెంప్లేట్ డౌన్‌లోడ్ చేయడం</div>
+    <p>యాప్ లోపల ఉన్న <strong>Download Template</strong> బటన్ ద్వారా మాత్రమే ఎక్సెల్ ఫైల్‌ను డౌన్‌లోడ్ చేయాలి. సొంతంగా కొత్త ఫైల్స్ క్రియేట్ చేయకూడదు.</p>
   </div>
   <div class="option-box" style="border-color:#e0f2f1;">
-    <div class="option-tag tag-b">Step 2 — Template నింపండి</div>
-    <p>Computer లో లేదా phone లో (Google Sheets, Microsoft Excel) template తెరవండి. Quantity/value columns లో మీ data enter చేయండి. Product codes, column headings లేదా sheet structure మార్చకండి. <strong>.xlsx</strong> గా save చేయండి.</p>
+    <div class="option-tag tag-b">స్టెప్ 2 — టెంప్లేట్ నింపడం</div>
+    <p>ఆ టెంప్లేట్ ఫైల్‌ను ఓపెన్ చేసి, కేవలం డేటా కాలమ్స్ మాత్రమే నింపి సేవ్ చేయాలి. ప్రొడక్ట్ కోడ్‌లు మార్చకూడదు. <strong>.xlsx</strong> గా save చేయండి.</p>
   </div>
   <div class="option-box">
-    <div class="option-tag tag-a">Step 3 — Transfer చేసి Import చేయండి</div>
-    <p>Filled file ని phone కు transfer చేయండి (WhatsApp, Google Drive, email లేదా USB). App లో ⋮ → relevant Import option తాకి file ఎంచుకోండి. App commit చేయడానికి ముందు ప్రతి row validate చేస్తుంది.</p>
+    <div class="option-tag tag-a">స్టెప్ 3 — ట్రాన్స్‌ఫర్ చేసి ఇంపోర్ట్ చేయడం</div>
+    <p>ఆ ఫైల్‌ను ఫోన్‌లోకి తెచ్చుకుని యాప్‌లో <strong>⋮ → Import</strong> ఆప్షన్ ద్వారా సెలెక్ట్ చేయాలి. ఇంపోర్ట్ పూర్తయిన తర్వాత ఎన్ని రికార్డులు కొత్తగా వచ్చాయి (New), ఎన్ని స్కిప్ అయ్యాయి (Skipped), ఎన్ని ఫెయిల్ అయ్యాయి (Failed) అనే సమ్మరీ స్క్రీన్ పై కనిపిస్తుంది.</p>
   </div>
 
-  <h3>Excel Import — Quick Reference</h3>
+  <h3>ఎక్సెల్ ఇంపోర్ట్ — క్విక్ రిఫరెన్స్</h3>
   <div class="table-wrap">
     <table>
       <tr><th>Import చేయాల్సింది</th><th>Template ఎక్కడ దొరుకుతుంది</th><th>Import ఎక్కడ చేయాలి</th></tr>
@@ -1299,64 +1301,64 @@
     </table>
   </div>
   <ul>
-    <li>Opening stock import — <a href="#s4">Section 4 (Step 4, Option B)</a> మరియు <a href="#s9">Section 9</a></li>
-    <li>Closing balance import — <a href="#s6">Section 6 (Excel నుండి Closing Balances Import)</a></li>
-    <li>Purchase import — <a href="#s7">Section 7 (Excel నుండి Purchases Import)</a></li>
+    <li>ఓపెనింగ్ స్టాక్ ఇంపోర్ట్ — <a href="#s4">Section 4 (Step 4, Option B)</a> మరియు <a href="#s9">Section 9</a></li>
+    <li>క్లోజింగ్ బ్యాలెన్స్ ఇంపోర్ట్ — <a href="#s6">Section 6 (ఎక్సెల్ ద్వారా క్లోజింగ్ బ్యాలెన్స్ ఇంపోర్ట్)</a></li>
+    <li>పర్చేస్ ఇంపోర్ట్ — <a href="#s7">Section 7 (ఎక్సెల్ నుండి పర్చేసెస్ ఇంపోర్ట్)</a></li>
   </ul>
 
-  <h3>Import Result Summary</h3>
+  <h3>ఇంపోర్ట్ రిజల్ట్ సమ్మరీ</h3>
   <div class="table-wrap">
     <table>
-      <tr><th>Result</th><th>అర్థం</th></tr>
-      <tr><td><strong>New</strong></td><td>Records విజయవంతంగా import అయ్యాయి</td></tr>
-      <tr><td><strong>Skipped</strong></td><td>ఇప్పటికే exist చేస్తున్నాయి — same product + date, లేదా same invoice + date. మార్పు చేయబడలేదు.</td></tr>
-      <tr><td><strong>Failed</strong></td><td>Product code దొరకలేదు, లేదా data format error</td></tr>
+      <tr><th>రిజల్ట్</th><th>అర్థం</th></tr>
+      <tr><td><strong>New</strong></td><td>రికార్డులు విజయవంతంగా ఇంపోర్ట్ అయ్యాయి</td></tr>
+      <tr><td><strong>Skipped</strong></td><td>ఇప్పటికే ఉన్నాయి — సేమ్ ప్రొడక్ట్ + తేదీ, లేదా సేమ్ ఇన్వాయిస్ + తేదీ. మార్పు చేయబడలేదు.</td></tr>
+      <tr><td><strong>Failed</strong></td><td>ప్రొడక్ట్ కోడ్ కనుగొనబడలేదు, లేదా డేటా ఫార్మాట్ ఎర్రర్</td></tr>
     </table>
   </div>
-  <p>Skipped లేదా failed rows list ని clipboard కి copy చేయడానికి <strong>Copy List</strong> తాకండి. Review చేసి figures సరిచేసిన తర్వాత retry చేయండి.</p>
-  <div class="callout warn">"product code not found" తో చాలా rows fail అయితే: <span class="path">Items/Products → Download Standard Product List</span> ద్వారా product list update చేసి import retry చేయండి.</div>
+  <p>స్కిప్ లేదా ఫెయిల్ అయిన rows లిస్ట్‌ను క్లిప్‌బోర్డ్‌కి కాపీ చేయడానికి <strong>Copy List</strong> తాకండి. సరిచూసుకుని మళ్లీ ఇంపోర్ట్ చేయండి.</p>
+  <div class="callout warn">"product code not found" అంటూ చాలా rows ఫెయిల్ అయితే: <span class="path">Items/Products → Download Standard Product List</span> ద్వారా ప్రొడక్ట్ లిస్ట్ అప్‌డేట్ చేసి మళ్లీ ఇంపోర్ట్ చేయండి.</div>
 </div>
 
 
 <!-- SECTION 13 -->
 <div class="section-card" id="s13">
-  <h2><span class="sec-num">13</span> Help మరియు Support</h2>
+  <h2><span class="sec-num">13</span> హెల్ప్ మరియు సపోర్ట్</h2>
 
-  <p><span class="path">Settings → Help &amp; Support</span> కి వెళ్ళండి.</p>
-  <p><strong>Support email:</strong> simhadrisystems@gmail.com</p>
+  <p>యాప్‌లో ఏదైనా సమస్య వస్తే <span class="path">Settings → Help &amp; Support</span> కి వెళ్లి మద్దతు పొందవచ్చు.</p>
+  <p><strong>సపోర్ట్ ఈమెయిల్:</strong> simhadrisystems@gmail.com</p>
 
-  <h3>Support Contact చేయడం</h3>
-  <p><strong>Ask for Help</strong> లేదా <strong>Report Issue</strong> తాకండి. App మీ app version, Android version మరియు device model తో message template pre-fill చేస్తుంది. Data automatically పంపబడదు.</p>
+  <h3>సపోర్ట్ కోసం సంప్రదించడం</h3>
+  <p><strong>Ask for Help</strong> లేదా <strong>Report Issue</strong> తాకండి. యాప్ మీ వెర్షన్, ఆండ్రాయిడ్ వెర్షన్ మరియు డివైస్ మోడల్‌తో మెసేజ్ టెంప్లేట్ ముందే నింపుతుంది. డేటా ఆటోమేటిక్‌గా పంపబడదు.</p>
 
-  <h3>సాధారణ సమస్యలు</h3>
+  <h3>సాధారణ సమస్యలు — పరిష్కారాలు</h3>
   <div class="table-wrap">
     <table>
       <tr><th>సమస్య</th><th>ఏమి చేయాలి</th></tr>
-      <tr><td>Onboarding లో "Download" బదులు "Request Access" కనిపిస్తోంది</td><td>Admin activate చేయాలి — "Request Access" తాకి request పంపండి</td></tr>
+      <tr><td>డౌన్‌లోడ్ కావడం లేదు / Request Access అని వస్తోంది</td><td>అడ్మిన్ ఇంకా అనుమతి ఇవ్వలేదు, యాప్‌లోని బటన్ నొక్కి అడ్మిన్‌కు రిక్వెస్ట్ పంపండి</td></tr>
       <tr><td>"Drive Backup Pending" ఒక రోజు కంటే ఎక్కువ కాలం ఉంది</td><td>Card తాకి → Send Reminder</td></tr>
-      <tr><td>Home screen లో sync icon red గా ఉంది</td><td>Internet connection check చేసి sync icon తాకి retry చేయండి</td></tr>
-      <tr><td>Opening balance తప్పుగా కనిపిస్తోంది</td><td>Previous రోజు committed అయిందో check చేయండి — Daily Stock లో ఆ తేదీ verify చేయండి</td></tr>
+      <tr><td>హోమ్ స్క్రీన్‌లో సింక్ ఐకాన్ రెడ్ కలర్‌లో ఉంది</td><td>మీ ఇంటర్నెట్ కనెక్షన్ చెక్ చేసి, ఆ ఐకాన్ పై మరోసారి క్లిక్ చేయండి</td></tr>
+      <tr><td>ఓపెనింగ్ బ్యాలెన్స్ తప్పుగా చూపిస్తోంది</td><td>నిన్నటి రోజు డే-ఎండ్ రికన్సిలియేషన్ కరెక్ట్‌గా సేవ్ అయిందో లేదో Daily Stock లో ఒకసారి చెక్ చేసుకోండి</td></tr>
       <tr><td>Daily stock list లో product లేదు</td><td><span class="path">Items/Products → Download Standard Product List</span> run చేయండి</td></tr>
-      <tr><td>"Account Not Activated" error వస్తోంది</td><td>Email లేదా WhatsApp ద్వారా admin ని contact చేయండి</td></tr>
+      <tr><td>"Account Not Activated" error వస్తోంది</td><td>Email లేదా WhatsApp ద్వారా అడ్మిన్‌ను contact చేయండి</td></tr>
       <tr><td>Account deletion తర్వాత "Sign in again to complete" చూపిస్తోంది</td><td>Sign out చేసి same account తో sign in చేసి <span class="path">Business Info → ⋮ → Complete Account Deletion</span> కి వెళ్ళండి</td></tr>
     </table>
   </div>
 
-  <h3>Test Data Import చేయడం</h3>
-  <p><span class="path">Settings → Help &amp; Support → Import Test Data</span> కి వెళ్ళండి. Practice కోసం sample opening balances మరియు dummy stock data load అవుతుంది. App registration అవసరం.</p>
-  <p>Sample opening balance తేదీ confirm చేయండి. Live trading ప్రారంభించడానికి ready అయినప్పుడు sample data ని real figures తో replace చేయండి.</p>
+  <h3>టెస్ట్ డేటా ఇంపోర్ట్ చేయడం</h3>
+  <p><span class="path">Settings → Help &amp; Support → Import Test Data</span> కి వెళ్ళండి. ప్రాక్టీస్ కోసం శాంపిల్ ఓపెనింగ్ బ్యాలెన్స్ మరియు డమ్మీ స్టాక్ డేటా లోడ్ అవుతుంది. యాప్ రిజిస్ట్రేషన్ అవసరం.</p>
+  <p>శాంపిల్ ఓపెనింగ్ బ్యాలెన్స్ తేదీ కన్ఫర్మ్ చేయండి. నిజమైన వ్యాపారం మొదలుపెట్టడానికి రెడీ అయినప్పుడు శాంపిల్ డేటాను నిజమైన వివరాలతో రీప్లేస్ చేయండి.</p>
 
   <hr />
 
   <div class="callout note">
-    Cloud Drive Backup explicitly enable చేసే వరకు మీ అన్ని data మీ phone లోనే ఉంటుంది. App పూర్తిగా offline పని చేస్తుంది — internet connection లేకుండా closing stock enter చేయవచ్చు, purchases record చేయవచ్చు, reports చూడవచ్చు మరియు Excel కి export చేయవచ్చు.
+    Cloud Drive Backup ఆన్ చేసే వరకు మీ అన్ని డేటా మీ ఫోన్‌లోనే ఉంటుంది. యాప్ పూర్తిగా ఆఫ్‌లైన్‌లో పని చేస్తుంది — ఇంటర్నెట్ కనెక్షన్ లేకుండా క్లోజింగ్ స్టాక్ ఎంటర్ చేయవచ్చు, కొనుగోళ్లు రికార్డ్ చేయవచ్చు, రిపోర్టులు చూడవచ్చు మరియు ఎక్సెల్‌కి ఎక్స్‌పోర్ట్ చేయవచ్చు.
   </div>
 </div>
 
 </div><!-- /container -->
 
 <footer>
-  <p>WinEntry &nbsp;·&nbsp; వ్యాపార Inventory &amp; Stock Management Tool</p>
+  <p>WinEntry &nbsp;·&nbsp; రిటైల్ ఇన్వెంటరీ మేనేజ్‌మెంట్ యాప్</p>
   <p>Simhadri Systems &nbsp;·&nbsp; simhadrisystems@gmail.com</p>
   <p>మే 2026 నవీకరణ &nbsp;·&nbsp; Version 1.1 (Build 4)</p>
 </footer>

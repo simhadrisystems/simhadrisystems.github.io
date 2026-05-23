@@ -40,10 +40,23 @@
       border-radius: 20px;
       margin-bottom: 16px;
     }
+    .lang-badge {
+      display: inline-block;
+      background: rgba(255,200,0,0.25);
+      color: #ffe082;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      margin-left: 8px;
+      text-decoration: none;
+    }
+    .lang-badge:hover { background: rgba(255,200,0,0.4); }
     .site-header h1 {
       font-size: 34px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      font-weight: 700;
+      letter-spacing: 0;
       margin-bottom: 8px;
       color: #fff;
     }
@@ -345,8 +358,14 @@
 <!-- ═══ HEADER ═══ -->
 <header class="site-header">
   <div class="inner">
-    <div class="app-badge">Official User Guide</div>
-    <h1>WinEntry</h1>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div class="app-badge" style="margin-bottom:0;">Official User Guide</div>
+      <a href="../te/index.html" class="lang-badge" style="margin:0;">తెలుగు వెర్షన్</a>
+    </div>
+    <div style="display:flex; align-items:flex-end; gap:14px; margin:14px 0 8px;">
+      <img src="img/WinEntry_Logo.svg" alt="WinEntry" style="width:56px; height:56px; display:block;" />
+      <h1 style="font-size:50px; line-height:1; margin:0; align-self:flex-end; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">WinEntry</h1>
+    </div>
     <p class="tagline">Specialized Retail Inventory &amp; Accountability &nbsp;·&nbsp; Daily Stock &nbsp;·&nbsp; Sales &nbsp;·&nbsp; Purchases</p>
     <div class="header-meta">
       <span>Version 1.1 (Build 4)</span>
@@ -419,7 +438,7 @@
     <table>
       <tr><th>Size Code</th><th>Description</th><th>Typical Volume</th><th>Units per Case</th></tr>
       <tr><td>QQ</td><td>Full / Big</td><td>551–900 ml (usually 750 ml or 650 ml Beer)</td><td>12 per case</td></tr>
-      <tr><td>QQ + "L"</td><td>Litre</td><td>1000 ml (by suffixing "L" to the brand code)</td><td>9 per case</td></tr>
+      <tr><td>QQ</td><td>Litre</td><td>1000 ml (by suffixing "L" to the brand code)</td><td>9 per case</td></tr>
       <tr><td>PP</td><td>Half / Pint</td><td>201–550 ml (usually 375 ml or Can Beer)</td><td>24 per case</td></tr>
       <tr><td>NN</td><td>Quarter / Nip</td><td>101–200 ml (usually 180 ml)</td><td>48 per case</td></tr>
       <tr><td>DD</td><td>Dip / Miniature</td><td>≤ 100 ml (usually 90 ml or 60 ml)</td><td>96 per case</td></tr>
@@ -503,7 +522,7 @@
       <div class="phone-caption">Home — Getting Started card</div>
     </div>
     <div class="phone-wrap">
-      <img src="img/WinEntry_OnBoardEng1.png" alt=“Getting Started” style="width:250px; border-radius:20px;" />
+      <img src=”img/WinEntry_OnBoardEng0.png” alt=”Getting Started” style=”width:250px; border-radius:20px;” />
       <div class="phone-caption">Setup checklist dialog</div>
     </div>
   </div>
@@ -721,7 +740,7 @@
       <div class="phone-caption">Daily Stock View mode</div>
     </div>
     <div class="phone-wrap">
-      <img src="img/WinEntry_DailyStockEntryMode.png" alt=“Daily Stock Entry Mode” style="width:250px; border-radius:20px;" />
+      <img src=”img/WinEntry_DAilyStockEntryMode.png” alt=”Daily Stock Entry Mode” style=”width:250px; border-radius:20px;” />
       <div class="phone-caption">Daily Stock Entry mode</div>
     </div>
   </div>

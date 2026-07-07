@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="WinEntry by Simhadri Systems — a specialized retail inventory and accountability tool for unit-based stock tracking, daily reconciliation and bilingual operation.">
+<title>WinEntry — Simhadri Systems</title>
+<style>
+  :root {
+    --ink: #1f2530;
+    --muted: #5b6472;
+    --accent: #1a5fb4;
+    --surface: #ffffff;
+    --bg: #f4f6f9;
+    --border: #e2e6ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e8eaf0;
+      --muted: #9aa3b2;
+      --accent: #6ba4e8;
+      --surface: #1c212b;
+      --bg: #12161e;
+      --border: #2c3340;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+  }
+  header {
+    background: linear-gradient(135deg, #123a6d, #1a5fb4);
+    color: #fff;
+    padding: 48px 24px 44px;
+    text-align: center;
+  }
+  header .home-link {
+    display: block;
+    max-width: 760px;
+    margin: 0 auto 18px;
+    text-align: left;
+  }
+  header .home-link a { color: #cfe0f5; text-decoration: none; font-size: 0.9rem; }
+  header .home-link a:hover { color: #fff; }
+  header h1 { font-size: 1.9rem; letter-spacing: 0.02em; }
+  header p { margin-top: 10px; font-size: 1.05rem; opacity: 0.92; max-width: 620px; margin-left: auto; margin-right: auto; }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 20px 24px; }
+  section { margin-bottom: 40px; }
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  p { margin-bottom: 14px; }
+  .lede { color: var(--muted); font-size: 1.02rem; }
+  ul { margin: 0 0 14px 0; padding-left: 0; list-style: none; }
+  li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+  }
+  li strong { display: block; margin-bottom: 3px; }
+  li span { color: var(--muted); }
+  .usecases { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; }
+  .usecases li { margin-bottom: 0; }
+  .cta {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    text-align: center;
+  }
+  .cta a.btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 9px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 6px 8px 0;
+  }
+  .cta a.plain { color: var(--accent); text-decoration: none; font-weight: 500; margin: 6px 8px 0; display: inline-block; }
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 20px 40px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<header>
+  <div class="home-link"><a href="../">&larr; Simhadri Systems</a></div>
+  <h1>WinEntry</h1>
+  <p>Specialized Retail Inventory &amp; Accountability Tool</p>
+</header>
+
+<main>
+  <section>
+    <p class="lede">Originally engineered by Simhadri Systems to meet the rigorous daily
+       stock requirements of licensed retail wine and liquor shops in Andhra Pradesh
+       and Telangana, WinEntry is a robust, versatile tool designed for any business
+       that relies on precise, unit-based inventory tracking.</p>
+  </section>
+
+  <section>
+    <h2>What the App Does</h2>
+    <p>WinEntry automates the essential daily reconciliation process — the
+       "opening vs. closing" balance — that is critical for high-volume retail
+       environments.</p>
+    <ul>
+      <li><strong>Unit-Level Tracking</strong>
+          <span>Effortlessly manage inventory across multiple brands, categories and
+          varied sizes (e.g., bottles, cases or packets).</span></li>
+      <li><strong>Daily Reconciliation</strong>
+          <span>Log daily purchases, sales and expenses to generate instant, accurate
+          daily stock sheets.</span></li>
+      <li><strong>Bilingual &amp; Adaptive</strong>
+          <span>A flexible interface (currently supporting English and Telugu) that can
+          be localized to any language with minimal technical changes.</span></li>
+      <li><strong>Privacy-First Design</strong>
+          <span>Operates fully offline by default to keep your business data local,
+          with an optional, secure cloud backup for users who require multi-device
+          syncing.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Why It's Valuable</h2>
+    <ul>
+      <li><strong>Built by the Industry, for the Industry</strong>
+          <span>Born from the unique needs of retail licensees, WinEntry is offered as
+          a collaborative tool. Since licensees operate in exclusive geographic zones,
+          the app serves as a professional-grade solution shared among peers, fostering
+          a community of feedback and continuous improvement.</span></li>
+      <li><strong>Eliminates Human Error</strong>
+          <span>By replacing tedious manual ledger entries with automated digital
+          logging, the app significantly reduces the risk of mathematical errors and
+          financial discrepancies.</span></li>
+      <li><strong>Highly Customizable</strong>
+          <span>While it excels in the liquor industry, the underlying logic is
+          code-neutral: it can be seamlessly adapted to any retail sector — such as
+          dairy, hardware or cosmetics — without requiring code changes.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Generalized Business Use Cases</h2>
+    <p>The app's framework is suited to any business where stock is managed by count
+       and size, including:</p>
+    <ul class="usecases">
+      <li><strong>Dairy &amp; Beverage</strong>
+          <span>Tracking crates and individual bottles with high daily turnover.</span></li>
+      <li><strong>Construction &amp; Hardware</strong>
+          <span>Managing bags of cement, boxes of tiles or plumbing fixtures.</span></li>
+      <li><strong>Personal Care &amp; Cosmetics</strong>
+          <span>Organizing multiple brands across various SKU sizes (ml/grams).</span></li>
+      <li><strong>Pet Supply Stores</strong>
+          <span>Tracking packaged food bags and accessories by unit.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="cta">
+      <p><strong>Get started with WinEntry</strong></p>
+      <a class="btn" href="../guides/en/">User Guide (English)</a>
+      <a class="btn" href="../guides/te/">User Guide (Telugu)</a><br>
+      <a class="plain" href="mailto:simhadrisystems@gmail.com">Contact us for enquiries</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Contact: <a href="mailto:simhadrisystems@gmail.com">simhadrisystems@gmail.com</a></p>
+  <p>&copy; 2026 Simhadri Systems. All rights reserved.</p>
+</footer>
+</body>
+</html>

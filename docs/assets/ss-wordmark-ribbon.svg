@@ -1,0 +1,29 @@
+<svg width="370" height="512" viewBox="60 -15 370 512" xmlns="http://www.w3.org/2000/svg">
+
+  <rect width="370" height="512" fill="none"/>
+
+  <g transform="translate(-20,-10) scale(0.92)">
+
+    <path d="
+      M430 60
+      C480 40, 180 50, 180 180
+      C180 300, 400 240, 400 370
+      C400 480, 220 500, 150 510"
+      fill="none"
+      stroke="url(#ribbonGrad)"
+      stroke-width="80"
+      stroke-linecap="round"
+      stroke-linejoin="round"/>
+
+  </g>
+
+  <defs>
+    <linearGradient id="ribbonGrad" x1="0" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E88E5"/>
+      <stop offset="35%" stop-color="#FF4081"/>
+      <stop offset="65%" stop-color="#F4511E"/>
+      <stop offset="100%" stop-color="#FFD54F"/>
+    </linearGradient>
+  </defs>
+
+</svg>

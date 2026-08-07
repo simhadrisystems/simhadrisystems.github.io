@@ -3,165 +3,417 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Simhadri Systems builds mobile apps and business software tools, including eSudoku for Android.">
-<title>Simhadri Systems</title>
+<meta name="description" content="Simhadri Systems builds practical business software and brain-training puzzle apps — starting with WinEntry, a retail inventory tool, and eSudoku, a logic-only Sudoku puzzle game for Android.">
+<title>Simhadri Systems — Practical software. Playful puzzles.</title>
+<!-- TODO: favicon. Add e.g. <link rel="icon" href="assets/favicon.png"> once you supply one; app icons are not an automatic substitute. -->
 <style>
   :root {
+    /* Shared neutral scale — ties both product identities together */
     --ink: #1f2530;
     --muted: #5b6472;
-    --accent: #1a5fb4;
     --surface: #ffffff;
     --bg: #f4f6f9;
+    --cream: #faf8f3;
     --border: #e2e6ec;
+
+    /* WinEntry / business identity — same blue already live on winentry/ */
+    --biz: #1a5fb4;
+    --biz-deep: #123a6d;
+    --biz-grad: linear-gradient(90deg, #6E62CF 0%, #F02D7D 35%, #FF5722 70%, #FFB74D 100%);
+
+    /* eSudoku / puzzle identity — same purple already live on esudoku/ */
+    --play: #474878;
+    --play-deep: #33345a;
+    --play-grad: linear-gradient(90deg, #1E88E5 0%, #FF4081 35%, #F4511E 65%, #FFD54F 100%);
+
+    /* Unifying accent — sits between both gradients' warm endpoints (WinEntry's #FFB74D, eSudoku's #FFD54F) */
+    --gold: #E8A33D;
+
+    /* Hero background only — fixed brand colors, deliberately NOT overridden in dark mode below.
+       --biz/--play themselves get lightened in dark mode for text-on-dark-background contrast
+       elsewhere on the page; reusing them for the hero fill made the whole banner flip to a pale
+       pastel panel in dark mode, clashing with the rest of the dark theme. The hero is a self-
+       contained brand-colored surface, not page chrome, so it should stay constant across themes. */
+    --hero-c1: #1a5fb4;
+    --hero-c2: #474878;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --ink: #e8eaf0;
       --muted: #9aa3b2;
-      --accent: #6ba4e8;
       --surface: #1c212b;
       --bg: #12161e;
+      --cream: #1a1e27;
       --border: #2c3340;
+      --biz: #6ba4e8;
+      --play: #8f8fc7;
     }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
     background: var(--bg);
     color: var(--ink);
     line-height: 1.65;
   }
-  header {
-    background: linear-gradient(135deg, #123a6d, #1a5fb4);
+  a { color: var(--biz); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 64px 0; }
+  h2 { font-size: 1.7rem; margin-bottom: 12px; }
+  .eyebrow {
+    display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+  }
+  .section-sub { color: var(--muted); max-width: 640px; margin-bottom: 34px; font-size: 1.02rem; }
+
+  /* ---------- Top nav ---------- */
+  .site-nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 0;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+
+  /* ---------- Brand wordmark (official letterhead lockup: ribbon "S" + italic serif "IMHADRI SYSTEMS") ---------- */
+  /* align-items: flex-end (not baseline) — an SVG's flex-baseline is its own bottom edge, while a
+     text span's flex-baseline is the glyph baseline sitting above the line box's true bottom, so
+     "baseline" alignment left the ribbon floating above the text. flex-end matches the actual
+     visible bottoms instead. (vertical-align has no effect on flex children, so it's not used here.) */
+  .wordmark { display: inline-flex; align-items: flex-end; }
+  .wordmark svg {
+    display: inline-block; flex-shrink: 0;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.55)) drop-shadow(0 2px 5px rgba(0,0,0,0.25));
+  }
+  .wordmark-text {
+    font-family: 'Times New Roman', Times, serif; font-style: italic;
+    margin-left: -1px; white-space: nowrap;
+  }
+  .wordmark-nav svg { width: 15px; height: 22px; }
+  .wordmark-nav .wordmark-text { font-size: 24px; line-height: 24px; color: #0E1733; }
+  @media (prefers-color-scheme: dark) {
+    .wordmark-nav .wordmark-text { color: #f0f0f5; }
+  }
+  .wordmark-hero svg { width: 30px; height: 45px; }
+  .wordmark-hero .wordmark-text { font-size: 48px; line-height: 48px; color: #ffffff; }
+
+  .nav-links { display: flex; gap: 24px; font-size: 0.92rem; font-weight: 600; }
+  .nav-links a { color: var(--muted); text-decoration: none; }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background: linear-gradient(135deg, var(--hero-c1) 0%, var(--hero-c2) 100%);
     color: #fff;
-    padding: 56px 24px 48px;
-    text-align: center;
+    position: relative;
+    overflow: hidden;
   }
-  header h1 { font-size: 2rem; letter-spacing: 0.02em; }
-  header p { margin-top: 10px; font-size: 1.05rem; opacity: 0.92; max-width: 560px; margin-left: auto; margin-right: auto; }
-  main { max-width: 760px; margin: 0 auto; padding: 40px 20px 24px; }
-  section { margin-bottom: 44px; }
-  h2 {
-    font-size: 1.25rem;
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--border);
+  .hero-bar {
+    display: flex; height: 5px;
   }
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  .hero-bar span { flex: 1; }
+  .hero-bar .b1 { background: var(--biz-grad); }
+  .hero-bar .b2 { background: var(--play-grad); }
+  .hero-inner { padding: 68px 0 64px; text-align: center; }
+  .hero h1 { display: flex; justify-content: center; }
+  .hero .positioning {
+    max-width: 640px; margin: 20px auto 0; font-size: 1.08rem; opacity: 0.92;
   }
-  .card + .card { margin-top: 16px; }
-  .card-head { display: flex; align-items: center; gap: 18px; margin-bottom: 12px; }
-  .app-icon { width: 64px; height: 64px; border-radius: 15px; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.18); }
-  .card h3 { font-size: 1.1rem; margin-bottom: 6px; }
-  .card p { color: var(--muted); margin-bottom: 14px; }
-  .links a {
-    display: inline-block;
-    margin-right: 18px;
-    margin-top: 4px;
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
-  }
-  .links a:hover { text-decoration: underline; }
+  .hero-cta { margin-top: 30px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   .btn {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff !important;
-    padding: 9px 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    margin-right: 14px;
-    margin-top: 4px;
+    display: inline-block; padding: 12px 24px; border-radius: 999px;
+    font-weight: 700; font-size: 0.95rem; text-decoration: none;
   }
-  .btn:hover { opacity: 0.9; text-decoration: none; }
-  .play-badge { height: 60px; display: inline-block; vertical-align: middle; margin: 0 6px 0 -10px; }
+  .btn-light { background: #fff; color: var(--play-deep); }
+  .btn-light:hover { background: #f0f0ff; }
+  .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); }
+  .btn-outline:hover { background: rgba(255,255,255,0.12); }
+
+  /* ---------- Product showcase ---------- */
+  .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 10px; }
+  .product-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 28px; display: flex; flex-direction: column;
+    border-top: 4px solid transparent;
+  }
+  .product-card.play-side { border-top-color: var(--play); }
+  .product-card.biz-side { border-top-color: var(--biz); }
+  .card-head { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+  .app-icon { width: 60px; height: 60px; border-radius: 14px; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .card-tag {
+    display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;
+    text-transform: uppercase; border-radius: 6px; padding: 2px 9px; margin-bottom: 6px;
+  }
+  .play-side .card-tag { color: var(--play); background: color-mix(in srgb, var(--play) 12%, transparent); }
+  .biz-side .card-tag { color: var(--biz); background: color-mix(in srgb, var(--biz) 12%, transparent); }
+  .product-card h3 { font-size: 1.25rem; }
+  .product-card p.desc { color: var(--muted); margin: 12px 0 18px; font-size: 0.96rem; flex-grow: 1; }
+  .screenshot-slot {
+    /* TODO: replace with a real <img> screenshot when available; card works fine icon-only until then */
+    display: none;
+  }
+  .card-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; }
+  .play-badge { height: 50px; display: inline-block; }
   .play-badge img { height: 100%; }
-  .tag {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--accent);
-    background: color-mix(in srgb, var(--accent) 12%, transparent);
-    border-radius: 6px;
-    padding: 2px 10px;
-    margin-bottom: 10px;
+  .card-links a.text-link { font-size: 0.9rem; font-weight: 600; text-decoration: none; }
+  .play-side .card-links a.text-link { color: var(--play); }
+  .biz-side .card-links a.text-link { color: var(--biz); }
+  .card-links a.text-link:hover { text-decoration: underline; }
+  .guide-links { width: 100%; margin-top: 4px; font-size: 0.85rem; color: var(--muted); }
+  .guide-links a { color: var(--muted); text-decoration: underline; margin-right: 10px; }
+
+  /* ---------- Two sides narrative ---------- */
+  .two-sides { background: var(--cream); }
+  .sides-track {
+    display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; align-items: stretch; margin-top: 34px;
   }
+  .side-panel { padding: 26px 24px; border-radius: 14px; }
+  .side-panel.biz { background: color-mix(in srgb, var(--biz) 8%, var(--surface)); border: 1px solid color-mix(in srgb, var(--biz) 20%, var(--border)); }
+  .side-panel.play { background: color-mix(in srgb, var(--play) 8%, var(--surface)); border: 1px solid color-mix(in srgb, var(--play) 20%, var(--border)); }
+  .side-panel .eyebrow.biz { color: var(--biz); }
+  .side-panel .eyebrow.play { color: var(--play); }
+  .side-panel h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .side-panel p { color: var(--muted); font-size: 0.95rem; }
+  .sides-arrow {
+    display: flex; align-items: center; justify-content: center; padding: 0 18px;
+    color: var(--gold); font-size: 1.6rem; font-weight: 800;
+  }
+  .pipeline-note {
+    margin-top: 22px; border: 1.5px dashed var(--border); border-radius: 12px;
+    padding: 16px 20px; font-size: 0.9rem; color: var(--muted); text-align: center;
+  }
+
+  /* ---------- About / Contact ---------- */
+  .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; }
+  .about-grid p { color: var(--muted); margin-bottom: 12px; }
+  .about-grid .note {
+    font-size: 0.85rem; border-left: 3px solid var(--gold); padding-left: 12px; margin-top: 16px;
+  }
+  .contact-box {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px;
+    height: fit-content;
+  }
+  .contact-box h3 { font-size: 1rem; margin-bottom: 12px; }
+  .contact-box a.email { color: var(--biz); font-weight: 600; text-decoration: none; }
+  .contact-box a.email:hover { text-decoration: underline; }
+  .social-slot {
+    margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border);
+    font-size: 0.82rem; color: var(--muted);
+  }
+  /* TODO: social links — replace the placeholder line in .social-slot with real icons/links (LinkedIn, X, GitHub, etc.) once supplied */
+
+  /* ---------- Footer ---------- */
   footer {
     border-top: 1px solid var(--border);
-    padding: 28px 20px 40px;
+    padding: 30px 20px 44px;
     text-align: center;
     color: var(--muted);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
-  footer a { color: var(--accent); text-decoration: none; }
+  footer a { color: var(--biz); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  footer .foot-links { margin-top: 8px; }
+  footer .foot-links a { margin: 0 8px; }
+
+  @media (max-width: 720px) {
+    .product-grid { grid-template-columns: 1fr; }
+    .sides-track { grid-template-columns: 1fr; }
+    .sides-arrow { transform: rotate(90deg); padding: 10px 0; }
+    .about-grid { grid-template-columns: 1fr; }
+    .wordmark-hero svg { width: 19px; height: 29px; }
+    .wordmark-hero .wordmark-text { font-size: 32px; line-height: 32px; }
+    .site-nav { flex-direction: column; gap: 12px; }
+  }
 </style>
 </head>
 <body>
-<header>
-  <h1>Simhadri Systems</h1>
-  <p>Mobile apps and practical software tools for everyday business and leisure.</p>
+
+<div class="wrap site-nav">
+  <div class="brand">
+    <span class="wordmark wordmark-nav" role="img" aria-label="Simhadri Systems">
+      <svg viewBox="80 0 342 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g transform="translate(-20,-10) scale(0.92)">
+          <path d="M430 60 C480 40, 180 50, 180 180 C180 300, 400 240, 400 370 C400 480, 220 500, 150 510"
+            fill="none" stroke="url(#navRibbon)" stroke-width="104" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <defs>
+          <linearGradient id="navRibbon" x1="0" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#1E88E5"/><stop offset="35%" stop-color="#FF4081"/>
+            <stop offset="65%" stop-color="#F4511E"/><stop offset="100%" stop-color="#FFD54F"/>
+          </linearGradient>
+        </defs>
+      </svg><span class="wordmark-text" aria-hidden="true">IMHADRI SYSTEMS</span>
+    </span>
+  </div>
+  <nav class="nav-links">
+    <a href="#products">Products</a>
+    <a href="#story">Our Story</a>
+    <a href="#about">About</a>
+  </nav>
+</div>
+
+<header class="hero">
+  <div class="hero-inner wrap">
+    <h1>
+      <span class="wordmark wordmark-hero" role="img" aria-label="Simhadri Systems">
+        <svg viewBox="80 0 342 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g transform="translate(-20,-10) scale(0.92)">
+            <path d="M430 60 C480 40, 180 50, 180 180 C180 300, 400 240, 400 370 C400 480, 220 500, 150 510"
+              fill="none" stroke="url(#heroRibbon)" stroke-width="104" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <defs>
+            <linearGradient id="heroRibbon" x1="0" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#1E88E5"/><stop offset="35%" stop-color="#FF4081"/>
+              <stop offset="65%" stop-color="#F4511E"/><stop offset="100%" stop-color="#FFD54F"/>
+            </linearGradient>
+          </defs>
+        </svg><span class="wordmark-text" aria-hidden="true">IMHADRI SYSTEMS</span>
+      </span>
+    </h1>
+    <p class="positioning">Tools for your business. Games for your brain.</p>
+    <p class="positioning" style="font-size: 1rem; opacity: 0.8; margin-top: 12px;">
+      We build practical software for people who run real businesses — and puzzle apps for
+      people who like to keep their minds sharp.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-light" href="#products">See our apps</a>
+      <a class="btn btn-outline" href="#story">Our story</a>
+    </div>
+  </div>
+  <div class="hero-bar"><span class="b1"></span><span class="b2"></span></div>
 </header>
 
 <main>
-  <section>
-    <h2>Our Products</h2>
-    <div class="card">
-      <div class="card-head">
-        <img class="app-icon" src="assets/esudoku-icon.png" alt="eSudoku app icon">
-        <div>
-          <span class="tag">Android</span>
-          <h3>eSudoku</h3>
+  <section id="products" class="wrap">
+    <span class="eyebrow">Our Products</span>
+    <h2>Two apps, two very different jobs</h2>
+    <p class="section-sub">One keeps a shop's stock honest. The other keeps your mind sharp. Both are built the same way — offline-first, no clutter, no nonsense.</p>
+
+    <div class="product-grid">
+      <article class="product-card play-side">
+        <div class="card-head">
+          <img class="app-icon" src="assets/esudoku-icon.png" alt="eSudoku app icon">
+          <div>
+            <span class="card-tag">Android · Puzzle</span>
+            <h3>eSudoku</h3>
+          </div>
+        </div>
+        <p class="desc">
+          A free, offline Sudoku puzzle app with six genuine difficulty levels — Easy through
+          Grandmaster — plus a 500-level Journey mode, Daily Challenges, and achievements.
+          Every puzzle is generated using real human solving techniques and verified solvable
+          by logic alone, with no guessing required.
+        </p>
+        <div class="screenshot-slot"><!-- TODO: eSudoku screenshot(s) --></div>
+        <div class="card-links">
+          <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.simhadri.sudoku"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
+          <a class="text-link" href="esudoku/">Learn More →</a>
+          <a class="text-link" href="https://sites.google.com/view/win-sudoku/privacy-policy" style="font-weight:500;">Privacy Policy</a>
+        </div>
+      </article>
+
+      <article class="product-card biz-side">
+        <div class="card-head">
+          <svg class="app-icon" viewBox="0 0 512 512" role="img" aria-label="WinEntry logo">
+            <defs>
+              <linearGradient id="wgrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0">
+                <stop offset="0%" stop-color="#6E62CF"/>
+                <stop offset="35%" stop-color="#F02D7D"/>
+                <stop offset="65%" stop-color="#FF5722"/>
+                <stop offset="100%" stop-color="#FFB74D"/>
+              </linearGradient>
+            </defs>
+            <rect width="512" height="512" rx="110" fill="#B5C8E3"/>
+            <g transform="translate(-20,-10) scale(0.92)" style="filter: drop-shadow(0 0 5px rgba(255,255,255,0.55)) drop-shadow(0 2px 5px rgba(0,0,0,0.2));">
+              <path d="M100 100 C160 520, 240 520, 260 260 S300 160, 320 260 S400 520, 500 100"
+                    fill="none" stroke="url(#wgrad)" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+          <div>
+            <span class="card-tag">Android · Retail Software</span>
+            <h3>WinEntry</h3>
+          </div>
+        </div>
+        <p class="desc">
+          A specialized retail inventory and accountability tool, originally engineered for
+          licensed wine and liquor retailers in Andhra Pradesh and Telangana. WinEntry
+          automates daily opening-vs-closing stock reconciliation with unit-level tracking, a
+          bilingual English/Telugu interface, and a privacy-first, offline-by-default design —
+          adaptable to any business that manages stock by count and size.
+        </p>
+        <div class="screenshot-slot"><!-- TODO: WinEntry screenshot(s) --></div>
+        <div class="card-links">
+          <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.simhadri.winentry"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
+          <a class="text-link" href="winentry/">Learn More →</a>
+          <div class="guide-links">
+            User guide: <a href="guides/en/">English</a><a href="guides/te/">Telugu</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="story" class="two-sides">
+    <div class="wrap">
+      <span class="eyebrow">Our Story</span>
+      <h2>Two sides of Simhadri Systems</h2>
+      <p class="section-sub">We started by solving a real, unglamorous problem for real businesses. We're now applying the same care to something people do for fun.</p>
+
+      <div class="sides-track">
+        <div class="side-panel biz">
+          <span class="eyebrow biz">Where we started</span>
+          <h3>Business tools, built for the shop floor</h3>
+          <p>
+            Simhadri Systems began with WinEntry — practical, offline-first retail software
+            solving a genuine daily problem for licensed wine and liquor retailers: honest,
+            accurate stock reconciliation, in a bilingual interface built for the people who
+            actually use it.
+          </p>
+        </div>
+        <div class="sides-arrow" aria-hidden="true">→</div>
+        <div class="side-panel play">
+          <span class="eyebrow play">Where we're headed</span>
+          <h3>Puzzle apps that keep your mind sharp</h3>
+          <p>
+            eSudoku is our first step into brain-training entertainment — a Sudoku app built
+            with the same standards as our business tools: no shortcuts, no filler, puzzles
+            that are genuinely fair because they're solvable by logic alone.
+          </p>
         </div>
       </div>
-      <p>A free, offline Sudoku puzzle app with six genuine difficulty levels — Easy through
-         Grandmaster — plus a 500-level Journey mode, Daily Challenges, and achievements.
-         Every puzzle is generated using real human solving techniques and verified solvable
-         by logic alone, with no guessing required.</p>
-      <div class="links">
-        <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.simhadri.sudoku"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
-        <a class="btn" href="esudoku/">Learn More</a>
-        <a href="https://sites.google.com/view/win-sudoku/privacy-policy">Privacy Policy</a>
+
+      <div class="pipeline-note">
+        <!-- TODO: more apps in the pipeline? Give me a name + one-liner for each and I'll add them here. -->
+        More brain-training apps are in the works — details coming soon.
       </div>
     </div>
-    <div class="card">
-      <div class="card-head">
-        <svg class="app-icon" viewBox="0 0 512 512" role="img" aria-label="WinEntry logo">
-          <defs>
-            <linearGradient id="wgrad" gradientUnits="userSpaceOnUse" x1="70" y1="120" x2="450" y2="120">
-              <stop offset="0" stop-color="#6E62CF"/>
-              <stop offset="0.35" stop-color="#F02D7D"/>
-              <stop offset="0.7" stop-color="#FF5722"/>
-              <stop offset="1" stop-color="#FFB74D"/>
-            </linearGradient>
-          </defs>
-          <rect width="512" height="512" rx="110" fill="#B5C8E3"/>
-          <path d="M96,92 C88,240 122,368 168,362 C212,356 205,160 254,142 C298,126 300,392 350,386 C398,380 420,200 422,78"
-                fill="none" stroke="url(#wgrad)" stroke-width="72" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div>
-          <span class="tag">Retail Software</span>
-          <h3>WinEntry</h3>
-        </div>
+  </section>
+
+  <section id="about" class="wrap">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow">About</span>
+        <h2>Who's behind Simhadri Systems</h2>
+        <p>
+          Simhadri Systems builds software with two different audiences in mind: business
+          owners who need tools that just work, and puzzle players who want a genuine
+          challenge. WinEntry came first, built to solve a real day-to-day problem for retail
+          stock management. eSudoku is the newer side of that same philosophy, applied to
+          something people do for fun rather than for work.
+        </p>
+        <p class="note">
+          <!-- TODO: replace/extend with founder details, founding date, or a longer story once you supply them. Nothing beyond your own description has been added here. -->
+          This is a short blurb drafted from the repositioning you described — add founding
+          details, dates, or a founder bio whenever you're ready.
+        </p>
       </div>
-      <p>A specialized retail inventory and accountability tool, originally engineered
-         for licensed wine and liquor retailers in Andhra Pradesh and Telangana.
-         WinEntry automates daily opening-vs-closing stock reconciliation with
-         unit-level tracking, a bilingual English/Telugu interface and a privacy-first,
-         offline-by-default design — adaptable to any business that manages stock by
-         count and size.</p>
-      <div class="links">
-        <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.simhadri.winentry"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
-        <a class="btn" href="winentry/">Learn More</a>
-        <a href="guides/en/">User Guide (English)</a>
-        <a href="guides/te/">User Guide (Telugu)</a>
+      <div class="contact-box">
+        <h3>Get in touch</h3>
+        <p style="color:var(--muted); font-size:0.92rem; margin-bottom:14px;">Questions, feedback, or support for either app:</p>
+        <a class="email" href="mailto:simhadrisystems@gmail.com">simhadrisystems@gmail.com</a>
+        <div class="social-slot">
+          <!-- TODO: social/professional links (LinkedIn, X/Twitter, GitHub, etc.) — none supplied yet -->
+          Social links coming soon.
+        </div>
       </div>
     </div>
   </section>
@@ -170,6 +422,12 @@
 <footer>
   <p>Contact: <a href="mailto:simhadrisystems@gmail.com">simhadrisystems@gmail.com</a></p>
   <p>&copy; 2026 Simhadri Systems. All rights reserved.</p>
+  <p class="foot-links">
+    <a href="esudoku/">eSudoku</a>·
+    <a href="winentry/">WinEntry</a>·
+    <a href="https://sites.google.com/view/win-sudoku/privacy-policy">eSudoku Privacy Policy</a>
+  </p>
 </footer>
+
 </body>
 </html>

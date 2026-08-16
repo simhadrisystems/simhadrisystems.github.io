@@ -215,3 +215,8 @@ vidoomy.com, 8953515, RESELLER
 zetaglobal.net, 525, RESELLER
 kidoz.net, 14260, RESELLER, a109366414b7335e
 kidoz.net, 15467, RESELLER, a109366414b7335e
+# sharethrough.com/uvcax8il with Unity's own TAG-ID (d53b998a7bd4ecd12), confirmed via two
+# independent copies from Unity's dashboard on 16 Aug — distinct from the existing
+# sharethrough.com/uvcax8il line above sourced from InMobi's list (d53b998a7bd4ecd2). Kept both
+# rather than overwrite either.
+sharethrough.com, uvcax8il, RESELLER, d53b998a7bd4ecd12

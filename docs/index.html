@@ -167,11 +167,6 @@
   .card-links a.text-link:hover { text-decoration: underline; }
   .guide-links { width: 100%; margin-top: 4px; font-size: 0.85rem; color: var(--muted); }
   .guide-links a { color: var(--muted); text-decoration: underline; margin-right: 10px; }
-  .soon-tag {
-    display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 600;
-    color: var(--muted);
-  }
-  .soon-tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--calc); }
 
   /* ---------- Two sides narrative ---------- */
   .two-sides { background: var(--cream); }
@@ -315,7 +310,7 @@
         </p>
         <div class="screenshot-slot"><!-- TODO: eCalc screenshot(s) --></div>
         <div class="card-links">
-          <span class="soon-tag"><span class="dot"></span>Coming soon to Google Play</span>
+          <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.simhadri.calc"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
           <a class="text-link" href="ecalc/">Learn More →</a>
           <a class="text-link" href="https://sites.google.com/view/counter-calc/privacy-policy" style="font-weight:500;">Privacy Policy</a>
         </div>

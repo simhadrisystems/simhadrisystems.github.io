@@ -83,12 +83,8 @@
     background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.55);
   }
   .btn-ghost:hover { background: rgba(255,255,255,0.12); }
-  .soon-pill {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 12px 22px; border-radius: 999px; font-weight: 700; font-size: 14px;
-    background: rgba(255,255,255,0.08); border: 1.5px dashed rgba(255,255,255,0.4); color: #fff;
-  }
-  .soon-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); }
+  .play-badge { height: 54px; display: inline-block; }
+  .play-badge img { height: 100%; }
 
   /* ---------- Sections ---------- */
   section { padding: 56px 0; }
@@ -139,25 +135,16 @@
   }
   .pill.gear { background: linear-gradient(180deg, #404246 0%, #222427 100%); box-shadow: 0 3px 0 #08090c; }
 
-  /* Mini keypad mockup — matches the app's real key layout/colors, not a screenshot */
-  .keypad-band {
-    background: var(--canvas); border-radius: 16px; padding: 22px; margin-top: 30px;
-    max-width: 320px; margin-left: auto; margin-right: auto;
+  /* Real on-device screenshots, current build — shown in a simple rounded frame */
+  .shot-row {
+    display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 34px;
   }
-  .keypad-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: minmax(38px, 52px); gap: 8px; }
-  .kkey {
-    border-radius: 9px; display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 15px; color: #fff; background: #1D1F23; box-shadow: 0 2px 0 #040608;
+  .shot-frame {
+    width: 200px; border-radius: 20px; padding: 8px; background: var(--canvas);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
   }
-  .kkey.blank { background: transparent; box-shadow: none; }
-  .kkey.mem { background: #232629; box-shadow: 0 2px 0 #07090d; color: #ACAEB2; font-size: 13px; }
-  .kkey.op { background: linear-gradient(180deg, var(--amber) 0%, #BF7406 100%); box-shadow: 0 2px 0 var(--amber-deep); }
-  .kkey.plus { background: linear-gradient(180deg, #67D283 0%, #33AC5A 100%); box-shadow: 0 2px 0 #00601C; }
-  .kkey.equals {
-    background: linear-gradient(180deg, #67D283 0%, var(--green) 100%);
-    box-shadow: 0 2px 0 #00601C; font-size: 20px;
-  }
-  .kkey.ac { color: #ED756E; background: #232629; box-shadow: 0 2px 0 #07090d; font-size: 13px; }
+  .shot-frame img { width: 100%; border-radius: 13px; }
+  .shot-caption { text-align: center; font-size: 13px; color: var(--muted); margin-top: 10px; font-weight: 600; }
 
   .privacy-note {
     margin-top: 30px; background: var(--panel); border: 1px solid var(--panel-line);
@@ -206,7 +193,7 @@
       counter actually works.
     </p>
     <div class="cta-row">
-      <span class="soon-pill"><span class="dot"></span>Coming soon to Google Play</span>
+      <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.simhadri.calc"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
       <a class="btn btn-ghost" href="#features">See what's inside</a>
     </div>
   </div>
@@ -273,37 +260,18 @@
       <span class="pill gear">⚙</span>
     </div>
 
-    <div class="keypad-band">
-      <div class="keypad-grid">
-        <div class="kkey mem">MC</div>
-        <div class="kkey blank"></div>
-        <div class="kkey ac">AC</div>
-        <div class="kkey mem">⌫</div>
-
-        <div class="kkey mem">M+</div>
-        <div class="kkey mem">M−</div>
-        <div class="kkey mem">.</div>
-        <div class="kkey op">÷</div>
-
-        <div class="kkey">7</div>
-        <div class="kkey">8</div>
-        <div class="kkey">9</div>
-        <div class="kkey op">−</div>
-
-        <div class="kkey">4</div>
-        <div class="kkey">5</div>
-        <div class="kkey">6</div>
-        <div class="kkey op">×</div>
-
-        <div class="kkey">1</div>
-        <div class="kkey">2</div>
-        <div class="kkey">3</div>
-        <div class="kkey equals">=</div>
-
-        <div class="kkey">00</div>
-        <div class="kkey">0</div>
-        <div class="kkey plus">+</div>
-        <div class="kkey blank"></div>
+    <div class="shot-row">
+      <div>
+        <div class="shot-frame"><img src="img/ecalc-idle.png" alt="eCalc idle screen, showing the full keypad with pack-size keys"></div>
+        <div class="shot-caption">Idle</div>
+      </div>
+      <div>
+        <div class="shot-frame"><img src="img/ecalc-pack-calc.png" alt="eCalc mid pack-size calculation: 24 times a 120-pack size key showing 2,880"></div>
+        <div class="shot-caption">Pack-size key in use</div>
+      </div>
+      <div>
+        <div class="shot-frame"><img src="img/ecalc-memory-tape.png" alt="eCalc showing memory, running total, and transaction tape with a pack-size annotation"></div>
+        <div class="shot-caption">Memory, total &amp; tape</div>
       </div>
     </div>
   </div>

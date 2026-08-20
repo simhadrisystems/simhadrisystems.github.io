@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Simhadri Systems builds practical business software and brain-training puzzle apps — starting with WinEntry, a retail inventory tool, and eSudoku, a logic-only Sudoku puzzle game for Android.">
+<meta name="description" content="Simhadri Systems builds practical business software and brain-training puzzle apps — WinEntry (retail inventory), eCalc (a shop sale counter calculator), and eSudoku, a logic-only Sudoku puzzle game for Android.">
 <title>Simhadri Systems — Practical software. Playful puzzles.</title>
 <!-- TODO: favicon. Add e.g. <link rel="icon" href="assets/favicon.png"> once you supply one; app icons are not an automatic substitute. -->
 <style>
@@ -25,6 +25,10 @@
     --play: #474878;
     --play-deep: #33345a;
     --play-grad: linear-gradient(90deg, #1E88E5 0%, #FF4081 35%, #F4511E 65%, #FFD54F 100%);
+
+    /* eCalc / counter-calculator identity — amber, pulled from the app's own equals/operator keys */
+    --calc: #B96E00;
+    --calc-deep: #7A4A00;
 
     /* Unifying accent — sits between both gradients' warm endpoints (WinEntry's #FFB74D, eSudoku's #FFD54F) */
     --gold: #E8A33D;
@@ -129,7 +133,7 @@
   .btn-outline:hover { background: rgba(255,255,255,0.12); }
 
   /* ---------- Product showcase ---------- */
-  .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 10px; }
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; margin-top: 10px; }
   .product-card {
     background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
     padding: 28px; display: flex; flex-direction: column;
@@ -137,6 +141,7 @@
   }
   .product-card.play-side { border-top-color: var(--play); }
   .product-card.biz-side { border-top-color: var(--biz); }
+  .product-card.calc-side { border-top-color: var(--calc); }
   .card-head { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
   .app-icon { width: 60px; height: 60px; border-radius: 14px; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
   .card-tag {
@@ -145,6 +150,7 @@
   }
   .play-side .card-tag { color: var(--play); background: color-mix(in srgb, var(--play) 12%, transparent); }
   .biz-side .card-tag { color: var(--biz); background: color-mix(in srgb, var(--biz) 12%, transparent); }
+  .calc-side .card-tag { color: var(--calc); background: color-mix(in srgb, var(--calc) 14%, transparent); }
   .product-card h3 { font-size: 1.25rem; }
   .product-card p.desc { color: var(--muted); margin: 12px 0 18px; font-size: 0.96rem; flex-grow: 1; }
   .screenshot-slot {
@@ -157,9 +163,15 @@
   .card-links a.text-link { font-size: 0.9rem; font-weight: 600; text-decoration: none; }
   .play-side .card-links a.text-link { color: var(--play); }
   .biz-side .card-links a.text-link { color: var(--biz); }
+  .calc-side .card-links a.text-link { color: var(--calc); }
   .card-links a.text-link:hover { text-decoration: underline; }
   .guide-links { width: 100%; margin-top: 4px; font-size: 0.85rem; color: var(--muted); }
   .guide-links a { color: var(--muted); text-decoration: underline; margin-right: 10px; }
+  .soon-tag {
+    display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 600;
+    color: var(--muted);
+  }
+  .soon-tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--calc); }
 
   /* ---------- Two sides narrative ---------- */
   .two-sides { background: var(--cream); }
@@ -282,10 +294,33 @@
 <main>
   <section id="products" class="wrap">
     <span class="eyebrow">Our Products</span>
-    <h2>Two apps, two very different jobs</h2>
-    <p class="section-sub">One keeps a shop's stock honest. The other keeps your mind sharp. Both are built the same way — offline-first, no clutter, no nonsense.</p>
+    <h2>Three apps, two very different jobs</h2>
+    <p class="section-sub">Two keep a shop's stock and sales honest. The third keeps your mind sharp. All three are built the same way — offline-first, no clutter, no nonsense.</p>
 
     <div class="product-grid">
+      <article class="product-card calc-side">
+        <div class="card-head">
+          <img class="app-icon" src="assets/ecalc-icon.png" alt="eCalc app icon">
+          <div>
+            <span class="card-tag">Android · Retail Software</span>
+            <h3>eCalc</h3>
+          </div>
+        </div>
+        <p class="desc">
+          A fast, no-fuss calculator built for the shop sale counter, not general arithmetic.
+          Pack-size keys turn a unit count into a case total in one tap, a running total and
+          independent memory stay visible at all times, and a full transaction tape logs every
+          calculation of the session as a real audit trail — with true left-to-right math, no
+          textbook order of operations.
+        </p>
+        <div class="screenshot-slot"><!-- TODO: eCalc screenshot(s) --></div>
+        <div class="card-links">
+          <span class="soon-tag"><span class="dot"></span>Coming soon to Google Play</span>
+          <a class="text-link" href="ecalc/">Learn More →</a>
+          <a class="text-link" href="https://sites.google.com/view/counter-calc/privacy-policy" style="font-weight:500;">Privacy Policy</a>
+        </div>
+      </article>
+
       <article class="product-card play-side">
         <div class="card-head">
           <img class="app-icon" src="assets/esudoku-icon.png" alt="eSudoku app icon">
@@ -363,7 +398,9 @@
             Simhadri Systems began with WinEntry — practical, offline-first retail software
             solving a genuine daily problem for licensed wine and liquor retailers: honest,
             accurate stock reconciliation, in a bilingual interface built for the people who
-            actually use it.
+            actually use it. eCalc extends that same shop-floor focus to the sale counter itself
+            — a calculator built around pack sizes and running totals instead of general
+            arithmetic.
           </p>
         </div>
         <div class="sides-arrow" aria-hidden="true">→</div>
@@ -394,8 +431,9 @@
           Simhadri Systems builds software with two different audiences in mind: business
           owners who need tools that just work, and puzzle players who want a genuine
           challenge. WinEntry came first, built to solve a real day-to-day problem for retail
-          stock management. eSudoku is the newer side of that same philosophy, applied to
-          something people do for fun rather than for work.
+          stock management, and eCalc followed to solve the counter-side half of that same
+          problem. eSudoku is the newer side of that same philosophy, applied to something
+          people do for fun rather than for work.
         </p>
       </div>
       <div class="contact-box">
@@ -415,8 +453,10 @@
   <p>Contact: <a href="mailto:simhadrisystems@gmail.com">simhadrisystems@gmail.com</a></p>
   <p>&copy; 2026 Simhadri Systems. All rights reserved.</p>
   <p class="foot-links">
-    <a href="esudoku/">eSudoku</a>·
     <a href="winentry/">WinEntry</a>·
+    <a href="ecalc/">eCalc</a>·
+    <a href="esudoku/">eSudoku</a>·
+    <a href="https://sites.google.com/view/counter-calc/privacy-policy">eCalc Privacy Policy</a>·
     <a href="https://sites.google.com/view/win-sudoku/privacy-policy">eSudoku Privacy Policy</a>
   </p>
 </footer>

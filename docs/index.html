@@ -76,7 +76,7 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 18px 0;
   }
-  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 
   /* ---------- Brand wordmark (official letterhead lockup: ribbon "S" + italic serif "IMHADRI SYSTEMS") ---------- */
   /* align-items: flex-end (not baseline) — an SVG's flex-baseline is its own bottom edge, while a
@@ -142,7 +142,8 @@
   .product-card.play-side { border-top-color: var(--play); }
   .product-card.biz-side { border-top-color: var(--biz); }
   .product-card.calc-side { border-top-color: var(--calc); }
-  .card-head { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+  .card-head { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; color: inherit; text-decoration: none; }
+  .card-head:hover h3 { text-decoration: underline; }
   .app-icon { width: 60px; height: 60px; border-radius: 14px; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
   .card-tag {
     display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;
@@ -232,7 +233,7 @@
 <body>
 
 <div class="wrap site-nav">
-  <div class="brand">
+  <a class="brand" href="./" aria-label="Simhadri Systems — Home">
     <span class="wordmark wordmark-nav" role="img" aria-label="Simhadri Systems">
       <svg viewBox="80 0 342 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <g transform="translate(-20,-10) scale(0.92)">
@@ -247,7 +248,7 @@
         </defs>
       </svg><span class="wordmark-text" aria-hidden="true">IMHADRI SYSTEMS</span>
     </span>
-  </div>
+  </a>
   <nav class="nav-links">
     <a href="#products">Products</a>
     <a href="#story">Our Story</a>
@@ -294,13 +295,13 @@
 
     <div class="product-grid">
       <article class="product-card calc-side">
-        <div class="card-head">
+        <a class="card-head" href="ecalc/">
           <img class="app-icon" src="assets/ecalc-icon.png" alt="eCalc app icon">
           <div>
             <span class="card-tag">Android · Retail Software</span>
             <h3>eCalc</h3>
           </div>
-        </div>
+        </a>
         <p class="desc">
           A fast, no-fuss calculator built for the shop sale counter, not general arithmetic.
           Pack-size keys turn a unit count into a case total in one tap, a running total and
@@ -317,13 +318,13 @@
       </article>
 
       <article class="product-card play-side">
-        <div class="card-head">
+        <a class="card-head" href="esudoku/">
           <img class="app-icon" src="assets/esudoku-icon.png" alt="eSudoku app icon">
           <div>
             <span class="card-tag">Android · Puzzle</span>
             <h3>eSudoku</h3>
           </div>
-        </div>
+        </a>
         <p class="desc">
           A free, offline Sudoku puzzle app with six genuine difficulty levels — Easy through
           Grandmaster — plus a 500-level Journey mode, Daily Challenges, and achievements.
@@ -339,7 +340,7 @@
       </article>
 
       <article class="product-card biz-side">
-        <div class="card-head">
+        <a class="card-head" href="winentry/">
           <svg class="app-icon" viewBox="0 0 512 512" role="img" aria-label="WinEntry logo">
             <defs>
               <linearGradient id="wgrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0">
@@ -359,7 +360,7 @@
             <span class="card-tag">Android · Retail Software</span>
             <h3>WinEntry</h3>
           </div>
-        </div>
+        </a>
         <p class="desc">
           A specialized retail inventory and accountability tool, originally engineered for
           licensed wine and liquor retailers in Andhra Pradesh and Telangana. WinEntry

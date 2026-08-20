@@ -36,11 +36,18 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 18px 0;
   }
-  .nav-brand { display: flex; align-items: center; gap: 12px; }
-  .nav-brand span { font-size: 20px; font-weight: 800; color: var(--brand); }
   .nav-links { display: flex; gap: 22px; font-size: 14px; font-weight: 600; align-items: center; }
   .nav-links a { color: var(--muted); }
-  .nav-links a.home-link { color: var(--brand); }
+
+  /* ---------- Simhadri Systems home link (identical across every page) ---------- */
+  .brand { display: flex; align-items: center; text-decoration: none; }
+  .wordmark { display: inline-flex; align-items: flex-end; }
+  .wordmark svg { display: inline-block; flex-shrink: 0; }
+  .wordmark-text {
+    font-family: 'Times New Roman', Times, serif; font-style: italic;
+    margin-left: -1px; white-space: nowrap; font-size: 24px; line-height: 24px; color: #0E1733;
+  }
+  .wordmark svg { width: 15px; height: 22px; }
 
   /* ---------- Hero ---------- */
   .hero {
@@ -190,34 +197,26 @@
 <body>
 
 <div class="wrap nav">
-  <div class="nav-brand">
-    <svg width="30" height="30" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#474878" d="M102.4,0 H409.6 A102.4,102.4 0 0 1 512,102.4 V409.6 A102.4,102.4 0 0 1 409.6,512 H102.4 A102.4,102.4 0 0 1 0,409.6 V102.4 A102.4,102.4 0 0 1 102.4,0 Z"/>
-      <defs>
-        <linearGradient id="navGrad" gradientUnits="userSpaceOnUse" x1="-20" y1="0" x2="532" y2="0">
-          <stop offset="0" stop-color="#1E88E5"/><stop offset="0.35" stop-color="#FF4081"/>
-          <stop offset="0.65" stop-color="#F4511E"/><stop offset="1" stop-color="#FFD54F"/>
-        </linearGradient>
-      </defs>
-      <path fill="none" stroke="url(#navGrad)" stroke-width="73.6" stroke-linecap="round" stroke-linejoin="round"
-        d="M375.6,72.8 C421.6,26.8 145.6,36 145.6,155.6 C145.6,266 348,210.8 348,330.4 C348,431.6 182.4,450 118,459.2"/>
-      <path fill="none" stroke="#FFFFFF" stroke-width="4" d="M102.4,2 H409.6 A100.4,100.4 0 0 1 510,102.4 V409.6 A100.4,100.4 0 0 1 409.6,510 H102.4 A100.4,100.4 0 0 1 2,409.6 V102.4 A100.4,100.4 0 0 1 102.4,2 Z"/>
-      <path fill="none" stroke="#FFFFFF" stroke-width="4" d="M102.4,0 L102.4,512"/>
-      <path fill="none" stroke="#FFFFFF" stroke-width="4" d="M204.8,0 L204.8,512"/>
-      <path fill="none" stroke="#FFFFFF" stroke-width="4" d="M307.2,0 L307.2,512"/>
-      <path fill="none" stroke="#FFFFFF" stroke-width="4" d="M409.6,0 L409.6,512"/>
-      <path fill="none" stroke="#FFFFFF" stroke-width="4" d="M0,102.4 L512,102.4"/>
-      <path fill="none" stroke="#FFFFFF" stroke-width="4" d="M0,204.8 L512,204.8"/>
-      <path fill="none" stroke="#FFFFFF" stroke-width="4" d="M0,307.2 L512,307.2"/>
-      <path fill="none" stroke="#FFFFFF" stroke-width="4" d="M0,409.6 L512,409.6"/>
-    </svg>
-    <span>eSudoku</span>
-  </div>
+  <a class="brand" href="../" aria-label="Simhadri Systems — Home">
+    <span class="wordmark" role="img" aria-label="Simhadri Systems">
+      <svg viewBox="80 0 342 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g transform="translate(-20,-10) scale(0.92)">
+          <path d="M430 60 C480 40, 180 50, 180 180 C180 300, 400 240, 400 370 C400 480, 220 500, 150 510"
+            fill="none" stroke="url(#navRibbon)" stroke-width="104" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <defs>
+          <linearGradient id="navRibbon" x1="0" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#1E88E5"/><stop offset="35%" stop-color="#FF4081"/>
+            <stop offset="65%" stop-color="#F4511E"/><stop offset="100%" stop-color="#FFD54F"/>
+          </linearGradient>
+        </defs>
+      </svg><span class="wordmark-text" aria-hidden="true">IMHADRI SYSTEMS</span>
+    </span>
+  </a>
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#difficulty">Difficulty</a>
     <a href="#journey">Journey</a>
-    <a href="../">← Simhadri Systems</a>
   </div>
 </div>
 

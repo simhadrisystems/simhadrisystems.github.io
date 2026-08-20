@@ -31,20 +31,25 @@
     color: var(--ink);
     line-height: 1.65;
   }
+
+  /* ---------- Simhadri Systems home link (identical across every page) ---------- */
+  .wrap-nav { max-width: 980px; margin: 0 auto; padding: 18px 24px; }
+  .brand { display: inline-flex; align-items: flex-end; text-decoration: none; }
+  .brand svg { display: inline-block; flex-shrink: 0; width: 15px; height: 22px; }
+  .brand .wordmark-text {
+    font-family: 'Times New Roman', Times, serif; font-style: italic;
+    margin-left: -1px; white-space: nowrap; font-size: 24px; line-height: 24px; color: #0E1733;
+  }
+  @media (prefers-color-scheme: dark) {
+    .brand .wordmark-text { color: #f0f0f5; }
+  }
+
   header {
     background: linear-gradient(135deg, #123a6d, #1a5fb4);
     color: #fff;
     padding: 48px 24px 44px;
     text-align: center;
   }
-  header .home-link {
-    display: block;
-    max-width: 760px;
-    margin: 0 auto 18px;
-    text-align: left;
-  }
-  header .home-link a { color: #cfe0f5; text-decoration: none; font-size: 0.9rem; }
-  header .home-link a:hover { color: #fff; }
   header h1 { font-size: 1.9rem; letter-spacing: 0.02em; }
   header p { margin-top: 10px; font-size: 1.05rem; opacity: 0.92; max-width: 620px; margin-left: auto; margin-right: auto; }
   main { max-width: 760px; margin: 0 auto; padding: 40px 20px 24px; }
@@ -98,8 +103,23 @@
 </style>
 </head>
 <body>
+<div class="wrap-nav">
+  <a class="brand" href="../" aria-label="Simhadri Systems — Home">
+    <svg viewBox="80 0 342 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(-20,-10) scale(0.92)">
+        <path d="M430 60 C480 40, 180 50, 180 180 C180 300, 400 240, 400 370 C400 480, 220 500, 150 510"
+          fill="none" stroke="url(#navRibbon)" stroke-width="104" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <defs>
+        <linearGradient id="navRibbon" x1="0" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#1E88E5"/><stop offset="35%" stop-color="#FF4081"/>
+          <stop offset="65%" stop-color="#F4511E"/><stop offset="100%" stop-color="#FFD54F"/>
+        </linearGradient>
+      </defs>
+    </svg><span class="wordmark-text" aria-hidden="true">IMHADRI SYSTEMS</span>
+  </a>
+</div>
 <header>
-  <div class="home-link"><a href="../">&larr; Simhadri Systems</a></div>
   <svg style="width:88px;height:88px;border-radius:20px;box-shadow:0 3px 10px rgba(0,0,0,0.25);margin-bottom:16px" viewBox="0 0 512 512" role="img" aria-label="WinEntry logo">
     <defs>
       <linearGradient id="wgrad" gradientUnits="userSpaceOnUse" x1="70" y1="120" x2="450" y2="120">

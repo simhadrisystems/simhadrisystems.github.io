@@ -42,12 +42,17 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 18px 0;
   }
-  .nav-brand { display: flex; align-items: center; gap: 10px; }
-  .nav-brand img { width: 30px; height: 30px; border-radius: 8px; }
-  .nav-brand span { font-size: 20px; font-weight: 800; color: var(--brand-deep); }
   .nav-links { display: flex; gap: 22px; font-size: 14px; font-weight: 600; align-items: center; }
   .nav-links a { color: var(--muted); }
-  .nav-links a.home-link { color: var(--brand-deep); }
+
+  /* ---------- Simhadri Systems home link (identical across every page) ---------- */
+  .brand { display: flex; align-items: center; text-decoration: none; }
+  .wordmark { display: inline-flex; align-items: flex-end; }
+  .wordmark svg { display: inline-block; flex-shrink: 0; width: 15px; height: 22px; }
+  .wordmark-text {
+    font-family: 'Times New Roman', Times, serif; font-style: italic;
+    margin-left: -1px; white-space: nowrap; font-size: 24px; line-height: 24px; color: #0E1733;
+  }
 
   /* ---------- Hero ---------- */
   .hero {
@@ -171,14 +176,25 @@
 <body>
 
 <div class="wrap nav">
-  <div class="nav-brand">
-    <img src="../assets/ecalc-icon.png" alt="eCalc app icon">
-    <span>eCalc</span>
-  </div>
+  <a class="brand" href="../" aria-label="Simhadri Systems — Home">
+    <span class="wordmark" role="img" aria-label="Simhadri Systems">
+      <svg viewBox="80 0 342 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g transform="translate(-20,-10) scale(0.92)">
+          <path d="M430 60 C480 40, 180 50, 180 180 C180 300, 400 240, 400 370 C400 480, 220 500, 150 510"
+            fill="none" stroke="url(#navRibbon)" stroke-width="104" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <defs>
+          <linearGradient id="navRibbon" x1="0" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#1E88E5"/><stop offset="35%" stop-color="#FF4081"/>
+            <stop offset="65%" stop-color="#F4511E"/><stop offset="100%" stop-color="#FFD54F"/>
+          </linearGradient>
+        </defs>
+      </svg><span class="wordmark-text" aria-hidden="true">IMHADRI SYSTEMS</span>
+    </span>
+  </a>
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#packkeys">Pack Keys</a>
-    <a href="../">← Simhadri Systems</a>
   </div>
 </div>
 

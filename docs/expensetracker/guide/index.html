@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Guide — Expense Tracker</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px; line-height: 1.7; color: #1a1a1a; background: #ffffff; padding: 0 16px;
+    }
+    .container { max-width: 780px; margin: 8px auto 80px; }
+    h1 { font-size: 28px; font-weight: 700; margin-bottom: 4px; color: #0d1b2a; }
+    .subtitle { color: #555; font-size: 14px; margin-bottom: 24px; }
+    h2 {
+      font-size: 18px; font-weight: 600; color: #0d1b2a; clear: both;
+      margin: 36px 0 10px; border-left: 4px solid #474878; padding-left: 12px;
+    }
+    h3 { font-size: 16px; font-weight: 600; color: #0d1b2a; margin: 18px 0 6px; }
+    p { margin-bottom: 14px; }
+    ul, ol { margin: 8px 0 14px 22px; }
+    li { margin-bottom: 6px; }
+    a { color: #474878; }
+    .highlight { background: #f0fff4; border-left: 4px solid #059669; padding: 14px 18px; border-radius: 4px; margin: 16px 0; }
+    .warn { background: #fff8e6; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 4px; margin: 16px 0; }
+    .toc { border: 1px solid #c7c7e0; border-radius: 6px; padding: 14px 20px; background: #f8f8fd; font-size: 15px; margin-bottom: 8px; }
+    .toc ol { margin: 6px 0 0 20px; }
+    .toc li { margin-bottom: 2px; }
+    figure { float: right; width: 220px; margin: 4px 0 16px 24px; }
+    figure img { width: 100%; border: 1px solid #dde3f0; border-radius: 10px; display: block; }
+    figcaption { font-size: 13px; color: #555; text-align: center; margin-top: 4px; }
+    .pair { display: flex; gap: 16px; flex-wrap: wrap; margin: 8px 0 18px; clear: both; }
+    .pair figure { float: none; margin: 0; }
+    .clear { clear: both; }
+    @media (max-width: 600px) {
+      figure { float: none; width: 70%; max-width: 260px; margin: 8px auto 18px; }
+      .pair { justify-content: center; }
+      .pair figure { width: 45%; }
+    }
+
+    /* Site header (same as the other Simhadri Systems pages) */
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 0 28px; }
+    .nav-links { display: flex; gap: 22px; font-size: 14px; font-weight: 600; align-items: center; }
+    .nav-links a { color: #5a5a68; text-decoration: none; }
+    .brand { display: flex; align-items: center; text-decoration: none; }
+    .wordmark { display: inline-flex; align-items: flex-end; }
+    .wordmark svg { display: inline-block; flex-shrink: 0; width: 15px; height: 22px; }
+    .wordmark-text { font-family: 'Times New Roman', Times, serif; font-style: italic; margin-left: -1px; white-space: nowrap; font-size: 24px; line-height: 24px; color: #0E1733; }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="nav">
+  <a class="brand" href="../" aria-label="Simhadri Systems — Home">
+    <span class="wordmark" role="img" aria-label="Simhadri Systems">
+      <svg viewBox="80 0 342 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g transform="translate(-20,-10) scale(0.92)">
+          <path d="M430 60 C480 40, 180 50, 180 180 C180 300, 400 240, 400 370 C400 480, 220 500, 150 510"
+            fill="none" stroke="url(#navRibbon)" stroke-width="104" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <defs>
+          <linearGradient id="navRibbon" x1="0" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#1E88E5"/><stop offset="35%" stop-color="#FF4081"/>
+            <stop offset="65%" stop-color="#F4511E"/><stop offset="100%" stop-color="#FFD54F"/>
+          </linearGradient>
+        </defs>
+      </svg><span class="wordmark-text" aria-hidden="true">IMHADRI SYSTEMS</span>
+    </span>
+  <div class="nav-links">
+    <a href="#start">Contents</a>
+    <a href="https://sites.google.com/view/simhadri-expense-tracker/privacy-policy" target="_blank">Privacy</a>
+  </div>
+</div>
+
+<h1>User Guide</h1>
+<p class="subtitle">
+  Expense Tracker — Daily business expenses &amp; cash reconciliation &nbsp;|&nbsp; Version 1.0 &nbsp;|&nbsp; Last updated: 10 October 2026<br />
+  By Simhadri Systems &nbsp;|&nbsp; <a href="mailto:simhadrisystems@gmail.com">simhadrisystems@gmail.com</a>
+</p>
+
+<div class="highlight">
+  <strong>The short version:</strong> enter the day's Sale, UPI and Bank figures and each expense on your phone,
+  check Home for missing days, use Reports for totals, and <strong>export a backup every week</strong>.
+  Your data lives only on your phone; nobody else keeps a copy.
+</div>
+
+<div class="toc">
+  <strong>Contents</strong>
+  <ol>
+    <li><a href="#start">Getting started</a></li>
+    <li><a href="#daily">Daily routine</a></li>
+    <li><a href="#fix">Fixing mistakes</a></li>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#reports">Reports</a></li>
+    <li><a href="#setup">Branches, categories and business details</a></li>
+    <li><a href="#backup">Backup and restore</a></li>
+    <li><a href="#desktop">Using it with the desktop app</a></li>
+    <li><a href="#security">Security</a></li>
+    <li><a href="#privacy">Privacy and deleting your data</a></li>
+    <li><a href="#faq">Questions and help</a></li>
+  </ol>
+</div>
+
+<h2 id="start">1. Getting started</h2>
+<p>The first time you open the app it walks you through four short steps:</p>
+<ol>
+  <li><strong>Welcome</strong> — what the app does.</li>
+  <li><strong>Your data stays on this phone</strong> — read and tap <em>I understand and accept</em>. The app works offline, has no account, and you are responsible for your backups.</li>
+  <li><strong>Business name</strong> — printed on your reports.</li>
+  <li><strong>Create a branch or restore a backup</strong> — a new branch starts with a standard set of categories you can change later. If you already have a backup file (from this app or the desktop app), choose <em>Restore a backup</em>; you will see a preview before anything is imported.</li>
+</ol>
+<p>The bottom bar has four tabs: <strong>Home</strong>, <strong>Entry</strong>, <strong>Reports</strong> and <strong>Settings</strong>. If you have more than one branch, switch branches from the name at the top left.</p>
+
+<h2 id="daily">2. Daily routine</h2>
+<figure><img src="img/04_entry.jpg" alt="Entry screen with daily summary and expenses" /><figcaption>Entry: summary and expenses for one day</figcaption></figure>
+<h3>Pick the day</h3>
+<p>Open <strong>Entry</strong>. Use the ◄ ► arrows or swipe on the date bar to change the day, or tap the date to pick from a calendar. The ⋮ menu has <em>Go to today</em>.</p>
+<h3>Daily summary</h3>
+<p>Tap the <strong>Daily summary</strong> card and enter the day's <strong>Sale</strong>, <strong>UPI / Online</strong> and <strong>Bank deposit</strong>. Use <strong>Notes</strong> for deposit details, shortages or remarks. The app works out:</p>
+<ul>
+  <li><strong>Net cash</strong> = Sale − UPI − Expenses</li>
+</ul>
+<p>Once saved, the card shows a green <em>Saved</em> tick. Tap it again to change the figures.</p>
+<h3>Add expenses</h3>
+<p>Tap <strong>Add expense</strong> (you can drag this button out of the way). Choose the <strong>Category</strong> and <strong>Subcategory</strong> — recently used subcategories come first — then type the <strong>Amount</strong> and an optional note.</p>
+<ul>
+  <li>If a subcategory has a <strong>default amount</strong>, leave Amount empty to use it.</li>
+  <li><strong>Save &amp; add another</strong> keeps the sheet open for the next entry. The list under the form shows everything saved for that day.</li>
+  <li><strong>Already entered?</strong> If the same subcategory already has an entry that day, the app asks you to edit the existing one or add a note that makes the new one different. This stops accidental double entries.</li>
+</ul>
+<figure class="clear" style="float:none;margin-left:0"><img src="img/05_add_expense.jpg" alt="Add expense sheet" /><figcaption>Add expense</figcaption></figure>
+
+<h2 id="fix">3. Fixing mistakes</h2>
+<ul>
+  <li><strong>Edit:</strong> tap an entry, or swipe it left. Change anything and save.</li>
+  <li><strong>Delete one entry:</strong> open it and tap <em>Delete</em>. A message with <strong>Undo</strong> appears for a few seconds.</li>
+  <li><strong>Several entries:</strong> long-press an entry to start selecting, tick the others, then <em>Delete selected</em>, <em>Move to date</em> or <em>Copy to date</em>.</li>
+  <li><strong>Clear a day or a date range:</strong> use <em>Clear day or range…</em> in the ⋮ menu. A safety snapshot is saved first, so you can get the entries back from Backup &amp; restore.</li>
+</ul>
+
+<h2 id="home">4. Home</h2>
+<div class="pair">
+  <figure><img src="img/01_home_all.jpg" alt="Home, all branches" /><figcaption>All branches</figcaption></figure>
+  <figure><img src="img/03_home_branch_chart.jpg" alt="Home for one branch" /><figcaption>One branch</figcaption></figure>
+</div>
+<p>With two or more branches, Home opens on <strong>All branches</strong>: today's status for each branch, days that need attention, and this month's combined figures. Tap a branch for its own Home, with a 7-day sale chart and the top expense categories.</p>
+<ul>
+  <li><strong>Missing days:</strong> a past day with no Sale and no expenses is listed under the yellow notice. Tap the day to enter it, or mark it closed.</li>
+  <li><strong>Closed days:</strong> if the business was shut, mark the day as closed (Holiday, Strike / Bandh or Other) from the missing-day notice or from Entry's ⋮ menu. <em>Reopen day</em> undoes it.</li>
+  <li><strong>Holidays:</strong> 26 January, 15 August and 2 October are built in; add others in Settings → Holidays. A holiday with nothing entered counts as closed.</li>
+  <li><strong>Average daily sale</strong> = the month's Sale ÷ trading days (days with a Sale or expenses). Closed days are left out. Last month's average is shown below for comparison.</li>
+  <li><strong>Net not yet deposited</strong> = this month's Net cash − Bank deposits.</li>
+</ul>
+
+<h2 id="reports">5. Reports</h2>
+<div class="pair">
+  <figure><img src="img/06_report_expenses.jpg" alt="Expenses report" /><figcaption>Expenses</figcaption></figure>
+  <figure><img src="img/07_report_recon.jpg" alt="Reconciliation report" /><figcaption>Reconciliation</figcaption></figure>
+</div>
+<ul>
+  <li><strong>Expenses</strong> — totals by category and subcategory. Filter by Category or Subcategory, or tick <strong>Day-wise</strong> to see each day. Tap a category band to fold it.</li>
+  <li><strong>Reconciliation</strong> — Sale, UPI, Expenses, Net cash and Bank deposit for each day, with totals and the average daily sale. The date column stays fixed; swipe the table sideways for more columns.</li>
+  <li><strong>Period and branches:</strong> use ‹ › to change month. Tap the branch box to open <em>Period and branches</em>: This month, Last month, a chosen month or a date range, and tick one, several or all branches for a combined report.</li>
+  <li><strong>Share:</strong> the share icon at the top right offers <em>Share as PDF</em>, <em>Share as Excel</em> and <em>Print</em>.</li>
+</ul>
+
+<h2 id="setup">6. Branches, categories and business details</h2>
+<p>All in <strong>Settings</strong>. Settings under <em>Branch settings</em> apply to the branch chosen at the top of that section.</p>
+<ul>
+  <li><strong>Branches</strong> — add a branch (with the standard categories or a copy of another branch's), rename or delete. Deleting saves a safety snapshot first. If you set a PIN, these changes ask for it.</li>
+  <li><strong>Categories</strong> — add, rename, reorder and set default amounts. Changes apply when you tap <em>Save</em>; <em>Discard</em> cancels them all. A category that still has expenses cannot be deleted; remove a main category's subcategories first.</li>
+  <li><strong>Business details</strong> — the name and two address lines printed at the top of that branch's reports and saved in its backups.</li>
+</ul>
+
+<h2 id="backup">7. Backup and restore</h2>
+<div class="warn">
+  <strong>Your data is only on this phone.</strong> If the phone is lost, reset or the app is uninstalled, the data is gone unless you exported a backup. The developer has no copy and cannot recover it.
+</div>
+<div class="pair">
+  <figure><img src="img/10_backup.jpg" alt="Backup and restore" /><figcaption>Export</figcaption></figure>
+  <figure><img src="img/11_backup_snapshots.jpg" alt="Restore and safety snapshots" /><figcaption>Restore and snapshots</figcaption></figure>
+</div>
+<h3>Export a backup</h3>
+<p>Settings → <strong>Backup &amp; restore</strong>:</p>
+<ul>
+  <li><strong>Export &lt;branch&gt;</strong> saves one .xlsx file; you choose where (Downloads, Google Drive and so on).</li>
+  <li><strong>Export all branches</strong> saves one file per branch into a folder you pick.</li>
+  <li><strong>Date range</strong> exports only part of the data. It is a partial copy and does not count as a full backup.</li>
+</ul>
+<p>Keep a copy off the phone — for example in Google Drive or on a computer. The app reminds you when changes have not been backed up for the number of days set in <em>Remind me to back up after</em> (7 by default).</p>
+<h3>Restore a backup</h3>
+<ol>
+  <li>Tap <strong>Restore from backup file</strong> and pick the .xlsx file. You can also tap the file in Files, Drive or WhatsApp and open it with Expense Tracker — choose <strong>Just once</strong>, not <em>Always</em>.</li>
+  <li>Check the preview: the branch, date range and how many rows will be imported or skipped.</li>
+  <li>Choose <strong>Replace &lt;branch&gt;</strong> (everything in that branch is replaced) or <strong>New branch</strong>, then confirm.</li>
+</ol>
+<h3>Safety snapshots</h3>
+<p>Before every restore, clear, branch delete or reconciliation import, the app saves an automatic snapshot on the phone (the last 5 are kept). If something went wrong, tap the snapshot to put the branch back as it was. Snapshots are not a backup: they are deleted with the app.</p>
+<h3>Moving to a new phone</h3>
+<ol>
+  <li>On the old phone: <em>Export all branches</em> and copy the files to Google Drive or your computer.</li>
+  <li>On the new phone: install the app and choose <em>Restore a backup</em> on the first screen, then restore each branch file.</li>
+</ol>
+
+<h2 id="desktop">8. Using it with the desktop app</h2>
+<p>If you also use the Expense Tracker desktop app, the two exchange data through the same .xlsx backup files.</p>
+<ul>
+  <li><strong>Enter data in one place only — the phone.</strong> A restore replaces the whole branch, so entries made on the desktop after your last phone export would be lost at the next restore.</li>
+  <li><strong>Phone → desktop:</strong> export a backup on the phone and restore it in the desktop app for reports and archive.</li>
+  <li><strong>Desktop → phone:</strong> restore a desktop backup as above. A desktop backup has no daily summaries, so the branch keeps its Sale, UPI and Bank figures.</li>
+  <li><strong>Desktop reconciliation report:</strong> Settings → Backup &amp; restore → <em>Import desktop reconciliation report</em> fills Sale, UPI and Bank for the dates in the file. Existing notes are kept, and a safety snapshot is saved first.</li>
+</ul>
+
+<h2 id="security">9. Security</h2>
+<figure><img src="img/12_security.jpg" alt="Security settings" /><figcaption>Settings → Security</figcaption></figure>
+<ul>
+  <li><strong>PIN</strong> — 6 digits. It protects branch changes and the app lock. It stays on this phone and is never put in backup files. After 3 wrong attempts you must wait a short time before trying again.</li>
+  <li><strong>App lock</strong> — asks for the PIN each time the app opens. Set a PIN first.</li>
+  <li><strong>Unlock with fingerprint</strong> — on phones that support it; the PIN always works too.</li>
+  <li><strong>Hide in Recents</strong> — blanks the app preview in the recent-apps screen and blocks screenshots.</li>
+</ul>
+<div class="warn clear">
+  <strong>Forgot your PIN?</strong> It cannot be reset — there is no developer account or server. The only way forward is <em>Forgot PIN?</em> → delete all local data, then restore your latest backup. Another reason to back up regularly.
+</div>
+
+<h2 id="privacy">10. Privacy and deleting your data</h2>
+<ul>
+  <li>The app has <strong>no internet access</strong>, no account, no ads and no tracking. The developer never receives your data.</li>
+  <li>Your data is kept only on this phone, in Android's own backup to your Google account (if you have it switched on), and in the files you export.</li>
+  <li><strong>Delete everything:</strong> Settings → <em>Delete all local data</em> (type DELETE to confirm), or uninstall the app. This cannot be undone.</li>
+</ul>
+<p>Full details: <a href="https://sites.google.com/view/simhadri-expense-tracker/privacy-policy" target="_blank">Privacy Policy</a> and <a href="https://sites.google.com/view/simhadri-expense-tracker/tos" target="_blank">Terms of Service</a>.</p>
+
+<h2 id="faq">11. Questions and help</h2>
+<h3>A day shows as missing, but the business was closed.</h3>
+<p>Tap the day in the yellow notice and choose <em>Mark as closed</em>. It stops being flagged and is left out of the average daily sale.</p>
+<h3>The app will not let me save an expense.</h3>
+<p>The same subcategory already has an entry that day. Edit the existing entry, or add a note that makes the new one different.</p>
+<h3>I deleted something by mistake.</h3>
+<p>Tap <strong>Undo</strong> right away. For a cleared day or range, a restore or a deleted branch, use the safety snapshot in Backup &amp; restore.</p>
+<h3>Tapping a backup file always opens the wrong app.</h3>
+<p>In the "Open with" chooser pick Expense Tracker and <strong>Just once</strong>. If you chose <em>Always</em> for another app, clear its defaults in Android Settings → Apps.</p>
+<h3>Something is not working.</h3>
+<p>Settings → <strong>Share diagnostics</strong> creates a small text file with technical details (no business data). Send it with a short description to <a href="mailto:simhadrisystems@gmail.com">simhadrisystems@gmail.com</a>.</p>
+
+</div>
+</body>
+</html>
